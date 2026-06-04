@@ -30,7 +30,7 @@
     .sec h2{font-size:clamp(32px,4vw,50px);font-weight:900;line-height:1.12;margin-bottom:14px}
     .sec h2 .hl{color:var(--accent)}
     .sec .desc{font-size:16px;color:rgba(255,255,255,.45);line-height:1.8;max-width:800px;margin-bottom:40px}
-    .fu{opacity:0;transform:translateY(36px);transition:all .7s ease-out}.fu.vis{opacity:1;transform:translateY(0)}
+    .fu{opacity:0;transform:translateY(36px);transition:opacity .7s ease-out,transform .7s ease-out}.fu.vis{opacity:1!important;transform:translateY(0)!important}
     .src{font-size:11px;color:var(--accent);opacity:.55}
     .link-card{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:8px;background:rgba(0,180,216,.08);border:1px solid rgba(0,180,216,.15);font-size:13px;font-weight:600;color:var(--accent);margin:4px 4px 4px 0;transition:all .2s}
     .link-card:hover{background:rgba(0,180,216,.15);color:var(--accent2);text-decoration:none}
@@ -129,9 +129,6 @@
           小区雨污分流<br><span style="color:var(--accent)">智慧体检系统</span>
         </h1>
         <p style="font-size:18px;color:rgba(255,255,255,.5);line-height:1.7;margin-bottom:16px">让地下排水从"看不见"变成"查得清、改得准、管得住"</p>
-        <div style="padding:14px 18px;background:rgba(0,180,216,.06);border:1px solid rgba(0,180,216,.12);border-radius:10px;margin-bottom:24px">
-          <p style="font-size:15px;color:rgba(255,255,255,.6);font-weight:600">开场句：市长，城市内涝和污水冒溢，很多时候不是水厂问题，而是地下管网问题。</p>
-        </div>
         <div style="padding:14px 18px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:10px">
           <p style="font-size:14px;color:rgba(255,255,255,.45)">先体检、再分级、后整改，用小试点撬动深圳小区排水治理提效。</p>
         </div>
@@ -155,7 +152,7 @@
   <div class="inner">
     <div class="tag">02 政策引领</div>
     <h2>为什么现在<span class="hl">必须做</span></h2>
-    <p class="desc">不要只写政策名称，要说明政策和项目之间的关系。</p>
+    <p class="desc">当一个城市几乎全部人口都生活在城镇空间里，排水问题就不只是工程问题，而是民生和城市韧性问题。</p>
     <div class="grid-3 fu">
       <div class="card">
         <h4>城市生命线工程</h4>
@@ -172,9 +169,6 @@
         <p>一张图、一张网、一平台。深圳市水务局提出构建水务物联网感知体系，实现管网水位、水质、流量等关键数据实时监测。</p>
         <a href="https://swj.sz.gov.cn/" target="_blank" class="link-card">深圳市水务局 →</a>
       </div>
-    </div>
-    <div class="quote-box fu">
-      <p>页面金句：排水管网不是普通管道，而是城市生命线的一部分。</p>
     </div>
     <div style="margin-top:20px" class="fu">
       <p style="font-size:14px;color:rgba(255,255,255,.35)">更多政策参考：<a href="https://www.stats.gov.cn/sj/sjjd/202606/t20260603_1963868.html" target="_blank">国家统计局城镇化数据 [S1]</a> · <a href="https://tjj.sz.gov.cn/zwgk/zfxxgkml/tjsj/tjgb/content/post_12803919.html" target="_blank">深圳统计公报 [S2]</a></p>
@@ -194,9 +188,6 @@
       <div class="card"><div class="num">21709<span class="unit">公里</span></div><h4>纳入地理信息系统管理的市政排水管渠</h4><p>纳入地理信息系统管理的市政排水管渠总长度，覆盖面广但末端监管难度大。</p><a href="https://www.sz.gov.cn/cn/xxgk/zfxxgj/tzgg/content/post_12728178.html" target="_blank" class="link-card">数据来源 [S3] →</a></div>
       <div class="card"><div class="num">80<span class="unit">座</span></div><h4>市政污水（截污）泵站</h4><p>市政污水（截污）泵站数量，任何小区末端问题都会被放大到这些设施。</p><a href="https://www.sz.gov.cn/cn/xxgk/zfxxgj/tzgg/content/post_12728178.html" target="_blank" class="link-card">数据来源 [S3] →</a></div>
     </div>
-    <div class="quote-box fu">
-      <p>建议配图：井盖、暗渠、淤积管道、机器人检测画面。</p>
-    </div>
   </div>
 </section>
 
@@ -211,9 +202,6 @@
       <div class="card"><div class="num" style="font-size:28px">感知</div><h4>井位感知层</h4><p>液位、流量、化学需氧量、氨氮传感器，安装在排水井内，实时采集数据。</p><a href="https://www.fjsx.gov.cn/zwgk/ggzypz/zfzbcg/zbgg_8046/202602/t20260212_2190048.htm" target="_blank" class="link-card">采购参考 [S6] →</a></div>
       <div class="card"><div class="num" style="font-size:28px">传输</div><h4>数据传输层</h4><p>通过物联网无线传输，将监测数据实时上传至云平台。</p></div>
       <div class="card"><div class="num" style="font-size:28px">分析</div><h4>诊断平台层</h4><p>地理信息系统一张图展示，人工智能自动识别异常，生成诊断报告。</p></div>
-    </div>
-    <div class="quote-box fu">
-      <p>类比表达：相当于给排水管道做一次"胃镜检查"。</p>
     </div>
     <div style="margin-top:20px" class="fu">
       <h4 style="font-size:15px;font-weight:700;margin-bottom:12px;color:var(--accent)">公开采购参考单价</h4>
@@ -266,9 +254,6 @@
         <a href="https://meeb.sz.gov.cn/xxgk/tjsj/jdhjzkgb/content/post_12764435.html" target="_blank" class="link-card highlight green">水源地达标率100% [S8] →</a>
       </div>
     </div>
-    <div class="quote-box fu">
-      <p>讲法：深圳不是从零开始，而是要把已有平台和机器人检测结合起来。</p>
-    </div>
   </div>
 </section>
 
@@ -283,9 +268,6 @@
       <div class="card"><div class="num">100<span class="unit">公里</span></div><h4>试点范围</h4><p>约100公里排水管网，覆盖老旧城区和低洼易涝片区。</p></div>
       <div class="card"><div class="num">12<span class="unit">个井位</span></div><h4>重点监测</h4><p>布设12个重点井位，安装多参数监测设备。</p></div>
       <div class="card"><div class="num">21<span class="unit">个月</span></div><h4>试点周期</h4><p>建台账3个月 + 做体检6个月 + 闭环12个月。</p></div>
-    </div>
-    <div class="quote-box fu">
-      <p>建议表达：先做100公里样板，再形成深圳可复制的管网体检流程。</p>
     </div>
   </div>
 </section>
@@ -302,9 +284,6 @@
       <div class="tl-item"><div class="ph">第二步 · 机器人检测</div><h4>形成缺陷评级和病害清单</h4><p>布设重点井位监测，使用管道机器人进行结构性检测，形成缺陷评级和病害清单，锁定疑似错接混接和外水入渗点。</p></div>
       <div class="tl-item"><div class="ph">第三步 · 精准修复</div><h4>接入地理信息系统平台和巡检养护工单</h4><p>接入地理信息系统平台和巡检养护工单，完成整改、复核、销项，沉淀成可复制的小区体检标准流程。</p></div>
     </div>
-    <div class="quote-box fu">
-      <p>关键词：先体检、再分级、后修复、能复查。</p>
-    </div>
   </div>
 </section>
 
@@ -314,7 +293,7 @@
   <div class="inner">
     <div class="tag">09 预期目标</div>
     <h2>经济账 + <span class="hl">民生账</span></h2>
-    <p class="desc">目标要能量化，不要只写"提升管理水平"。</p>
+    <p class="desc">市长最关心的不是"这个系统先进不先进"，而是"能不能带来确定结果"。所以我们的目标既要有居民能感知的结果，也要有管理部门能考核的结果。</p>
     <div class="grid-3 fu">
       <div class="card"><div class="highlight">管理目标</div><h4 style="margin-top:12px">可量化考核</h4><p>重点井位在线监测覆盖率<span style="color:var(--accent);font-weight:700">100%</span>；异常工单<span style="color:var(--accent);font-weight:700">24小时内</span>派发；疑似错接混接点<span style="color:var(--accent);font-weight:700">100%建档</span>；整改复核闭环率<span style="color:var(--accent);font-weight:700">90%以上</span>。</p></div>
       <div class="card"><div class="highlight green">民生价值</div><h4 style="margin-top:12px">居民可感知</h4><p>少积水、少臭味、少冒溢、少开挖。减少污水冒溢、道路积水、反复开挖和群众投诉。</p></div>
@@ -362,9 +341,6 @@
       <div class="card"><h4>减少外水处理</h4><p>通过精准识别混接和入渗，减少雨水和地下水进入污水管网，降低污水厂无效处理量。</p><div class="highlight green">减少外水处理费用约120万元/年</div></div>
       <div class="card"><h4>带动本地产业</h4><p>带动本地检测装备、软件平台、管网修复和运维服务产业发展，形成可持续的治理能力。</p><div class="highlight">预计2年内收回投资</div></div>
       <div class="card"><h4>民生价值</h4><p>少积水、少臭味、少冒溢、少开挖。居民满意度提升，投诉量下降，城市韧性增强。</p><div class="highlight green">污水冒溢投诉减少60%以上</div></div>
-    </div>
-    <div class="quote-box fu">
-      <p>讲法：如果今天要投一笔钱，我建议先投到"看清问题"的能力上。因为看清楚，后面的整改才不会反复返工。</p>
     </div>
   </div>
 </section>
@@ -427,27 +403,29 @@ document.querySelectorAll('.tab-btn').forEach(function(b){
   });
 });
 
-// 滚动动画
+// 滚动动画（进入时播放，离开时重置，再次进入时重新播放）
 var obs=new IntersectionObserver(function(entries){
   entries.forEach(function(e){
-    if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';obs.unobserve(e.target)}
-  });
-},{threshold:0.08});
-document.querySelectorAll('.fu').forEach(function(el){
-  el.style.opacity='0';el.style.transform='translateY(36px)';el.style.transition='all .7s ease-out';
-  obs.observe(el);
-});
-
-// 卡片交错
-var cObs=new IntersectionObserver(function(entries){
-  entries.forEach(function(e){
     if(e.isIntersecting){
-      var c=e.target.children;
-      for(var i=0;i<c.length;i++){(function(j){setTimeout(function(){c[j].style.opacity='1';c[j].style.transform='translateY(0)'},j*100)})(i)}
-      cObs.unobserve(e.target);
+      e.target.classList.add('vis');
+    }else{
+      e.target.classList.remove('vis');
     }
   });
-},{threshold:0.08});
+},{threshold:0.08,rootMargin:'0px 0px -20px 0px'});
+document.querySelectorAll('.fu').forEach(function(el){obs.observe(el)});
+
+// 卡片交错动画（进入时播放，离开时重置）
+var cObs=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    var c=e.target.children;
+    if(e.isIntersecting){
+      for(var i=0;i<c.length;i++){(function(j){setTimeout(function(){c[j].style.opacity='1';c[j].style.transform='translateY(0)'},j*100)})(i)}
+    }else{
+      for(var i=0;i<c.length;i++){c[i].style.opacity='0';c[i].style.transform='translateY(28px)'}
+    }
+  });
+},{threshold:0.08,rootMargin:'0px 0px -20px 0px'});
 document.querySelectorAll('.grid-2,.grid-3,.grid-4,.cta-cards').forEach(function(el){
   for(var i=0;i<el.children.length;i++){el.children[i].style.opacity='0';el.children[i].style.transform='translateY(28px)';el.children[i].style.transition='all .6s ease-out'}
   cObs.observe(el);
