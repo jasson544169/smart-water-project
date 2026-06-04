@@ -6,30 +6,27 @@
 <title>深圳老旧小区雨污分流智慧体检治理项目</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 <style>
-:root{--blue:#1a5fb4;--blue2:#1648a0;--accent:#2563eb;--accent2:#1d4ed8;--bg1:#f0f5fb;--bg2:#e8eef6;--bg3:#f5f7fa;--white:#ffffff;--text:#1a1a2e;--muted:#5a6577;--light:#8896a8;--border:#d0d9e6;--card:#fff;--shadow:0 4px 20px rgba(26,95,180,.08)}
+:root{--blue:#1a5fb4;--accent:#2563eb;--accent2:#1d4ed8;--text:#1a1a2e;--muted:#5a6577;--light:#8896a8;--border:#d0d9e6;--card:#fff;--shadow:0 4px 20px rgba(26,95,180,.08)}
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
-body{font-family:"Noto Sans SC","PingFang SC",sans-serif;color:var(--text);background:var(--bg1);overflow-x:hidden;line-height:1.75}
-::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--bg2)}::-webkit-scrollbar-thumb{background:var(--accent);border-radius:3px}
+body{font-family:"Noto Sans SC","PingFang SC",sans-serif;color:var(--text);background:#f0f5fb;overflow-x:hidden;line-height:1.75}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:#e8eef6}::-webkit-scrollbar-thumb{background:var(--accent);border-radius:3px}
 a{color:var(--accent);text-decoration:none;transition:color .2s}a:hover{color:var(--accent2);text-decoration:underline}
-
-/* WATER TEXTURE */
-body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.07;
-background:repeating-linear-gradient(0deg,transparent,transparent 60px,rgba(26,95,180,.03) 60px,rgba(26,95,180,.03) 61px),
-repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(26,95,180,.03) 60px,rgba(26,95,180,.03) 61px)}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.06;background:repeating-linear-gradient(0deg,transparent,transparent 50px,rgba(26,95,180,.03) 50px,rgba(26,95,180,.03) 51px),repeating-linear-gradient(90deg,transparent,transparent 50px,rgba(26,95,180,.03) 50px,rgba(26,95,180,.03) 51px)}
 
 /* NAV */
-.nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 44px;background:rgba(255,255,255,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 44px;background:rgba(255,255,255,.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);box-shadow:0 2px 12px rgba(0,0,0,.04)}
 .nav-logo{font-size:18px;font-weight:900;color:var(--blue);text-decoration:none}
 .nav-menu{display:flex;gap:4px;list-style:none}
-.nav-menu a{color:var(--muted);text-decoration:none;font-size:13px;font-weight:500;padding:7px 12px;border-radius:8px;transition:all .25s}
-.nav-menu a:hover,.nav-menu a.on{color:var(--blue);background:rgba(26,95,180,.06)}
+.nav-menu a{color:var(--muted);text-decoration:none;font-size:13px;font-weight:500;padding:7px 12px;border-radius:8px;transition:all .25s;position:relative}
+.nav-menu a::after{content:"";position:absolute;bottom:2px;left:50%;width:0;height:2px;background:var(--accent);transition:all .35s cubic-bezier(.25,.8,.25,1);transform:translateX(-50%);border-radius:1px}
+.nav-menu a:hover::after,.nav-menu a.on::after{width:calc(100% - 24px)}
+.nav-menu a:hover,.nav-menu a.on{color:var(--blue);background:rgba(26,95,180,.05)}
 
 /* HERO */
-.hero{position:relative;min-height:100vh;display:flex;align-items:center;padding-top:64px;overflow:hidden;background:linear-gradient(135deg,var(--bg1) 0%,#e0eaf5 50%,var(--bg2) 100%)}
-.hero canvas{position:absolute;inset:0;width:100%;height:100%;opacity:.12;z-index:0}
-.hero .inner{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:0 44px;width:100%}
-.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
-.hero h1{font-size:clamp(36px,4.5vw,60px);font-weight:900;line-height:1.1;margin-bottom:16px;color:var(--blue)}
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;padding-top:64px;overflow:hidden;background:linear-gradient(135deg,#e8f0fa 0%,#d8e8f5 40%,#e0ecf4 100%)}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;opacity:.1;z-index:0}
+.hero .inner{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:0 44px;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.hero h1{font-size:clamp(36px,4.5vw,58px);font-weight:900;line-height:1.1;margin-bottom:16px;color:var(--blue)}
 .hero h1 em{font-style:normal;color:var(--accent)}
 .hero .sub{font-size:17px;color:var(--muted);line-height:1.7;margin-bottom:24px;max-width:480px}
 .hero-img{border-radius:20px;overflow:hidden;box-shadow:0 20px 50px rgba(26,95,180,.12);border:1px solid var(--border)}
@@ -37,9 +34,12 @@ repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(26,95,180,.03)
 .hero-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border-radius:999px;background:rgba(26,95,180,.06);border:1px solid rgba(26,95,180,.15);color:var(--blue);font-size:12px;font-weight:600;margin-bottom:16px}
 .hero-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(37,99,235,.3)}50%{opacity:.7;box-shadow:0 0 0 6px rgba(37,99,235,0)}}
+.cta-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;background:var(--accent);color:#fff;font-size:15px;font-weight:700;border:none;border-radius:10px;cursor:pointer;text-decoration:none;transition:all .3s}
+.cta-btn:hover{background:var(--accent2);transform:translateY(-2px) scale(1.03);box-shadow:0 8px 24px rgba(37,99,235,.2);text-decoration:none;color:#fff}
+.cta-btn:active{transform:scale(.97)}
 
-/* SECTION */
-.sec{position:relative;padding:90px 44px;overflow:hidden}
+/* SECTION COMMON */
+.sec{position:relative;padding:100px 44px;overflow:hidden}
 .sec-inner{max-width:1240px;margin:0 auto;position:relative;z-index:1}
 .tag{display:inline-flex;align-items:center;gap:8px;color:var(--accent);font-size:12px;font-weight:700;letter-spacing:.1em;margin-bottom:12px}
 .tag::before{content:"";width:20px;height:2px;background:var(--accent)}
@@ -47,62 +47,110 @@ repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(26,95,180,.03)
 .sec h2 em{font-style:normal;color:var(--accent)}
 .sec .lead{font-size:15px;color:var(--muted);line-height:1.8;max-width:780px;margin-bottom:32px}
 
-/* CARDS */
-.g2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.cd{padding:24px;border-radius:16px;background:var(--card);border:1px solid var(--border);box-shadow:var(--shadow);transition:all .35s cubic-bezier(.25,.8,.25,1);position:relative;overflow:hidden}
-.cd:hover{transform:translateY(-5px);box-shadow:0 12px 40px rgba(26,95,180,.12),0 0 0 1px rgba(26,95,180,.15)}
-.cd .big{font-size:42px;font-weight:900;color:var(--accent);line-height:1;margin-bottom:4px}
-.cd .unit{font-size:14px;color:var(--accent);font-weight:600}
-.cd h4{font-size:16px;font-weight:700;margin:8px 0 6px;color:var(--text)}
-.cd p{font-size:13px;color:var(--muted);line-height:1.65}
-.cd .badge{display:inline-block;padding:3px 10px;border-radius:6px;font-size:12px;font-weight:600;margin-top:8px}
-.cd .badge.b{background:rgba(37,99,235,.08);color:var(--accent)}
-.cd .badge.g{background:rgba(16,185,129,.08);color:#059669}
-.cd .badge.y{background:rgba(245,158,11,.08);color:#d97706}
-
 /* LINK CARD */
 .lk{display:inline-flex;align-items:center;gap:5px;padding:5px 12px;border-radius:6px;background:rgba(37,99,235,.06);border:1px solid rgba(37,99,235,.12);font-size:12px;font-weight:600;color:var(--accent);margin-top:8px;transition:all .2s}
 .lk:hover{background:rgba(37,99,235,.12);text-decoration:none}
 
-/* IMAGE GRID */
-.img-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0}
-.img-card{border-radius:14px;overflow:hidden;border:1px solid var(--border);aspect-ratio:16/10;background:var(--bg2);position:relative}
-.img-card img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
-.img-card:hover img{transform:scale(1.04)}
-.img-card .caption{position:absolute;bottom:0;left:0;right:0;padding:8px 12px;background:linear-gradient(transparent,rgba(0,0,0,.55));color:#fff;font-size:11px;font-weight:500}
+/* BADGE */
+.badge{display:inline-block;padding:3px 10px;border-radius:6px;font-size:12px;font-weight:600}
+.badge.b{background:rgba(37,99,235,.08);color:var(--accent)}
+.badge.g{background:rgba(16,185,129,.08);color:#059669}
+.badge.y{background:rgba(245,158,11,.08);color:#d97706}
 
-/* FLOW */
-.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:24px 0}
+/* === 板块1：项目简介 - 左大图+右分栏 === */
+.intro-layout{display:grid;grid-template-columns:1.2fr 0.8fr;gap:40px;align-items:stretch}
+.intro-big-img{border-radius:20px;overflow:hidden;min-height:400px;position:relative}
+.intro-big-img img{width:100%;height:100%;object-fit:cover;display:block}
+.intro-right{display:flex;flex-direction:column;justify-content:space-between}
+.intro-title{padding:28px;border-radius:16px;background:var(--card);border:1px solid var(--border);box-shadow:var(--shadow)}
+.intro-title h3{font-size:24px;font-weight:900;color:var(--blue);margin-bottom:8px}
+.intro-title p{font-size:14px;color:var(--muted);line-height:1.7}
+.intro-cards{display:grid;gap:12px}
+.intro-card{padding:20px;border-radius:14px;background:var(--card);border:1px solid var(--border);box-shadow:var(--shadow);transition:all .35s}
+.intro-card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(26,95,180,.1)}
+.intro-card h4{font-size:15px;font-weight:700;margin-bottom:4px}
+.intro-card p{font-size:13px;color:var(--muted);line-height:1.6}
+
+/* === 板块2：小区现状 - 瀑布流 === */
+.waterfall{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:start}
+.wf-item{border-radius:16px;overflow:hidden;background:var(--card);border:1px solid var(--border);box-shadow:var(--shadow);transition:all .4s}
+.wf-item:hover{transform:translateY(-6px);box-shadow:0 16px 44px rgba(26,95,180,.12);border-color:rgba(37,99,235,.2)}
+.wf-item img{width:100%;display:block;transition:transform .5s}
+.wf-item:hover img{transform:scale(1.03)}
+.wf-item .wf-text{padding:16px}
+.wf-item h4{font-size:15px;font-weight:700;margin-bottom:4px}
+.wf-item p{font-size:13px;color:var(--muted);line-height:1.55}
+.wf-item.tall{grid-row:span 2}
+.data-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:24px}
+.data-card{padding:20px;border-radius:14px;background:var(--card);border:1px solid var(--border);box-shadow:var(--shadow);text-align:center}
+.data-card .big{font-size:36px;font-weight:900;color:var(--accent);line-height:1}
+.data-card .unit{font-size:13px;color:var(--accent);font-weight:600}
+.data-card h4{font-size:13px;font-weight:700;margin:6px 0 2px}
+.data-card p{font-size:12px;color:var(--muted)}
+
+/* === 板块3：政策依据 - 左时间轴+右正文 === */
+.policy-layout{display:grid;grid-template-columns:200px 1fr;gap:40px}
+.pol-tl{position:relative;padding-left:24px}
+.pol-tl::before{content:"";position:absolute;left:8px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--accent),rgba(37,99,235,.08))}
+.pol-item{position:relative;padding:16px 20px;margin-bottom:16px;border-radius:12px;background:var(--card);border:1px solid var(--border);transition:all .3s}
+.pol-item:hover{border-color:rgba(37,99,235,.25);transform:translateX(4px)}
+.pol-item::before{content:"";position:absolute;left:-20px;top:22px;width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px rgba(37,99,235,.3)}
+.pol-item .year{font-size:13px;font-weight:700;color:var(--accent)}
+.pol-item h4{font-size:14px;font-weight:700;margin:4px 0}
+.pol-item p{font-size:12px;color:var(--muted);line-height:1.5}
+.pol-content .pol-text{margin-bottom:24px}
+.pol-content .pol-text h3{font-size:18px;font-weight:700;margin-bottom:8px;color:var(--blue)}
+.pol-content .pol-text p{font-size:14px;color:var(--muted);line-height:1.7}
+.pol-img{border-radius:14px;overflow:hidden;margin:16px 0;border:1px solid var(--border)}
+.pol-img img{width:100%;display:block}
+
+/* === 板块4：技术方案 - 上下分层 === */
+.tech-top{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;margin-bottom:30px}
+.tech-img{border-radius:16px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow)}
+.tech-img img{width:100%;display:block}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
 .fl{padding:18px 10px;border-radius:12px;background:var(--card);border:1px solid var(--border);text-align:center;transition:all .3s;box-shadow:var(--shadow)}
 .fl:hover{border-color:rgba(37,99,235,.3);transform:translateY(-3px)}
 .fl .sn{width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font-size:12px;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto 8px}
 .fl h4{font-size:13px;font-weight:700;margin-bottom:3px}
 .fl p{font-size:11px;color:var(--muted);line-height:1.4}
+.tech-bottom{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.tech-small{border-radius:14px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow);position:relative}
+.tech-small img{width:100%;display:block;transition:transform .5s}
+.tech-small:hover img{transform:scale(1.04)}
+.tech-small .caption{position:absolute;bottom:0;left:0;right:0;padding:10px 14px;background:linear-gradient(transparent,rgba(0,0,0,.6));color:#fff;font-size:12px;font-weight:500}
 
-/* TIMELINE */
-.tl{position:relative;padding-left:30px;margin:24px 0}
-.tl::before{content:"";position:absolute;left:10px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--accent),rgba(37,99,235,.08))}
-.tl-i{position:relative;padding:20px 22px;margin-bottom:12px;border-radius:14px;background:var(--card);border:1px solid var(--border);box-shadow:var(--shadow);transition:all .3s}
-.tl-i:hover{border-color:rgba(37,99,235,.25);transform:translateX(4px)}
-.tl-i::before{content:"";position:absolute;left:-26px;top:26px;width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px rgba(37,99,235,.3)}
-.tl-i .ph{display:inline-block;padding:3px 10px;border-radius:6px;background:rgba(37,99,235,.06);color:var(--accent);font-size:12px;font-weight:700;margin-bottom:6px}
-.tl-i h4{font-size:16px;font-weight:700;margin-bottom:4px}
-.tl-i p{font-size:13px;color:var(--muted);line-height:1.6}
+/* === 板块5：施工落地 - 大图通栏+两列交错 === */
+.impl-hero{border-radius:20px;overflow:hidden;margin-bottom:30px;box-shadow:0 16px 48px rgba(26,95,180,.1);border:1px solid var(--border)}
+.impl-hero img{width:100%;display:block;max-height:400px;object-fit:cover}
+.impl-row{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:20px;align-items:center}
+.impl-row.reverse{direction:rtl}
+.impl-row.reverse > *{direction:ltr}
+.impl-text{padding:24px;border-radius:14px;background:var(--card);border:1px solid var(--border);box-shadow:var(--shadow)}
+.impl-text h4{font-size:18px;font-weight:700;margin-bottom:8px;color:var(--blue)}
+.impl-text p{font-size:14px;color:var(--muted);line-height:1.7}
+.impl-img{border-radius:14px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow)}
+.impl-img img{width:100%;display:block}
 
-/* TABLE */
-.tbl{width:100%;border-collapse:separate;border-spacing:0 5px}
-.tbl th{text-align:left;padding:10px 16px;color:var(--accent);font-size:12px;font-weight:600;letter-spacing:.05em}
-.tbl td{padding:13px 16px;background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);font-size:13px;color:var(--text)}
-.tbl td:first-child{border-left:1px solid var(--border);border-radius:10px 0 0 10px;font-weight:600}
-.tbl td:last-child{border-right:1px solid var(--border);border-radius:0 10px 10px 0;text-align:right;font-weight:900;color:var(--accent);font-size:15px}
-.tbl tr:hover td{background:#f8fafc}
-.total-row{display:flex;justify-content:flex-end;align-items:center;gap:14px;margin-top:16px;padding:18px 26px;border-radius:12px;background:rgba(37,99,235,.04);border:1px solid rgba(37,99,235,.12)}
-.total-row .tl-text{font-size:15px;color:var(--muted)}.total-row .tl-num{font-size:42px;font-weight:900;color:var(--accent)}.total-row .tl-unit{font-size:16px;color:var(--accent)}
+/* === 板块6：项目效益 - 左右对比 === */
+.compare{display:grid;grid-template-columns:1fr auto 1fr;gap:0;align-items:stretch;margin:30px 0;border-radius:20px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow)}
+.compare-side{position:relative;min-height:350px}
+.compare-side img{width:100%;height:100%;object-fit:cover;display:block}
+.compare-side .label{position:absolute;bottom:16px;left:16px;padding:6px 14px;border-radius:8px;font-size:13px;font-weight:700;color:#fff}
+.compare-side .label.before{background:rgba(239,68,68,.85)}
+.compare-side .label.after{background:rgba(16,185,129,.85)}
+.compare-mid{display:flex;flex-direction:column;justify-content:center;align-items:center;padding:24px;background:var(--card);min-width:200px;text-align:center}
+.compare-mid h3{font-size:18px;font-weight:900;color:var(--blue);margin-bottom:12px}
+.compare-mid p{font-size:13px;color:var(--muted);line-height:1.6}
+.benefit-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:24px}
+.ben-card{padding:20px;border-radius:14px;background:var(--card);border:1px solid var(--border);box-shadow:var(--shadow);transition:all .35s}
+.ben-card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(26,95,180,.1)}
+.ben-card h4{font-size:15px;font-weight:700;margin-bottom:6px}
+.ben-card p{font-size:13px;color:var(--muted);line-height:1.6}
+.ben-card .val{font-size:18px;font-weight:900;color:var(--accent);margin-top:8px}
 
 /* CTA */
-.cta{text-align:center;padding:100px 44px;background:linear-gradient(135deg,var(--bg2),var(--bg1))}
+.cta{text-align:center;padding:100px 44px;background:linear-gradient(135deg,#e8eef6,#f0f5fb)}
 .cta h2{font-size:clamp(26px,3.8vw,44px);font-weight:900;margin-bottom:12px;line-height:1.15;color:var(--blue)}
 .cta h2 em{font-style:normal;color:var(--accent)}
 .cta .lead{margin:0 auto 28px}
@@ -110,18 +158,16 @@ repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(26,95,180,.03)
 .cta-c{padding:18px;border-radius:12px;background:var(--card);border:1px solid var(--border);text-align:center;box-shadow:var(--shadow)}
 .cta-c .cn{font-size:26px;font-weight:900;color:var(--accent);margin-bottom:2px}
 .cta-c .ct{font-size:12px;color:var(--muted)}
-.cta-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 32px;background:var(--accent);color:#fff;font-size:15px;font-weight:700;border:none;border-radius:10px;cursor:pointer;text-decoration:none;transition:all .3s}
-.cta-btn:hover{background:var(--accent2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(37,99,235,.2);text-decoration:none;color:#fff}
 
 /* REFS */
-.refs{background:var(--bg2);padding:56px 44px;border-top:1px solid var(--border)}
+.refs{background:#e8eef6;padding:56px 44px;border-top:1px solid var(--border)}
 .refs h3{font-size:17px;font-weight:700;margin-bottom:18px;color:var(--blue)}
 .ref-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .ref-item{padding:10px 14px;border-radius:8px;background:var(--card);border:1px solid var(--border);font-size:12px;color:var(--muted);line-height:1.5}
 .ref-item .rt{color:var(--accent);font-weight:700;margin-right:4px}
 
 /* FOOTER */
-.footer{padding:44px 44px 28px;border-top:1px solid var(--border);background:var(--white)}
+.footer{padding:44px 44px 28px;border-top:1px solid var(--border);background:#fff}
 .ft-inner{max-width:1240px;margin:0 auto}
 .ft-top{display:grid;grid-template-columns:1fr 2fr;gap:44px;margin-bottom:32px}
 .ft-logo{font-size:20px;font-weight:900;color:var(--blue);margin-bottom:10px}
@@ -131,48 +177,32 @@ repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(26,95,180,.03)
 .ft-col a:hover{color:var(--blue);text-decoration:none}
 .ft-btm{display:flex;justify-content:space-between;padding-top:14px;border-top:1px solid var(--border);font-size:11px;color:var(--light)}
 
-/* ANIMATIONS */
-/* 弹跳式进入 - 标题/重要数据 */
+/* TABLE */
+.tbl{width:100%;border-collapse:separate;border-spacing:0 5px}
+.tbl th{text-align:left;padding:10px 16px;color:var(--accent);font-size:12px;font-weight:600}
+.tbl td{padding:13px 16px;background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);font-size:13px}
+.tbl td:first-child{border-left:1px solid var(--border);border-radius:10px 0 0 10px;font-weight:600}
+.tbl td:last-child{border-right:1px solid var(--border);border-radius:0 10px 10px 0;text-align:right;font-weight:900;color:var(--accent);font-size:15px}
+.tbl tr:hover td{background:#f8fafc}
+.total-row{display:flex;justify-content:flex-end;align-items:center;gap:14px;margin-top:16px;padding:18px 26px;border-radius:12px;background:rgba(37,99,235,.04);border:1px solid rgba(37,99,235,.12)}
+.total-row .tl-text{font-size:15px;color:var(--muted)}.total-row .tl-num{font-size:42px;font-weight:900;color:var(--accent)}.total-row .tl-unit{font-size:16px;color:var(--accent)}
+
+/* ANIMATIONS - 6类差异化 */
 .a-bounce{opacity:0;transform:translateY(40px) scaleY(.92);transition:opacity .6s ease,transform .7s cubic-bezier(.34,1.56,.64,1)}.a-bounce.on{opacity:1;transform:translateY(0) scaleY(1)}
-/* 飘落式进入 - 正文/普通卡片 */
 .a-drop{opacity:0;transform:translateY(-20px);transition:opacity .8s ease .1s,transform .9s cubic-bezier(.23,1,.32,1) .1s}.a-drop.on{opacity:1;transform:translateY(0)}
-/* 左侧平滑滑入+淡入 - 图片 */
 .a-slide{opacity:0;transform:translateX(-40px);transition:opacity .5s ease .15s,transform .6s cubic-bezier(.25,.8,.25,1) .15s}.a-slide.on{opacity:1;transform:translateX(0)}
-/* 右侧平滑滑入+淡入 */
 .a-slide-r{opacity:0;transform:translateX(40px);transition:opacity .5s ease .15s,transform .6s cubic-bezier(.25,.8,.25,1) .15s}.a-slide-r.on{opacity:1;transform:translateX(0)}
-/* 缩放进入 */
 .a-scale{opacity:0;transform:scale(.94);transition:opacity .55s ease,transform .6s cubic-bezier(.25,.8,.25,1)}.a-scale.on{opacity:1;transform:scale(1)}
-/* 放大进入 */
-.a-zoom{opacity:0;transform:scale(1.06);transition:opacity .55s ease,transform .6s cubic-bezier(.25,.8,.25,1)}.a-zoom.on{opacity:1;transform:scale(1)}
-/* 旋转进入 */
 .a-rotate{opacity:0;transform:rotate(-4deg) scale(.95);transition:opacity .6s ease,transform .7s cubic-bezier(.25,.8,.25,1)}.a-rotate.on{opacity:1;transform:rotate(0) scale(1)}
+.a-zoom{opacity:0;transform:scale(1.06);transition:opacity .55s ease,transform .6s cubic-bezier(.25,.8,.25,1)}.a-zoom.on{opacity:1;transform:scale(1)}
+/* 时间轴延伸 */
+.pol-tl.on::before{transform:scaleY(1)} .pol-tl::before{transform-origin:top;transform:scaleY(0);transition:transform 1.2s cubic-bezier(.25,.8,.25,1)}
+/* 图标浮动 */
+.float-icon{animation:floatY 3s ease-in-out infinite}
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 
-/* 导航下划线动画 */
-.nav-menu a{position:relative;overflow:hidden}
-.nav-menu a::after{content:"";position:absolute;bottom:4px;left:12px;width:0;height:2px;background:var(--accent);transition:width .35s cubic-bezier(.25,.8,.25,1);border-radius:1px}
-.nav-menu a:hover::after,.nav-menu a.on::after{width:calc(100% - 24px)}
-
-/* 按钮按压效果 */
-.cta-btn:active{transform:scale(.97)!important;transition:transform .1s ease}
-.lk:active{transform:scale(.97);transition:transform .1s ease}
-.cd:active{transform:scale(.985);transition:transform .1s ease}
-
-/* 按钮悬浮放大 */
-.cta-btn{transition:all .3s cubic-bezier(.25,.8,.25,1)}
-.cta-btn:hover{transform:translateY(-2px) scale(1.03)}
-
-/* 图标悬浮效果 */
-.cd .badge{transition:transform .3s ease}
-.cd:hover .badge{transform:translateY(-2px)}
-.img-card .caption{transition:transform .3s ease,opacity .3s ease}
-.img-card:hover .caption{transform:translateY(-2px)}
-
-/* 时间轴滚动延伸 */
-.tl::before{transform-origin:top;transform:scaleY(0);transition:transform 1.2s cubic-bezier(.25,.8,.25,1)}
-.tl.on::before{transform:scaleY(1)}
-
-@media(max-width:1024px){.g2,.g3,.g4,.cta-cards,.ref-grid,.img-grid{grid-template-columns:1fr}.nav-menu{display:none}.flow{grid-template-columns:1fr 1fr}.hero-grid{grid-template-columns:1fr}.ft-top{grid-template-columns:1fr}.ft-links{grid-template-columns:1fr 1fr}}
-@media(max-width:640px){.sec{padding:56px 20px}.flow{grid-template-columns:1fr}.ft-links{grid-template-columns:1fr}.ft-btm{flex-direction:column;gap:6px}.img-grid{grid-template-columns:1fr}}
+@media(max-width:1024px){.intro-layout,.policy-layout,.tech-top,.impl-row,.compare{grid-template-columns:1fr}.compare-mid{min-width:auto;padding:20px}.waterfall,.benefit-cards,.data-row,.tech-bottom,.cta-cards,.ref-grid{grid-template-columns:1fr 1fr}.nav-menu{display:none}.flow{grid-template-columns:1fr 1fr}.ft-top{grid-template-columns:1fr}.ft-links{grid-template-columns:1fr 1fr}.impl-row.reverse{direction:ltr}}
+@media(max-width:640px){.sec{padding:56px 20px}.waterfall,.benefit-cards,.data-row,.tech-bottom{grid-template-columns:1fr}.flow{grid-template-columns:1fr}.ft-links{grid-template-columns:1fr}.ft-btm{flex-direction:column;gap:6px}}
 </style>
 </head>
 <body>
@@ -181,8 +211,8 @@ repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(26,95,180,.03)
   <a href="#top" class="nav-logo">雨污分流智慧体检</a>
   <ul class="nav-menu">
     <li><a href="#intro">项目简介</a></li>
-    <li><a href="#policy">政策依据</a></li>
     <li><a href="#status">小区现状</a></li>
+    <li><a href="#policy">政策依据</a></li>
     <li><a href="#tech">技术方案</a></li>
     <li><a href="#impl">施工落地</a></li>
     <li><a href="#budget">造价预算</a></li>
@@ -194,148 +224,153 @@ repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(26,95,180,.03)
 <section class="hero" id="top">
   <canvas id="waterCanvas"></canvas>
   <div class="inner">
-    <div class="hero-grid">
-      <div>
-        <div class="hero-badge"><span class="dot"></span>深圳市水务局 · 课程项目</div>
-        <h1>深圳老旧小区<br><em>雨污分流</em><br>智慧体检治理项目</h1>
-        <p class="sub">让地下排水从"看不见"变成"查得清、改得准、管得住"。先体检、再分级、后整改，用小试点撬动深圳小区排水治理提效。</p>
-        <div style="display:flex;gap:10px;flex-wrap:wrap">
-          <a href="#intro" class="cta-btn" style="padding:10px 24px;font-size:14px">了解项目 →</a>
-          <a href="#budget" class="cta-btn" style="padding:10px 24px;font-size:14px;background:var(--white);color:var(--accent);border:1px solid var(--border)">查看预算</a>
-        </div>
+    <div>
+      <div class="hero-badge a-bounce"><span class="dot"></span>深圳市水务局 · 课程项目</div>
+      <h1 class="a-bounce">深圳老旧小区<br><em>雨污分流</em><br>智慧体检治理项目</h1>
+      <p class="sub a-drop">让地下排水从"看不见"变成"查得清、改得准、管得住"。先体检、再分级、后整改，用小试点撬动深圳小区排水治理提效。</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap" class="a-drop">
+        <a href="#intro" class="cta-btn">了解项目 →</a>
+        <a href="#budget" class="cta-btn" style="background:#fff;color:var(--accent);border:1px solid var(--border)">查看预算</a>
       </div>
-      <div class="hero-img">
-        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=700&q=80" alt="智慧水务">
-      </div>
+    </div>
+    <div class="hero-img a-scale">
+      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=700&q=80" alt="智慧水务">
     </div>
   </div>
 </section>
 
-<!-- 01 项目简介 -->
-<section class="sec" id="intro" style="background:linear-gradient(180deg,var(--bg1),var(--bg2))">
+<!-- 01 项目简介 - 左大图+右分栏 -->
+<section class="sec" id="intro" style="background:linear-gradient(180deg,#e8f0fa,#f0f5fb)">
   <div class="sec-inner">
     <div class="tag a-bounce">01 项目简介</div>
     <h2 class="a-bounce">一句话打动<em>决策者</em></h2>
     <p class="lead a-drop">选择一个供水或排水智慧化技术，讲清楚：为什么深圳现在要做、技术怎么落地、要花多少钱、能带来什么民生与经济价值。</p>
-    <div class="img-grid">
-      <div class="img-card a-slide"><img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=500&q=80" alt="老旧小区"><div class="caption">老旧小区整体环境</div></div>
-      <div class="img-card a-scale"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=500&q=80" alt="管网改造"><div class="caption">管网改造远景实拍</div></div>
-      <div class="img-card a-slide-r"><img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=500&q=80" alt="雨污分流"><div class="caption">雨污分流落地实景</div></div>
-    </div>
-    <div class="g3">
-      <div class="cd a-drop"><div class="badge b">情景身份</div><h4>深圳市水务局专项工作组</h4><p>以"水务局局长"身份进行汇报，项目要像一个真实城市项目。</p></div>
-      <div class="cd a-drop"><div class="badge b">项目主题</div><h4>小区雨污分流智慧体检系统</h4><p>实施排水智慧化管理技术，场景：老旧住宅小区排水管网诊断与修复。</p></div>
-      <div class="cd a-drop"><div class="badge b">汇报重点</div><h4>紧跟时事、有理有据</h4><p>紧跟时事、有理有据、能自圆其说；讲解要有激情，网页与海报要吸引人。</p></div>
+    <div class="intro-layout">
+      <div class="intro-big-img a-slide">
+        <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&q=80" alt="老旧小区">
+      </div>
+      <div class="intro-right">
+        <div class="intro-title a-slide-r">
+          <h3>深圳市水务局专项工作组</h3>
+          <p>以"水务局局长"身份进行汇报，项目要像一个真实城市项目，而不是课堂作业。</p>
+        </div>
+        <div class="intro-cards">
+          <div class="intro-card a-drop"><div class="badge b">项目主题</div><h4>小区雨污分流智慧体检系统</h4><p>实施排水智慧化管理技术，场景：老旧住宅小区排水管网诊断与修复。</p></div>
+          <div class="intro-card a-drop"><div class="badge b">汇报重点</div><h4>紧跟时事、有理有据</h4><p>紧跟时事、有理有据、能自圆其说；讲解要有激情，网页与海报要吸引人。</p></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- 02 政策依据 -->
-<section class="sec" id="policy" style="background:linear-gradient(180deg,var(--bg2),var(--bg1))">
+<!-- 02 小区现状 - 瀑布流 -->
+<section class="sec" id="status" style="background:linear-gradient(180deg,#e4edf5,#edf2f8)">
   <div class="sec-inner">
-    <div class="tag a-bounce">02 政策依据</div>
-    <h2 class="a-bounce">为什么现在<em>必须做</em></h2>
-    <p class="lead a-drop">2025年全国常住人口城镇化率67.89%，城镇常住人口95380万人，城市治理已进入精细化阶段。<a href="https://www.stats.gov.cn/sj/sjjd/202606/t20260603_1963868.html" target="_blank">《新型城镇化建设深入推进》[S1]</a> 深圳常住人口1824.85万人，城镇化率99.79%。<a href="https://tjj.sz.gov.cn/zwgk/zfxxgkml/tjsj/tjgb/content/post_12803919.html" target="_blank">《深圳市2025年统计公报》[S2]</a></p>
-    <div class="img-grid">
-      <div class="img-card a-slide"><img src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=500&q=80" alt="城市排水"><div class="caption">城市排水治理政务落地实景</div></div>
-      <div class="img-card a-scale"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=500&q=80" alt="管网治理"><div class="caption">市政管网治理实景</div></div>
-      <div class="img-card a-slide-r"><img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=500&q=80" alt="城市规划"><div class="caption">城市排水系统规划</div></div>
-    </div>
-    <div class="g3">
-      <div class="cd a-drop"><h4>城市生命线工程</h4><p>地下管网要加强监测预警。国务院安委办推动城市生命线安全工程，排水管网是核心组成部分。</p><a href="https://www.gov.cn/zhengce/zhengceku/202401/content_6926000.htm" target="_blank" class="lk">《城市生命线安全工程推进方案》→</a></div>
-      <div class="cd a-drop"><h4>排水防涝与韧性城市</h4><p>风险要提前发现。住建部要求加强城市排水防涝体系建设，提升城市应对极端天气的韧性能力。</p><a href="https://www.mohurd.gov.cn/gongkai/zhengce/zhengcefilelib/202303/20230322_771588.html" target="_blank" class="lk">《城市排水防涝体系建设》→</a></div>
-      <div class="cd a-drop"><h4>深圳智慧水务</h4><p>一张图、一张网、一平台。深圳市水务局构建水务物联网感知体系，实现管网水位、水质、流量实时监测。</p><a href="https://swj.sz.gov.cn/" target="_blank" class="lk">深圳市水务局官网 →</a></div>
-    </div>
-    <p style="margin-top:20px;font-size:15px;color:var(--muted);line-height:1.8">当一个城市几乎全部人口都生活在城镇空间里，排水问题就不只是工程问题，而是民生和城市韧性问题。</p>
-  </div>
-</section>
-
-<!-- 03 小区现状 -->
-<section class="sec" id="status" style="background:linear-gradient(180deg,var(--bg1),var(--bg3))">
-  <div class="sec-inner">
-    <div class="tag a-bounce">03 小区现状</div>
+    <div class="tag a-bounce">02 小区现状</div>
     <h2 class="a-bounce">问题藏在<em>地下</em></h2>
-    <p class="lead a-drop">2025年深圳全年累计处理污水<a href="https://www.sz.gov.cn/cn/xxgk/zfxxgj/tzgg/content/post_12728178.html" target="_blank"><strong>23.17亿立方米</strong> 《深圳市2025年度污水处理费征收使用情况公示》[S3]</a>，纳入地理信息系统管理的市政排水管渠<strong>21709.80公里</strong>，市政污水泵站<strong>80座</strong>。排水系统规模很大，任何小区末端错接、混接、外水入渗，都会被层层放大。</p>
-    <div class="img-grid">
-      <div class="img-card a-slide"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=500&q=80" alt="雨污混接"><div class="caption">阳台立管雨污混接实景</div></div>
-      <div class="img-card a-scale"><img src="https://images.unsplash.com/photo-1581093458791-9d42e3c7e117?w=500&q=80" alt="管线错接"><div class="caption">楼顶管线错接实拍</div></div>
-      <div class="img-card a-slide-r"><img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=500&q=80" alt="检查井"><div class="caption">老旧破损检查井实拍</div></div>
+    <p class="lead a-drop">2025年深圳全年累计处理污水<a href="https://www.sz.gov.cn/cn/xxgk/zfxxgj/tzgg/content/post_12728178.html" target="_blank"><strong>23.17亿立方米</strong>《深圳市2025年度污水处理费征收使用情况公示》[S3]</a>，纳入地理信息系统管理的市政排水管渠<strong>21709.80公里</strong>，市政污水泵站<strong>80座</strong>。</p>
+    <div class="waterfall">
+      <div class="wf-item tall a-slide"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=500&q=80" alt="雨污混接"><div class="wf-text"><h4>阳台立管雨污混接实景</h4><p>雨水管与污水管混接，雨天污水溢流，旱天河水倒灌。</p></div></div>
+      <div class="wf-item a-scale"><img src="https://images.unsplash.com/photo-1581093458791-9d42e3c7e117?w=500&q=80" alt="管线错接"><div class="wf-text"><h4>楼顶管线错接实拍</h4><p>管线错接导致排水系统混乱。</p></div></div>
+      <div class="wf-item a-slide-r"><img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=500&q=80" alt="检查井"><div class="wf-text"><h4>老旧破损检查井实拍</h4><p>检查井老化破损，影响监测和维护。</p></div></div>
+      <div class="wf-item a-slide"><img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=500&q=80" alt="排水管网"><div class="wf-text"><h4>地下排水管网实景</h4><p>管网埋在地下，隐蔽性强、点多面广。</p></div></div>
+      <div class="wf-item a-scale"><img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=500&q=80" alt="污水冒溢"><div class="wf-text"><h4>污水冒溢现场</h4><p>雨天污水冒溢，影响居民生活。</p></div></div>
+      <div class="wf-item a-slide-r"><img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=500&q=80" alt="道路积水"><div class="wf-text"><h4>道路积水实景</h4><p>排水不畅导致雨天道路积水。</p></div></div>
     </div>
-    <div class="g4">
-      <div class="cd a-bounce"><div class="big">23.17<span class="unit">亿m³</span></div><h4>2025年累计处理污水</h4><p>深圳全年累计处理污水量</p><a href="https://www.sz.gov.cn/cn/xxgk/zfxxgj/tzgg/content/post_12728178.html" target="_blank" class="lk">《污水处理费公示》[S3] →</a></div>
-      <div class="cd a-bounce"><div class="big">21709<span class="unit">公里</span></div><h4>市政排水管渠</h4><p>纳入地理信息系统管理</p><a href="https://www.sz.gov.cn/cn/xxgk/zfxxgj/tzgg/content/post_12728178.html" target="_blank" class="lk">《污水处理费公示》[S3] →</a></div>
-      <div class="cd a-bounce"><div class="big">80<span class="unit">座</span></div><h4>市政污水泵站</h4><p>截污泵站数量</p><a href="https://www.sz.gov.cn/cn/xxgk/zfxxgj/tzgg/content/post_12728178.html" target="_blank" class="lk">《污水处理费公示》[S3] →</a></div>
-      <div class="cd a-rotate"><div class="badge y">2026年4月1日起</div><h4>运维责任明确</h4><p>未申请移交的居住区类小区，权属主体应做好排水管渠日常运维。</p><a href="https://www.sz.gov.cn/szzt2010/wgkzl/jcgk/jcygk/zdzcjc/content/post_12679010.html" target="_blank" class="lk">《排水管理进小区通告》[S4] →</a></div>
+    <div class="data-row">
+      <div class="data-card a-bounce"><div class="big">23.17<span class="unit">亿m³</span></div><h4>2025年累计处理污水</h4><p><a href="https://www.sz.gov.cn/cn/xxgk/zfxxgj/tzgg/content/post_12728178.html" target="_blank" class="lk">《污水处理费公示》[S3] →</a></p></div>
+      <div class="data-card a-bounce"><div class="big">21709<span class="unit">公里</span></div><h4>市政排水管渠</h4><p><a href="https://www.sz.gov.cn/cn/xxgk/zfxxgj/tzgg/content/post_12728178.html" target="_blank" class="lk">《污水处理费公示》[S3] →</a></p></div>
+      <div class="data-card a-bounce"><div class="big">80<span class="unit">座</span></div><h4>市政污水泵站</h4><p><a href="https://www.sz.gov.cn/cn/xxgk/zfxxgj/tzgg/content/post_12728178.html" target="_blank" class="lk">《污水处理费公示》[S3] →</a></p></div>
+      <div class="data-card a-rotate"><div class="badge y">2026年4月1日起</div><h4 style="margin-top:6px">运维责任明确</h4><p><a href="https://www.sz.gov.cn/szzt2010/wgkzl/jcgk/jcygk/zdzcjc/content/post_12679010.html" target="_blank" class="lk">《排水管理进小区通告》[S4] →</a></p></div>
     </div>
   </div>
 </section>
 
-<!-- 04 技术方案 -->
-<section class="sec" id="tech" style="background:linear-gradient(180deg,var(--bg3),var(--bg1))">
+<!-- 03 政策依据 - 左时间轴+右正文 -->
+<section class="sec" id="policy" style="background:linear-gradient(180deg,#e8eef6,#f0f5fb)">
+  <div class="sec-inner">
+    <div class="tag a-bounce">03 政策依据</div>
+    <h2 class="a-bounce">为什么现在<em>必须做</em></h2>
+    <p class="lead a-drop">2025年全国常住人口城镇化率67.89%，城镇常住人口95380万人，城市治理已进入精细化阶段。<a href="https://www.stats.gov.cn/sj/sjjd/202606/t20260603_1963868.html" target="_blank">《新型城镇化建设深入推进》[S1]</a></p>
+    <div class="policy-layout">
+      <div class="pol-tl a-slide">
+        <div class="pol-item"><div class="year">2024</div><h4>城市生命线工程</h4><p>国务院安委办推动</p></div>
+        <div class="pol-item"><div class="year">2025</div><h4>排水防涝与韧性城市</h4><p>住建部要求加强</p></div>
+        <div class="pol-item"><div class="year">2025</div><h4>深圳智慧水务</h4><p>一张图、一张网</p></div>
+        <div class="pol-item"><div class="year">2026</div><h4>运维责任明确</h4><p>4月1日起执行</p></div>
+      </div>
+      <div class="pol-content">
+        <div class="pol-text a-slide-r"><h3>城市生命线工程</h3><p>地下管网要加强监测预警。国务院安委办推动城市生命线安全工程，排水管网是核心组成部分。</p><a href="https://www.gov.cn/zhengce/zhengceku/202401/content_6926000.htm" target="_blank" class="lk">《城市生命线安全工程推进方案》→</a></div>
+        <div class="pol-img a-scale"><img src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=800&q=80" alt="城市排水"></div>
+        <div class="pol-text a-slide-r"><h3>排水防涝与韧性城市</h3><p>风险要提前发现。住建部要求加强城市排水防涝体系建设，提升城市应对极端天气的韧性能力。</p><a href="https://www.mohurd.gov.cn/gongkai/zhengce/zhengcefilelib/202303/20230322_771588.html" target="_blank" class="lk">《城市排水防涝体系建设》→</a></div>
+        <div class="pol-text a-slide-r"><h3>深圳智慧水务</h3><p>一张图、一张网、一平台。深圳市水务局构建水务物联网感知体系，实现管网水位、水质、流量实时监测。</p><a href="https://swj.sz.gov.cn/" target="_blank" class="lk">深圳市水务局官网 →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 技术方案 - 上下分层 -->
+<section class="sec" id="tech" style="background:linear-gradient(180deg,#e0ecf4,#edf2f8)">
   <div class="sec-inner">
     <div class="tag a-bounce">04 技术方案</div>
     <h2 class="a-bounce">系统由<em>四层</em>组成</h2>
-    <p class="lead a-drop">系统由井位感知层、数据传输层、诊断平台层、闭环处置层组成。重点监测液位、流量、化学需氧量、氨氮，识别"晴天有污、雨天倒灌、流量突增、水质突变"四类异常。</p>
-    <div class="img-grid">
-      <div class="img-card a-slide"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&q=80" alt="雨水井污水井"><div class="caption">雨水井与污水井实景对照</div></div>
-      <div class="img-card a-scale"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&q=80" alt="传感器安装"><div class="caption">井内智能传感器安装实拍</div></div>
-      <div class="img-card a-slide-r"><img src="https://images.unsplash.com/photo-1581093458791-9d42e3c7e117?w=500&q=80" alt="CCTV检测"><div class="caption">管道CCTV检测机器人作业实拍</div></div>
-    </div>
-    <div class="flow">
-      <div class="fl a-drop"><div class="sn">1</div><h4>井位感知层</h4><p>液位、流量<br>化学需氧量、氨氮</p></div>
-      <div class="fl a-drop"><div class="sn">2</div><h4>数据传输层</h4><p>物联网<br>无线传输</p></div>
-      <div class="fl a-drop"><div class="sn">3</div><h4>诊断平台层</h4><p>地理信息系统<br>人工智能分析</p></div>
-      <div class="fl a-drop"><div class="sn">4</div><h4>闭环处置层</h4><p>工单派发<br>整改复核</p></div>
-    </div>
-    <div class="g2" style="margin-top:24px">
-      <div class="cd a-left">
-        <h4>公开采购参考单价</h4>
-        <p style="margin-bottom:10px">设备单价来自公开中标公告：</p>
-        <div style="display:grid;gap:5px">
-          <div style="display:flex;justify-content:space-between;padding:7px 12px;border-radius:8px;background:var(--bg1);font-size:13px"><span style="color:var(--muted)">窨井多参数采集仪</span><span style="color:var(--accent);font-weight:700">12,500元/台</span></div>
-          <div style="display:flex;justify-content:space-between;padding:7px 12px;border-radius:8px;background:var(--bg1);font-size:13px"><span style="color:var(--muted)">超声波流量计</span><span style="color:var(--accent);font-weight:700">11,500元/台</span></div>
-          <div style="display:flex;justify-content:space-between;padding:7px 12px;border-radius:8px;background:var(--bg1);font-size:13px"><span style="color:var(--muted)">化学需氧量传感器</span><span style="color:var(--accent);font-weight:700">16,800元/台</span></div>
-          <div style="display:flex;justify-content:space-between;padding:7px 12px;border-radius:8px;background:var(--bg1);font-size:13px"><span style="color:var(--muted)">氨氮传感器</span><span style="color:var(--accent);font-weight:700">13,500元/台</span></div>
+    <p class="lead a-drop">系统由井位感知层、数据传输层、诊断平台层、闭环处置层组成。重点监测液位、流量、化学需氧量、氨氮。</p>
+    <div class="tech-top">
+      <div class="tech-img a-slide"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80" alt="技术方案"></div>
+      <div class="a-slide-r">
+        <div class="flow">
+          <div class="fl a-drop"><div class="sn">1</div><h4>井位感知层</h4><p>液位、流量<br>化学需氧量</p></div>
+          <div class="fl a-drop"><div class="sn">2</div><h4>数据传输层</h4><p>物联网<br>无线传输</p></div>
+          <div class="fl a-drop"><div class="sn">3</div><h4>诊断平台层</h4><p>地理信息系统<br>人工智能分析</p></div>
+          <div class="fl a-drop"><div class="sn">4</div><h4>闭环处置层</h4><p>工单派发<br>整改复检</p></div>
         </div>
-        <a href="https://www.fjsx.gov.cn/zwgk/ggzypz/zfzbcg/zbgg_8046/202602/t20260212_2190048.htm" target="_blank" class="lk">《三明市沙县区排水管网监测管理建设项目结果公告》[S6] →</a>
-      </div>
-      <div class="cd a-right">
-        <h4>技术流程</h4>
-        <p style="margin-bottom:10px">系统实现从检测到工单的全流程闭环管理：</p>
-        <div style="display:grid;gap:6px">
-          <div style="padding:9px 14px;border-radius:8px;background:rgba(37,99,235,.04);border-left:3px solid var(--accent);font-size:13px"><strong style="color:var(--accent)">查资料</strong> — 管网图、检查井、历史投诉</div>
-          <div style="padding:9px 14px;border-radius:8px;background:rgba(37,99,235,.04);border-left:3px solid var(--accent);font-size:13px"><strong style="color:var(--accent)">下机器人</strong> — 清淤降水、管道机器人入管</div>
-          <div style="padding:9px 14px;border-radius:8px;background:rgba(37,99,235,.04);border-left:3px solid var(--accent);font-size:13px"><strong style="color:var(--accent)">判缺陷</strong> — 视频分析、缺陷评级、里程定位</div>
-          <div style="padding:9px 14px;border-radius:8px;background:rgba(37,99,235,.04);border-left:3px solid var(--accent);font-size:13px"><strong style="color:var(--accent)">入平台</strong> — 地理信息系统数据入库</div>
-          <div style="padding:9px 14px;border-radius:8px;background:rgba(37,99,235,.04);border-left:3px solid var(--accent);font-size:13px"><strong style="color:var(--accent)">派工单</strong> — 派发修复工单、跟踪进度</div>
-          <div style="padding:9px 14px;border-radius:8px;background:rgba(37,99,235,.04);border-left:3px solid var(--accent);font-size:13px"><strong style="color:var(--accent)">再复检</strong> — 修复后复核、销项闭环</div>
+        <div style="margin-top:16px;padding:16px;border-radius:12px;background:var(--card);border:1px solid var(--border);box-shadow:var(--shadow)">
+          <p style="font-size:13px;color:var(--muted)"><strong style="color:var(--text)">技术流程：</strong>查资料 → 下机器人 → 判缺陷 → 入平台 → 派工单 → 再复检</p>
         </div>
       </div>
+    </div>
+    <div class="tech-bottom">
+      <div class="tech-small a-drop"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&q=80" alt="传感器安装"><div class="caption">井内智能传感器安装实拍</div></div>
+      <div class="tech-small a-drop"><img src="https://images.unsplash.com/photo-1581093458791-9d42e3c7e117?w=500&q=80" alt="CCTV检测"><div class="caption">管道CCTV检测机器人作业实拍</div></div>
+      <div class="tech-small a-drop"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&q=80" alt="数据平台"><div class="caption">智慧水务数据平台界面</div></div>
+    </div>
+    <div style="margin-top:20px;padding:16px;border-radius:12px;background:var(--card);border:1px solid var(--border);box-shadow:var(--shadow)">
+      <h4 style="font-size:15px;font-weight:700;margin-bottom:8px;color:var(--blue)">公开采购参考单价</h4>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
+        <div style="display:flex;justify-content:space-between;padding:8px 12px;border-radius:8px;background:#f5f7fa;font-size:13px"><span style="color:var(--muted)">窨井多参数采集仪</span><span style="color:var(--accent);font-weight:700">12,500元/台</span></div>
+        <div style="display:flex;justify-content:space-between;padding:8px 12px;border-radius:8px;background:#f5f7fa;font-size:13px"><span style="color:var(--muted)">超声波流量计</span><span style="color:var(--accent);font-weight:700">11,500元/台</span></div>
+        <div style="display:flex;justify-content:space-between;padding:8px 12px;border-radius:8px;background:#f5f7fa;font-size:13px"><span style="color:var(--muted)">化学需氧量传感器</span><span style="color:var(--accent);font-weight:700">16,800元/台</span></div>
+        <div style="display:flex;justify-content:space-between;padding:8px 12px;border-radius:8px;background:#f5f7fa;font-size:13px"><span style="color:var(--muted)">氨氮传感器</span><span style="color:var(--accent);font-weight:700">13,500元/台</span></div>
+      </div>
+      <a href="https://www.fjsx.gov.cn/zwgk/ggzypz/zfzbcg/zbgg_8046/202602/t20260212_2190048.htm" target="_blank" class="lk">《三明市沙县区排水管网监测管理建设项目结果公告》[S6] →</a>
     </div>
   </div>
 </section>
 
-<!-- 05 施工落地 -->
-<section class="sec" id="impl" style="background:linear-gradient(180deg,var(--bg1),var(--bg2))">
+<!-- 05 施工落地 - 大图通栏+两列交错 -->
+<section class="sec" id="impl" style="background:linear-gradient(180deg,#e8f0fa,#edf2f8)">
   <div class="sec-inner">
     <div class="tag a-bounce">05 施工落地</div>
     <h2 class="a-bounce">三步走：<em>先体检</em>，再分级，后修复</h2>
     <p class="lead a-drop">项目分三个阶段推进，确保从试点到推广的可行路径。试点片区约50个小区，布设12个重点井位。</p>
-    <div class="img-grid">
-      <div class="img-card a-slide"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=500&q=80" alt="路面开槽"><div class="caption">小区路面开槽铺管施工</div></div>
-      <div class="img-card a-scale"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=500&q=80" alt="立管改造"><div class="caption">外墙污水立管加装施工</div></div>
-      <div class="img-card a-slide-r"><img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=500&q=80" alt="路面复原"><div class="caption">完工路面复原实拍</div></div>
+    <div class="impl-hero a-scale"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=80" alt="施工现场"></div>
+    <div class="impl-row">
+      <div class="impl-img a-slide"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=500&q=80" alt="路面开槽"></div>
+      <div class="impl-text a-slide-r"><div class="ph" style="display:inline-block;padding:3px 10px;border-radius:6px;background:rgba(37,99,235,.06);color:var(--accent);font-size:12px;font-weight:700;margin-bottom:8px">第一步 · 建账摸底</div><h4>整理管网资产和重点风险点</h4><p>完成试点小区排水井、排水口、管线、历史问题的基础建档，建立管网"健康档案"，标注重点风险点位。</p></div>
     </div>
-    <div class="tl">
-      <div class="tl-i a-drop"><div class="ph">第一步 · 建账摸底</div><h4>整理管网资产和重点风险点</h4><p>完成试点小区排水井、排水口、管线、历史问题的基础建档，建立管网"健康档案"，标注重点风险点位。</p></div>
-      <div class="tl-i a-drop"><div class="ph">第二步 · 机器人检测</div><h4>形成缺陷评级和病害清单</h4><p>布设重点井位监测，使用管道机器人进行结构性检测，形成缺陷评级和病害清单，锁定疑似错接混接和外水入渗点。</p></div>
-      <div class="tl-i a-drop"><div class="ph">第三步 · 精准修复</div><h4>接入地理信息系统平台和巡检养护工单</h4><p>接入地理信息系统平台和巡检养护工单，完成整改、复核、销项，沉淀成可复制的小区体检标准流程。</p></div>
+    <div class="impl-row reverse">
+      <div class="impl-text a-slide"><div class="ph" style="display:inline-block;padding:3px 10px;border-radius:6px;background:rgba(37,99,235,.06);color:var(--accent);font-size:12px;font-weight:700;margin-bottom:8px">第二步 · 机器人检测</div><h4>形成缺陷评级和病害清单</h4><p>布设重点井位监测，使用管道机器人进行结构性检测，形成缺陷评级和病害清单，锁定疑似错接混接和外水入渗点。</p></div>
+      <div class="impl-img a-slide-r"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=500&q=80" alt="立管改造"></div>
+    </div>
+    <div class="impl-row">
+      <div class="impl-img a-slide"><img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=500&q=80" alt="完工复原"></div>
+      <div class="impl-text a-slide-r"><div class="ph" style="display:inline-block;padding:3px 10px;border-radius:6px;background:rgba(37,99,235,.06);color:var(--accent);font-size:12px;font-weight:700;margin-bottom:8px">第三步 · 精准修复</div><h4>接入地理信息系统平台和巡检养护工单</h4><p>接入地理信息系统平台和巡检养护工单，完成整改、复核、销项，沉淀成可复制的小区体检标准流程。</p></div>
     </div>
   </div>
 </section>
 
 <!-- 06 造价预算 -->
-<section class="sec" id="budget" style="background:linear-gradient(180deg,var(--bg2),var(--bg1))">
+<section class="sec" id="budget" style="background:linear-gradient(180deg,#e4edf5,#f0f5fb)">
   <div class="sec-inner">
     <div class="tag a-bounce">06 造价预算</div>
     <h2 class="a-bounce">试点预算：<em>85.9万元</em></h2>
@@ -357,27 +392,27 @@ repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(26,95,180,.03)
   </div>
 </section>
 
-<!-- 07 项目效益 -->
-<section class="sec" id="benefit" style="background:linear-gradient(180deg,var(--bg1),var(--bg3))">
+<!-- 07 项目效益 - 左右对比 -->
+<section class="sec" id="benefit" style="background:linear-gradient(180deg,#e8f0fa,#edf2f8)">
   <div class="sec-inner">
     <div class="tag a-bounce">07 项目效益</div>
     <h2 class="a-bounce">为什么这笔钱<em>值得花</em></h2>
     <p class="lead a-drop">排水管网项目的经济价值，主要来自"避免损失"和"少走弯路"。</p>
-    <div class="img-grid">
-      <div class="img-card a-slide"><img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=500&q=80" alt="改造前后"><div class="caption">同点位改造前后对比实景</div></div>
-      <div class="img-card a-scale"><img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=500&q=80" alt="水质改善"><div class="caption">周边沟渠水质改善实拍</div></div>
-      <div class="img-card a-slide-r"><img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=500&q=80" alt="河道治理"><div class="caption">河道水质改善效果</div></div>
+    <div class="compare">
+      <div class="compare-side a-slide"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80" alt="改造前"><div class="label before">改造前</div></div>
+      <div class="compare-mid a-scale"><h3>改造效果</h3><p>减少积水、减少冒溢、减少投诉、提升居民满意度</p></div>
+      <div class="compare-side a-slide-r"><img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=600&q=80" alt="改造后"><div class="label after">改造后</div></div>
     </div>
-    <div class="g2">
-      <div class="cd a-drop"><h4>减少盲目开挖</h4><p>先看清病害，再精准修复。减少反复开挖带来的交通、环境、投诉损失。</p><div class="badge g">节约养护成本约200万元/年</div></div>
-      <div class="cd a-drop"><h4>减少外水处理</h4><p>通过精准识别混接和入渗，减少雨水和地下水进入污水管网，降低污水厂无效处理量。</p><div class="badge g">减少外水处理费用约120万元/年</div></div>
-      <div class="cd a-drop"><h4>带动本地产业</h4><p>带动本地检测装备、软件平台、管网修复和运维服务产业发展。</p><div class="badge b">预计2年内收回投资</div></div>
-      <div class="cd a-drop"><h4>民生价值</h4><p>少积水、少臭味、少冒溢、少开挖。居民满意度提升，投诉量下降。</p><div class="badge g">污水冒溢投诉减少60%以上</div></div>
+    <div class="benefit-cards">
+      <div class="ben-card a-drop"><h4>减少盲目开挖</h4><p>先看清病害，再精准修复。减少反复开挖带来的交通、环境、投诉损失。</p><div class="val">节约养护成本约200万元/年</div></div>
+      <div class="ben-card a-drop"><h4>减少外水处理</h4><p>通过精准识别混接和入渗，降低污水厂无效处理量。</p><div class="val">减少外水处理费用约120万元/年</div></div>
+      <div class="ben-card a-drop"><h4>带动本地产业</h4><p>带动检测装备、软件平台、管网修复和运维服务产业发展。</p><div class="val">预计2年内收回投资</div></div>
+      <div class="ben-card a-drop"><h4>民生价值</h4><p>少积水、少臭味、少冒溢、少开挖。居民满意度提升。</p><div class="val">污水冒溢投诉减少60%以上</div></div>
     </div>
-    <div class="g3" style="margin-top:16px">
-      <div class="cd a-rotate"><div class="badge b">管理目标</div><h4 style="margin-top:6px">可量化考核</h4><p>重点井位在线监测覆盖率<strong>100%</strong>；异常工单<strong>24小时内</strong>派发；疑似错接混接点<strong>100%建档</strong>；整改复核闭环率<strong>90%以上</strong>。</p></div>
-      <div class="cd a-rotate"><div class="badge g">民生结果</div><h4 style="margin-top:6px">居民可感知</h4><p>少积水、少臭味、少冒溢、少开挖。减少污水冒溢、道路积水、反复开挖和群众投诉。</p></div>
-      <div class="cd a-rotate"><div class="badge y">经济效益</div><h4 style="margin-top:6px">投入产出比</h4><p>预计2年内收回投资，此后每年净节约约240万元。带动检测装备、软件平台、管网修复产业发展。</p></div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px">
+      <div class="data-card a-rotate"><div class="badge b">管理目标</div><h4 style="margin-top:6px">可量化考核</h4><p>重点井位在线监测覆盖率<strong>100%</strong>；异常工单<strong>24小时内</strong>派发；整改复核闭环率<strong>90%以上</strong>。</p></div>
+      <div class="data-card a-rotate"><div class="badge g">民生结果</div><h4 style="margin-top:6px">居民可感知</h4><p>少积水、少臭味、少冒溢、少开挖。减少污水冒溢、道路积水和群众投诉。</p></div>
+      <div class="data-card a-rotate"><div class="badge y">经济效益</div><h4 style="margin-top:6px">投入产出比</h4><p>预计2年内收回投资，此后每年净节约约240万元。</p></div>
     </div>
   </div>
 </section>
@@ -417,7 +452,7 @@ repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(26,95,180,.03)
     <div class="ft-top">
       <div><div class="ft-logo">雨污分流智慧体检</div><p style="font-size:13px;color:var(--muted);line-height:1.6">深圳市水务局专项工作组<br>供排水智慧管理课程项目</p></div>
       <div class="ft-links">
-        <div class="ft-col"><h4>项目板块</h4><a href="#intro">项目简介</a><a href="#policy">政策依据</a><a href="#status">小区现状</a></div>
+        <div class="ft-col"><h4>项目板块</h4><a href="#intro">项目简介</a><a href="#status">小区现状</a><a href="#policy">政策依据</a></div>
         <div class="ft-col"><h4>技术与实施</h4><a href="#tech">技术方案</a><a href="#impl">施工落地</a><a href="#budget">造价预算</a></div>
         <div class="ft-col"><h4>效益与文献</h4><a href="#benefit">项目效益</a><a href="#refs">参考文献</a><a href="https://swj.sz.gov.cn/" target="_blank">深圳水务局</a></div>
       </div>
@@ -428,109 +463,31 @@ repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(26,95,180,.03)
 
 <script>
 // 水流动画
-(function(){
-  var c=document.getElementById('waterCanvas');if(!c)return;
-  var ctx=c.getContext('2d');
-  function resize(){c.width=c.parentElement.offsetWidth;c.height=c.parentElement.offsetHeight}
-  resize();window.addEventListener('resize',resize);
-  var t=0;
-  function draw(){
-    ctx.clearRect(0,0,c.width,c.height);
-    ctx.strokeStyle='rgba(26,95,180,0.12)';ctx.lineWidth=1;
-    for(var i=0;i<10;i++){ctx.beginPath();for(var x=0;x<c.width;x+=4){var y=c.height*0.3+i*35+Math.sin(x*0.007+t+i*0.5)*18+Math.sin(x*0.003+t*0.6)*12;if(x===0)ctx.moveTo(x,y);else ctx.lineTo(x,y)}ctx.stroke()}
-    t+=0.015;requestAnimationFrame(draw);
-  }draw();
-})();
+(function(){var c=document.getElementById('waterCanvas');if(!c)return;var ctx=c.getContext('2d');function resize(){c.width=c.parentElement.offsetWidth;c.height=c.parentElement.offsetHeight}resize();window.addEventListener('resize',resize);var t=0;function draw(){ctx.clearRect(0,0,c.width,c.height);ctx.strokeStyle='rgba(26,95,180,0.1)';ctx.lineWidth=1;for(var i=0;i<10;i++){ctx.beginPath();for(var x=0;x<c.width;x+=4){var y=c.height*0.3+i*35+Math.sin(x*0.007+t+i*0.5)*18+Math.sin(x*0.003+t*0.6)*12;if(x===0)ctx.moveTo(x,y);else ctx.lineTo(x,y)}ctx.stroke()}t+=0.015;requestAnimationFrame(draw)}draw()})();
 
-// 滚动动画 - 多种类型
-var animObs=new IntersectionObserver(function(es){
-  es.forEach(function(e){
-    if(e.isIntersecting)e.target.classList.add('on');
-    else e.target.classList.remove('on');
-  });
-},{threshold:.1,rootMargin:'0px 0px -15px 0px'});
+// 滚动动画
+var animObs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('on');else e.target.classList.remove('on')})},{threshold:.1,rootMargin:'0px 0px -15px 0px'});
 document.querySelectorAll('.a-bounce,.a-drop,.a-slide,.a-slide-r,.a-scale,.a-zoom,.a-rotate').forEach(function(el){animObs.observe(el)});
 
-// 时间轴延伸动画
-var tlObs=new IntersectionObserver(function(es){
-  es.forEach(function(e){
-    if(e.isIntersecting)e.target.classList.add('on');
-    else e.target.classList.remove('on');
-  });
-},{threshold:.2});
-document.querySelectorAll('.tl').forEach(function(el){tlObs.observe(el)});
+// 时间轴延伸
+var tlObs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('on');else e.target.classList.remove('on')})},{threshold:.2});
+document.querySelectorAll('.pol-tl').forEach(function(el){tlObs.observe(el)});
 
-// 卡片交错动画
-var cObs=new IntersectionObserver(function(es){
-  es.forEach(function(e){
-    var c=e.target.children;
-    if(e.isIntersecting){
-      for(var i=0;i<c.length;i++){(function(j){setTimeout(function(){c[j].style.opacity='1';c[j].style.transform='translateY(0) scale(1)'},j*120)})(i)}
-    }else{
-      for(var i=0;i<c.length;i++){c[i].style.opacity='0';c[i].style.transform='translateY(20px) scale(.97)'}
-    }
-  });
-},{threshold:.08});
-document.querySelectorAll('.g2,.g3,.g4,.cta-cards,.ref-grid,.img-grid').forEach(function(el){
-  for(var i=0;i<el.children.length;i++){el.children[i].style.opacity='0';el.children[i].style.transform='translateY(20px) scale(.97)';el.children[i].style.transition='all .55s ease-out'}
-  cObs.observe(el);
-});
+// 卡片交错
+var cObs=new IntersectionObserver(function(es){es.forEach(function(e){var c=e.target.children;if(e.isIntersecting){for(var i=0;i<c.length;i++){(function(j){setTimeout(function(){c[j].style.opacity='1';c[j].style.transform='translateY(0) scale(1)'},j*120)})(i)}}else{for(var i=0;i<c.length;i++){c[i].style.opacity='0';c[i].style.transform='translateY(20px) scale(.97)'}}})},{threshold:.08});
+document.querySelectorAll('.g2,.g3,.g4,.cta-cards,.ref-grid,.waterfall,.benefit-cards,.data-row,.tech-bottom').forEach(function(el){for(var i=0;i<el.children.length;i++){el.children[i].style.opacity='0';el.children[i].style.transform='translateY(20px) scale(.97)';el.children[i].style.transition='all .55s ease-out'}cObs.observe(el)});
 
-// 数字滚动动画
-var numObs=new IntersectionObserver(function(es){
-  es.forEach(function(e){
-    if(!e.isIntersecting)return;
-    var el=e.target;
-    if(el.dataset.counted)return;
-    el.dataset.counted='1';
-    var text=el.textContent;
-    var match=text.match(/([\d.]+)/);
-    if(!match)return;
-    var target=parseFloat(match[1]);
-    var before=text.substring(0,text.indexOf(match[1]));
-    var after=text.substring(text.indexOf(match[1])+match[1].length);
-    var dur=1400;
-    var start=null;
-    function tick(ts){
-      if(!start)start=ts;
-      var p=Math.min((ts-start)/dur,1);
-      var eased=1-Math.pow(1-p,3);
-      var cur=target*eased;
-      if(target%1!==0)el.textContent=before+cur.toFixed(1)+after;
-      else el.textContent=before+Math.round(cur)+after;
-      if(p<1)requestAnimationFrame(tick);
-      else el.textContent=text;
-    }
-    requestAnimationFrame(tick);
-  });
-},{threshold:.5});
+// 数字滚动
+var numObs=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var el=e.target;if(el.dataset.counted)return;el.dataset.counted='1';var text=el.textContent;var match=text.match(/([\d.]+)/);if(!match)return;var target=parseFloat(match[1]);var before=text.substring(0,text.indexOf(match[1]));var after=text.substring(text.indexOf(match[1])+match[1].length);var dur=1400,start=null;function tick(ts){if(!start)start=ts;var p=Math.min((ts-start)/dur,1);var eased=1-Math.pow(1-p,3);var cur=target*eased;if(target%1!==0)el.textContent=before+cur.toFixed(1)+after;else el.textContent=before+Math.round(cur)+after;if(p<1)requestAnimationFrame(tick);else el.textContent=text}requestAnimationFrame(tick)})},{threshold:.5});
 document.querySelectorAll('.big,.tl-num').forEach(function(el){numObs.observe(el)});
 
-// 导航高亮
+// 导航
 var secs=document.querySelectorAll('section[id]'),nls=document.querySelectorAll('.nav-menu a');
-window.addEventListener('scroll',function(){
-  var cur='';
-  secs.forEach(function(s){if(window.scrollY>=s.offsetTop-80)cur=s.id});
-  nls.forEach(function(l){l.classList.remove('on');if(l.getAttribute('href')==='#'+cur)l.classList.add('on')});
-});
+window.addEventListener('scroll',function(){var cur='';secs.forEach(function(s){if(window.scrollY>=s.offsetTop-80)cur=s.id});nls.forEach(function(l){l.classList.remove('on');if(l.getAttribute('href')==='#'+cur)l.classList.add('on')})});
+document.querySelectorAll('a[href^="#"]').forEach(function(l){l.addEventListener('click',function(e){e.preventDefault();var t=document.querySelector(l.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'})})});
 
-// 平滑滚动
-document.querySelectorAll('a[href^="#"]').forEach(function(l){
-  l.addEventListener('click',function(e){
-    e.preventDefault();
-    var t=document.querySelector(l.getAttribute('href'));
-    if(t)t.scrollIntoView({behavior:'smooth',block:'start'});
-  });
-});
-
-// 视差效果
-window.addEventListener('scroll',function(){
-  document.querySelectorAll('.sec-bg img').forEach(function(img){
-    var r=img.parentElement.parentElement.getBoundingClientRect();
-    var s=window.innerHeight-r.top;
-    if(s>0&&r.top<window.innerHeight)img.style.transform='translateY('+(s*0.02)+'px)';
-  });
-});
+// 视差
+window.addEventListener('scroll',function(){document.querySelectorAll('.sec-bg img').forEach(function(img){var r=img.parentElement.parentElement.getBoundingClientRect();var s=window.innerHeight-r.top;if(s>0&&r.top<window.innerHeight)img.style.transform='translateY('+(s*0.02)+'px)'})});
 </script>
 </body>
 </html>
