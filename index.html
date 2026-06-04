@@ -8,108 +8,102 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --black: #000000;
-      --dark: #0a0a0a;
-      --white: #ffffff;
-      --cream: #f5f0eb;
-      --accent: #00b4d8;
-      --accent2: #0096c7;
-      --red: #e63946;
-      --muted: #999;
-      --text: #222;
-    }
+    :root{--black:#000;--dark:#0a0a0a;--white:#fff;--cream:#f5f0eb;--accent:#00b4d8;--accent2:#0096c7;--red:#e63946;--muted:#999;--text:#222;--green:#10b981;--yellow:#f59e0b}
     *{margin:0;padding:0;box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;color:var(--white);background:var(--black);overflow-x:hidden}
+    body{font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;color:var(--white);background:var(--black);overflow-x:hidden;line-height:1.7}
+    ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--black)}::-webkit-scrollbar-thumb{background:var(--accent);border-radius:3px}
 
-    /* ===== NAV ===== */
-    .nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:80px;display:flex;align-items:center;justify-content:space-between;padding:0 60px;background:rgba(0,0,0,0.88);backdrop-filter:blur(14px)}
-    .nav-logo{font-size:30px;font-weight:900;letter-spacing:0.1em;color:#fff;text-decoration:none;font-style:italic}
+    /* NAV */
+    .nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:80px;display:flex;align-items:center;justify-content:space-between;padding:0 60px;background:rgba(0,0,0,.88);backdrop-filter:blur(14px)}
+    .nav-logo{font-size:30px;font-weight:900;letter-spacing:.1em;color:#fff;text-decoration:none;font-style:italic}
     .nav-center{display:flex;gap:40px;list-style:none}
     .nav-center a{color:#fff;text-decoration:none;font-size:16px;font-weight:500;transition:color .3s}
     .nav-center a:hover,.nav-center a.on{color:var(--accent)}
     .nav-right{display:flex;align-items:center;gap:14px}
-    .nav-lang{color:#fff;font-size:14px;font-weight:600;padding:8px 18px;border:1px solid rgba(255,255,255,.3);border-radius:6px;cursor:pointer}
-    .nav-cta{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;background:var(--accent);color:#fff;font-size:15px;font-weight:700;border:none;border-radius:6px;cursor:pointer;text-decoration:none;transition:all .3s}
+    .nav-lang{color:#fff;font-size:14px;font-weight:600;padding:8px 18px;border:1px solid rgba(255,255,255,.3);border-radius:6px}
+    .nav-cta{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;background:var(--accent);color:#fff;font-size:15px;font-weight:700;border:none;border-radius:6px;text-decoration:none;transition:all .3s}
     .nav-cta:hover{background:var(--accent2);transform:translateY(-1px)}
 
-    /* ===== HERO ===== */
+    /* HERO */
     .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;background:#000}
-    .hero-bg{position:absolute;inset:0;z-index:0}
-    .hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.45}
+    .hero-bg{position:absolute;inset:0;z-index:0}.hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.4}
     .hero-bg::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 30% 60%,rgba(0,180,216,.22),transparent 50%),radial-gradient(ellipse at 70% 40%,rgba(0,150,199,.12),transparent 50%),linear-gradient(90deg,rgba(0,0,0,.75) 0%,rgba(0,0,0,.25) 45%,rgba(0,0,0,.65) 100%)}
     .hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;max-width:1400px;margin:0 auto;padding:0 60px;width:100%}
     .hero-product img{width:100%;max-width:520px;filter:drop-shadow(0 20px 60px rgba(0,180,216,.3))}
-    .hero-text h1{font-size:clamp(48px,6vw,82px);font-weight:900;line-height:1.05;letter-spacing:-.03em;margin-bottom:28px}
+    .hero-text h1{font-size:clamp(44px,5.5vw,78px);font-weight:900;line-height:1.08;letter-spacing:-.03em;margin-bottom:24px}
     .hero-text h1 .hl{color:var(--accent)}
-    .hero-text .sub{font-size:20px;color:rgba(255,255,255,.55);line-height:1.7;margin-bottom:36px;max-width:480px}
+    .hero-text .sub{font-size:19px;color:rgba(255,255,255,.55);line-height:1.7;margin-bottom:16px;max-width:520px}
+    .hero-text .oneliner{font-size:17px;color:var(--accent);font-weight:600;margin-bottom:32px;padding:12px 20px;background:rgba(0,180,216,.08);border:1px solid rgba(0,180,216,.2);border-radius:10px;display:inline-block}
     .hero-link{display:inline-flex;align-items:center;gap:8px;color:#fff;text-decoration:none;font-size:16px;font-weight:600;border-bottom:1px solid rgba(255,255,255,.3);padding-bottom:4px;transition:all .3s}
     .hero-link:hover{border-color:var(--accent);color:var(--accent)}
     .hero-ft{position:absolute;bottom:36px;left:60px;right:60px;display:flex;justify-content:space-between;z-index:1;font-size:12px;color:rgba(255,255,255,.28)}
 
-    /* ===== 3 REASONS ===== */
+    /* 3 REASONS */
     .reasons{background:var(--dark);padding:100px 60px;position:relative;overflow:hidden}
     .reasons-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;max-width:1400px;margin:0 auto}
     .reasons-left img{width:100%;max-width:480px;border-radius:20px;filter:drop-shadow(0 20px 40px rgba(0,0,0,.5))}
-    .reasons-right h2{font-size:clamp(40px,5vw,64px);font-weight:900;line-height:1.1;margin-bottom:40px}
+    .reasons-right h2{font-size:clamp(36px,4.5vw,58px);font-weight:900;line-height:1.1;margin-bottom:36px}
     .reasons-right h2 .num{color:var(--accent)}
-    .reason-item{margin-bottom:28px;padding-left:16px;border-left:3px solid var(--accent)}
+    .reason-item{margin-bottom:26px;padding-left:16px;border-left:3px solid var(--accent)}
     .reason-item h4{font-size:20px;font-weight:700;color:var(--accent);margin-bottom:6px}
     .reason-item p{font-size:15px;color:rgba(255,255,255,.5);line-height:1.6}
     .dots-deco{position:absolute;width:180px;height:180px;background-image:radial-gradient(circle,var(--red) 2px,transparent 2px);background-size:14px 14px;opacity:.12}
 
-    /* ===== TABS ===== */
+    /* TABS */
     .tabs-section{background:var(--dark);padding:80px 60px 100px;position:relative;overflow:hidden}
-    .tabs-bar{display:flex;gap:60px;margin-bottom:50px;border-bottom:1px solid rgba(255,255,255,.1);padding-bottom:18px;max-width:1400px;margin-left:auto;margin-right:auto;margin-bottom:50px}
-    .tab-btn{display:flex;align-items:center;gap:10px;cursor:pointer;font-size:22px;font-weight:700;color:rgba(255,255,255,.3);transition:color .3s;position:relative;padding-bottom:18px;margin-bottom:-19px}
-    .tab-btn.on{color:#fff}
-    .tab-btn.on::after{content:"";position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--accent)}
-    .tab-btn .ico{font-size:22px}
+    .tabs-bar{display:flex;gap:50px;margin-bottom:50px;border-bottom:1px solid rgba(255,255,255,.1);padding-bottom:18px;max-width:1400px;margin-left:auto;margin-right:auto}
+    .tab-btn{display:flex;align-items:center;gap:10px;cursor:pointer;font-size:20px;font-weight:700;color:rgba(255,255,255,.3);transition:color .3s;position:relative;padding-bottom:18px;margin-bottom:-19px}
+    .tab-btn.on{color:#fff}.tab-btn.on::after{content:"";position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--accent)}
     .tab-panels{max-width:1400px;margin:0 auto}
-    .tab-panel{display:none;min-height:480px}
-    .tab-panel.on{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+    .tab-panel{display:none;min-height:420px}.tab-panel.on{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
     .tp-left .tp-label{font-size:18px;color:var(--accent);font-weight:600;margin-bottom:6px}
-    .tp-left .tp-num{font-size:clamp(100px,14vw,200px);font-weight:900;color:var(--red);line-height:.88;letter-spacing:-.05em}
-    .tp-left .tp-note{margin-top:32px;font-size:15px;color:rgba(255,255,255,.45);line-height:1.6}
+    .tp-left .tp-num{font-size:clamp(90px,13vw,180px);font-weight:900;color:var(--red);line-height:.88;letter-spacing:-.05em}
+    .tp-left .tp-note{margin-top:28px;font-size:15px;color:rgba(255,255,255,.45);line-height:1.7}
     .tp-left .tp-note strong{color:var(--accent)}
     .tp-right img{width:100%;max-width:420px;filter:drop-shadow(0 20px 40px rgba(0,0,0,.5))}
 
-    /* ===== PRODUCTS (white) ===== */
+    /* PRODUCTS (white) */
     .products{background:var(--cream);padding:120px 60px;position:relative;overflow:hidden}
-    .products h2{font-size:clamp(60px,8vw,120px);font-weight:900;color:rgba(0,0,0,.07);letter-spacing:-.04em;margin-bottom:60px;line-height:1}
-    .prod-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;max-width:1400px;margin:0 auto}
-    .prod-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.06);transition:all .4s}
-    .prod-card:hover{transform:translateY(-8px);box-shadow:0 12px 40px rgba(0,0,0,.12)}
-    .prod-card .pc-img{height:260px;overflow:hidden;position:relative}
-    .prod-card .pc-img img{width:100%;height:100%;object-fit:cover}
-    .prod-card .pc-img .pc-num{position:absolute;top:18px;left:18px;font-size:26px;font-weight:900;color:var(--text)}
-    .prod-card .pc-body{padding:26px}
-    .prod-card h3{font-size:20px;font-weight:700;color:var(--text);margin-bottom:10px}
-    .prod-card p{font-size:14px;color:var(--muted);line-height:1.7}
-    .prod-card p strong{color:var(--accent);font-size:16px}
+    .products h2{font-size:clamp(56px,7vw,110px);font-weight:900;color:rgba(0,0,0,.07);letter-spacing:-.04em;margin-bottom:16px;line-height:1}
+    .products .prod-sub{font-size:17px;color:#888;max-width:700px;margin-bottom:50px;line-height:1.7}
+    .prod-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;max-width:1400px;margin:0 auto}
+    .prod-card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.05);transition:all .4s;border:1px solid rgba(0,0,0,.04)}
+    .prod-card:hover{transform:translateY(-6px);box-shadow:0 12px 36px rgba(0,0,0,.1)}
+    .prod-card .pc-top{padding:20px 22px 0}.prod-card .pc-num{font-size:42px;font-weight:900;color:var(--accent);line-height:1;margin-bottom:8px}
+    .prod-card h3{font-size:18px;font-weight:700;color:var(--text);margin-bottom:8px;line-height:1.3}
+    .prod-card p{font-size:13px;color:var(--muted);line-height:1.65;padding:0 22px 22px}
+    .prod-card .pc-tag{display:inline-block;margin:0 22px 16px;padding:4px 10px;border-radius:6px;font-size:12px;font-weight:600;background:rgba(230,57,70,.08);color:var(--red)}
 
-    /* ===== TECH (dark) ===== */
+    /* TECH (dark) */
     .tech{background:var(--dark);padding:120px 60px;position:relative;overflow:hidden}
-    .tech-inner{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-    .tech-txt h2{font-size:clamp(36px,4.5vw,58px);font-weight:900;line-height:1.12;margin-bottom:28px}
+    .tech-inner{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
+    .tech-txt h2{font-size:clamp(34px,4vw,52px);font-weight:900;line-height:1.12;margin-bottom:24px}
     .tech-txt h2 .hl{color:var(--accent)}
-    .tech-txt .tp-sub{font-size:18px;color:rgba(255,255,255,.5);line-height:1.7;margin-bottom:18px}
-    .tech-flow{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:36px}
-    .fl{padding:18px 6px;background:rgba(255,255,255,.04);border-radius:10px;text-align:center;border:1px solid rgba(255,255,255,.06);transition:all .3s}
+    .tech-txt .tp-sub{font-size:16px;color:rgba(255,255,255,.5);line-height:1.7;margin-bottom:14px}
+    .tech-flow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:30px 0}
+    .fl{padding:20px 8px;background:rgba(255,255,255,.04);border-radius:10px;text-align:center;border:1px solid rgba(255,255,255,.06);transition:all .3s}
     .fl:hover{border-color:rgba(0,180,216,.3);background:rgba(0,180,216,.04)}
     .fl .sn{width:32px;height:32px;border-radius:50%;background:var(--accent);color:#fff;font-size:13px;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto 8px}
-    .fl h4{font-size:13px;font-weight:700;margin-bottom:3px}
+    .fl h4{font-size:14px;font-weight:700;margin-bottom:4px}
     .fl p{font-size:11px;color:var(--muted);line-height:1.4}
+    .tech-price{margin-top:20px;padding:20px;border-radius:12px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06)}
+    .tech-price h4{font-size:16px;font-weight:700;margin-bottom:12px;color:var(--accent)}
+    .price-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+    .price-item{display:flex;justify-content:space-between;padding:8px 12px;border-radius:8px;background:rgba(255,255,255,.03);font-size:13px}
+    .price-item .pn{color:rgba(255,255,255,.5)}.price-item .pv{color:var(--yellow);font-weight:700}
     .tech-visual img{width:100%;border-radius:16px;box-shadow:0 16px 50px rgba(0,0,0,.4)}
+    .tech-case{margin-top:20px;padding:20px;border-radius:12px;background:rgba(0,180,216,.05);border:1px solid rgba(0,180,216,.12)}
+    .tech-case h4{font-size:15px;font-weight:700;margin-bottom:8px;color:var(--accent)}
+    .tech-case p{font-size:13px;color:rgba(255,255,255,.45);line-height:1.6}
 
-    /* ===== HISTORY (light) ===== */
+    /* HISTORY (light) */
     .history{background:var(--cream);padding:120px 60px;position:relative;overflow:hidden}
     .history::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 40px,rgba(0,0,0,.012) 40px,rgba(0,0,0,.012) 41px)}
     .history-inner{max-width:1400px;margin:0 auto;position:relative;z-index:1}
-    .history-inner h2{font-size:clamp(36px,4.5vw,58px);font-weight:900;color:var(--text);line-height:1.12;margin-bottom:12px}
+    .history-inner h2{font-size:clamp(34px,4vw,52px);font-weight:900;color:var(--text);line-height:1.12;margin-bottom:10px}
     .history-inner .hl{color:var(--accent)}
-    .history-inner .h-sub{font-size:18px;color:#888;line-height:1.6;margin-bottom:60px}
+    .history-inner .h-sub{font-size:17px;color:#888;line-height:1.6;margin-bottom:50px}
     .tl{position:relative;padding-left:40px}
     .tl::before{content:"";position:absolute;left:14px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--accent),rgba(0,180,216,.15))}
     .tl-item{position:relative;padding:24px 28px;margin-bottom:16px;border-radius:14px;background:#fff;border:1px solid rgba(0,0,0,.06);box-shadow:0 2px 12px rgba(0,0,0,.03)}
@@ -118,60 +112,78 @@
     .tl-item h4{font-size:18px;font-weight:700;color:var(--text);margin-bottom:6px}
     .tl-item p{font-size:14px;color:#888;line-height:1.6}
 
-    /* ===== GOALS (dark) ===== */
+    /* GOALS (dark) */
     .goals{background:var(--dark);padding:120px 60px}
     .goals-inner{max-width:1400px;margin:0 auto}
     .sec-tag{display:inline-flex;align-items:center;gap:8px;color:var(--accent);font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:18px}
     .sec-tag::before{content:"";width:24px;height:2px;background:var(--accent)}
-    .goals h2{font-size:clamp(36px,4vw,52px);font-weight:900;line-height:1.15;margin-bottom:18px}
-    .goals .desc{font-size:17px;color:rgba(255,255,255,.45);line-height:1.7;max-width:700px;margin-bottom:50px}
-    .g-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-    .g-card{padding:30px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);transition:all .3s}
+    .goals h2{font-size:clamp(34px,4vw,50px);font-weight:900;line-height:1.15;margin-bottom:16px}
+    .goals .desc{font-size:16px;color:rgba(255,255,255,.45);line-height:1.7;max-width:700px;margin-bottom:46px}
+    .g-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .g-card{padding:28px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);transition:all .3s}
     .g-card:hover{border-color:rgba(0,180,216,.3)}
-    .g-card .g-ico{font-size:30px;margin-bottom:14px}
-    .g-card h4{font-size:18px;font-weight:700;margin-bottom:10px}
-    .g-card p{font-size:14px;color:rgba(255,255,255,.45);line-height:1.7}
+    .g-card .g-ico{font-size:28px;margin-bottom:12px}
+    .g-card h4{font-size:17px;font-weight:700;margin-bottom:10px}
+    .g-card p{font-size:13px;color:rgba(255,255,255,.45);line-height:1.7}
+    .g-card .g-highlight{color:var(--accent);font-weight:700}
 
-    /* ===== BUDGET (dark) ===== */
+    /* BUDGET (dark) */
     .budget{background:var(--dark);padding:120px 60px}
     .budget-inner{max-width:1400px;margin:0 auto}
-    .budget h2{font-size:clamp(36px,4vw,52px);font-weight:900;line-height:1.15;margin-bottom:18px}
-    .budget .desc{font-size:17px;color:rgba(255,255,255,.45);line-height:1.7;max-width:700px;margin-bottom:50px}
+    .budget h2{font-size:clamp(34px,4vw,50px);font-weight:900;line-height:1.15;margin-bottom:16px}
+    .budget .desc{font-size:16px;color:rgba(255,255,255,.45);line-height:1.7;max-width:700px;margin-bottom:46px}
     .b-tbl{width:100%;border-collapse:separate;border-spacing:0 6px}
     .b-tbl th{text-align:left;padding:12px 20px;color:var(--accent);font-size:13px;font-weight:600;letter-spacing:.05em}
-    .b-tbl td{padding:16px 20px;background:rgba(255,255,255,.03);border-top:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05);font-size:15px}
+    .b-tbl td{padding:14px 20px;background:rgba(255,255,255,.03);border-top:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05);font-size:14px}
     .b-tbl td:first-child{border-left:1px solid rgba(255,255,255,.05);border-radius:10px 0 0 10px;font-weight:600}
-    .b-tbl td:last-child{border-right:1px solid rgba(255,255,255,.05);border-radius:0 10px 10px 0;text-align:right;font-weight:900;color:#f59e0b;font-size:18px}
+    .b-tbl td:last-child{border-right:1px solid rgba(255,255,255,.05);border-radius:0 10px 10px 0;text-align:right;font-weight:900;color:var(--yellow);font-size:16px}
     .b-total{display:flex;justify-content:flex-end;align-items:center;gap:16px;margin-top:22px;padding:22px 30px;border-radius:12px;background:rgba(0,180,216,.05);border:1px solid rgba(0,180,216,.12)}
-    .b-total .bl{font-size:16px;color:rgba(255,255,255,.45)}
-    .b-total .bn{font-size:46px;font-weight:900;color:#f59e0b}
-    .b-total .bu{font-size:17px;color:#f59e0b}
+    .b-total .bl{font-size:16px;color:rgba(255,255,255,.45)}.b-total .bn{font-size:46px;font-weight:900;color:var(--yellow)}.b-total .bu{font-size:17px;color:var(--yellow)}
+    .b-note{margin-top:18px;padding:16px 20px;border-radius:10px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);font-size:13px;color:rgba(255,255,255,.4);line-height:1.6}
+    .b-note strong{color:var(--accent)}
 
-    /* ===== TEAM (dark) ===== */
+    /* TEAM (dark) */
     .team{background:var(--dark);padding:120px 60px}
     .team-inner{max-width:1400px;margin:0 auto}
-    .team h2{font-size:clamp(36px,4vw,52px);font-weight:900;line-height:1.15;margin-bottom:18px}
-    .team .desc{font-size:17px;color:rgba(255,255,255,.45);line-height:1.7;max-width:700px;margin-bottom:50px}
+    .team h2{font-size:clamp(34px,4vw,50px);font-weight:900;line-height:1.15;margin-bottom:16px}
+    .team .desc{font-size:16px;color:rgba(255,255,255,.45);line-height:1.7;max-width:700px;margin-bottom:46px}
     .tm-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     .tm-card{padding:26px;border-radius:12px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);text-align:center;transition:all .3s}
     .tm-card:hover{border-color:rgba(0,180,216,.3)}
-    .tm-card .tm-av{font-size:34px;margin-bottom:10px}
+    .tm-card .tm-av{font-size:32px;margin-bottom:10px}
     .tm-card h4{font-size:17px;font-weight:700;margin-bottom:3px}
     .tm-card .tm-role{font-size:13px;color:var(--accent);font-weight:600;margin-bottom:8px}
     .tm-card p{font-size:12px;color:rgba(255,255,255,.38);line-height:1.5}
+    .ai-note{margin-top:30px;padding:24px;border-radius:14px;background:rgba(0,180,216,.05);border:1px solid rgba(0,180,216,.12)}
+    .ai-note h4{font-size:16px;font-weight:700;color:var(--accent);margin-bottom:10px}
+    .ai-note p{font-size:14px;color:rgba(255,255,255,.45);line-height:1.7}
 
-    /* ===== CTA ===== */
+    /* CTA */
     .cta{text-align:center;padding:140px 60px;background:#000;position:relative;overflow:hidden}
     .cta::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(0,180,216,.07),transparent 60%)}
-    .cta h2{font-size:clamp(34px,5vw,60px);font-weight:900;margin-bottom:18px;line-height:1.15;position:relative;z-index:1}
+    .cta h2{font-size:clamp(32px,4.5vw,56px);font-weight:900;margin-bottom:18px;line-height:1.15;position:relative;z-index:1}
     .cta h2 .hl{color:var(--accent)}
-    .cta .ct-sub{font-size:18px;color:rgba(255,255,255,.45);max-width:580px;margin:0 auto 36px;line-height:1.7;position:relative;z-index:1}
+    .cta .ct-sub{font-size:18px;color:rgba(255,255,255,.45);max-width:620px;margin:0 auto 36px;line-height:1.7;position:relative;z-index:1}
+    .cta-quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:900px;margin:0 auto 40px;position:relative;z-index:1}
+    .cta-q{padding:24px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);text-align:center}
+    .cta-q .cq-num{font-size:32px;font-weight:900;color:var(--accent);margin-bottom:6px}
+    .cta-q .cq-text{font-size:14px;color:rgba(255,255,255,.5);line-height:1.5}
     .cta-btn{display:inline-flex;align-items:center;gap:10px;padding:15px 38px;background:var(--accent);color:#fff;font-size:17px;font-weight:700;border:none;border-radius:8px;cursor:pointer;text-decoration:none;transition:all .3s;position:relative;z-index:1}
     .cta-btn:hover{background:var(--accent2);transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,180,216,.3)}
 
-    /* ===== FOOTER ===== */
+    /* SOURCES */
+    .sources{background:var(--dark);padding:80px 60px}
+    .sources-inner{max-width:1400px;margin:0 auto}
+    .sources h3{font-size:20px;font-weight:700;margin-bottom:24px;color:var(--accent)}
+    .src-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+    .src-item{padding:12px 16px;border-radius:8px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.05);font-size:13px;color:rgba(255,255,255,.45);line-height:1.5}
+    .src-item a{color:var(--accent);text-decoration:none}
+    .src-item a:hover{text-decoration:underline}
+    .src-item .src-tag{color:var(--accent);font-weight:700;margin-right:6px}
+
+    /* FOOTER */
     .footer{background:#000;border-top:1px solid rgba(255,255,255,.07);padding:70px 60px 36px}
-    .ft-top{display:grid;grid-template-columns:1fr 2fr;gap:80px;margin-bottom:50px;max-width:1400px;margin-left:auto;margin-right:auto;margin-bottom:50px}
+    .ft-top{display:grid;grid-template-columns:1fr 2fr;gap:80px;margin-bottom:50px;max-width:1400px;margin-left:auto;margin-right:auto}
     .ft-logo{font-size:34px;font-weight:900;letter-spacing:.1em;font-style:italic;margin-bottom:18px}
     .ft-links{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
     .ft-col h4{font-size:15px;font-weight:700;color:var(--accent);margin-bottom:14px}
@@ -182,40 +194,16 @@
     .ft-contact .ic{color:var(--accent)}
     .ft-btm{display:flex;justify-content:space-between;align-items:center;padding-top:20px;border-top:1px solid rgba(255,255,255,.05);font-size:12px;color:rgba(255,255,255,.25);max-width:1400px;margin:0 auto}
 
-    /* ===== FLOAT BTN ===== */
+    /* FLOAT */
     .float-btn{position:fixed;bottom:28px;right:28px;width:54px;height:54px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:22px;cursor:pointer;box-shadow:0 4px 18px rgba(0,180,216,.4);z-index:999;transition:all .3s;border:none;text-decoration:none}
     .float-btn:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,180,216,.5)}
 
-    /* ===== ANIMATIONS ===== */
-    .fu{opacity:0;transform:translateY(36px);transition:all .8s cubic-bezier(.16,1,.3,1)}
-    .fu.vis{opacity:1;transform:translateY(0)}
+    /* ANIM */
+    .fu{opacity:0;transform:translateY(36px);transition:all .8s cubic-bezier(.16,1,.3,1)}.fu.vis{opacity:1;transform:translateY(0)}
 
-    /* ===== RESPONSIVE ===== */
-    @media(max-width:1024px){
-      .hero-inner,.reasons-inner,.tech-inner{grid-template-columns:1fr}
-      .hero-product{display:none}
-      .hero-text .sub{margin:0 auto 36px}
-      .tab-panel.on{grid-template-columns:1fr}
-      .tp-right{display:none}
-      .prod-cards{grid-template-columns:1fr 1fr}
-      .g-grid,.tm-grid{grid-template-columns:1fr}
-      .ft-top{grid-template-columns:1fr}
-      .ft-links{grid-template-columns:1fr 1fr}
-      .tech-flow{grid-template-columns:repeat(3,1fr)}
-    }
-    @media(max-width:640px){
-      .nav{padding:0 20px}
-      .nav-center{display:none}
-      .hero-inner{padding:0 20px}
-      .reasons,.tabs-section,.products,.tech,.history,.goals,.budget,.team,.cta,.footer{padding-left:20px;padding-right:20px}
-      .tabs-bar{gap:16px;flex-wrap:wrap}
-      .tab-btn{font-size:16px}
-      .prod-cards{grid-template-columns:1fr}
-      .tech-flow{grid-template-columns:1fr 1fr}
-      .ft-links{grid-template-columns:1fr}
-      .ft-mid{grid-template-columns:1fr}
-      .ft-btm{flex-direction:column;gap:8px;text-align:center}
-    }
+    /* RESPONSIVE */
+    @media(max-width:1024px){.hero-inner,.reasons-inner,.tech-inner{grid-template-columns:1fr}.hero-product{display:none}.hero-text .sub,.hero-text .oneliner{margin-left:auto;margin-right:auto;text-align:center}.tab-panel.on{grid-template-columns:1fr}.tp-right{display:none}.prod-cards{grid-template-columns:1fr 1fr}.g-grid,.tm-grid{grid-template-columns:1fr}.ft-top{grid-template-columns:1fr}.ft-links{grid-template-columns:1fr 1fr}.tech-flow{grid-template-columns:repeat(2,1fr)}.cta-quotes{grid-template-columns:1fr}.src-grid{grid-template-columns:1fr}}
+    @media(max-width:640px){.nav{padding:0 20px}.nav-center{display:none}.hero-inner{padding:0 20px}.reasons,.tabs-section,.products,.tech,.history,.goals,.budget,.team,.cta,.sources,.footer{padding-left:20px;padding-right:20px}.tabs-bar{gap:16px;flex-wrap:wrap}.tab-btn{font-size:16px}.prod-cards{grid-template-columns:1fr}.tech-flow{grid-template-columns:1fr}.ft-links{grid-template-columns:1fr}.ft-mid{grid-template-columns:1fr}.ft-btm{flex-direction:column;gap:8px;text-align:center}.price-grid{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
@@ -240,12 +228,11 @@
 <section class="hero" id="top">
   <div class="hero-bg"><img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1920&q=80" alt=""></div>
   <div class="hero-inner">
-    <div class="hero-product">
-      <img src="https://images.unsplash.com/photo-1581093458791-9d42e3c7e117?w=600&q=80" alt="">
-    </div>
+    <div class="hero-product"><img src="https://images.unsplash.com/photo-1581093458791-9d42e3c7e117?w=600&q=80" alt=""></div>
     <div class="hero-text">
-      <h1>深圳小区<br><span class="hl">雨污分流</span><br>智慧体检系统</h1>
-      <p class="sub">用物联网传感器、AI算法和数字化平台，给深圳老旧小区的排水管网做一次全面"体检"。</p>
+      <h1>小区雨污分流<br><span class="hl">智慧体检系统</span></h1>
+      <p class="sub">让地下排水从"看不见"变成"查得清、改得准、管得住"</p>
+      <div class="oneliner">先体检、再分级、后整改，用小试点撬动深圳小区排水治理提效</div>
       <a href="#reasons" class="hero-link">了解更多 <span>→</span></a>
     </div>
   </div>
@@ -256,23 +243,12 @@
 <section class="reasons" id="reasons">
   <div class="dots-deco" style="top:30px;right:60px"></div>
   <div class="reasons-inner">
-    <div class="reasons-left">
-      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80" alt="">
-    </div>
+    <div class="reasons-left"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80" alt=""></div>
     <div class="reasons-right">
       <h2><span class="num">3</span> Reasons<br>to choose 智慧体检</h2>
-      <div class="reason-item">
-        <h4>精准诊断</h4>
-        <p>AI混接识别 + CCTV管道检测 + 水质流量分析，诊断准确率提升345%。</p>
-      </div>
-      <div class="reason-item">
-        <h4>数据驱动</h4>
-        <p>50+个小区数据接入，实时监测水质、流量、液位，AI自动分析异常。</p>
-      </div>
-      <div class="reason-item">
-        <h4>闭环管理</h4>
-        <p>从发现问题到修复复检，100%工单闭环跟踪，全流程数字化管理。</p>
-      </div>
+      <div class="reason-item"><h4>精准诊断</h4><p>AI混接识别 + CCTV管道检测 + 水质流量分析，诊断准确率提升345%。</p></div>
+      <div class="reason-item"><h4>数据驱动</h4><p>50+个小区数据接入，实时监测水质、流量、液位，AI自动分析异常。</p></div>
+      <div class="reason-item"><h4>闭环管理</h4><p>从发现问题到修复复检，100%工单闭环跟踪，全流程数字化管理。</p></div>
     </div>
   </div>
 </section>
@@ -312,21 +288,30 @@
   </div>
 </section>
 
-<!-- PRODUCTS (white) -->
+<!-- PRODUCTS (white) - 4 pain points -->
 <section class="products" id="prod">
-  <h2>现状痛点</h2>
+  <h2>核心痛点</h2>
+  <p class="prod-sub">目前小区雨污分流治理常见四类盲点。如果没有体检系统，往往只能靠人工巡查、居民投诉和事后开挖，成本高、效率低、返工多。</p>
   <div class="prod-cards">
     <div class="prod-card fu">
-      <div class="pc-img"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80" alt=""><span class="pc-num">1.</span></div>
-      <div class="pc-body"><h3>雨污混接普遍</h3><p>大量老旧小区雨水管和污水管混接，雨天污水溢流，旱天河水倒灌，严重影响水环境。</p></div>
+      <div class="pc-top"><div class="pc-num">01</div><h3>错接混接难发现</h3></div>
+      <p>雨水管和污水管混接，雨天污水溢流，旱天河水倒灌，严重影响水环境。</p>
+      <div class="pc-tag">高频问题</div>
     </div>
-    <div class="prod-card fu" style="transition-delay:.1s">
-      <div class="pc-img"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80" alt=""><span class="pc-num">2.</span></div>
-      <div class="pc-body"><h3>管网病害隐蔽</h3><p>管道裂缝、变形、淤积等结构性病害长期隐藏在地下，人工巡检效率低、覆盖面有限。</p></div>
+    <div class="prod-card fu" style="transition-delay:.08s">
+      <div class="pc-top"><div class="pc-num">02</div><h3>雨天外水入渗难识别</h3></div>
+      <p>雨水和地下水渗入污水管网，导致污水厂进水浓度偏低，处理效率大打折扣。</p>
+      <div class="pc-tag">隐蔽性强</div>
     </div>
-    <div class="prod-card fu" style="transition-delay:.2s">
-      <div class="pc-img"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80" alt=""><span class="pc-num">3.</span></div>
-      <div class="pc-body"><h3>应急响应滞后</h3><p>缺乏预警机制，暴雨或污水冒溢后才发现问题，被动应对造成更大损失和民怨。</p></div>
+    <div class="prod-card fu" style="transition-delay:.16s">
+      <div class="pc-top"><div class="pc-num">03</div><h3>异常点位难定位</h3></div>
+      <p>管道裂缝、变形、淤积等结构性病害长期隐藏在地下，人工巡检效率低。</p>
+      <div class="pc-tag">定位困难</div>
+    </div>
+    <div class="prod-card fu" style="transition-delay:.24s">
+      <div class="pc-top"><div class="pc-num">04</div><h3>整改优先级难排序</h3></div>
+      <p>缺乏量化评估手段，无法科学判断"先修哪里"，导致资金使用效率低。</p>
+      <div class="pc-tag">决策难点</div>
     </div>
   </div>
 </section>
@@ -335,31 +320,56 @@
 <section class="tech" id="tech">
   <div class="tech-inner">
     <div class="tech-txt fu">
-      <h2>一张图讲清楚<br><span class="hl">技术原理</span></h2>
-      <p class="tp-sub">智慧体检系统的核心逻辑：感知 → 传输 → 平台 → 分析 → 处置，相当于给排水管网做一次"全身体检 + 实时健康监测"。</p>
-      <p class="tp-sub">不要把技术讲成论文。要让市长明白：它能提前发现问题、帮助调度人员决策、减少人工盲查。</p>
+      <h2>一张图讲清<br><span class="hl">系统怎么工作</span></h2>
+      <p class="tp-sub">系统由4层组成：井位感知层、数据传输层、诊断平台层、闭环处置层。相当于给小区排水井装上持续观察能力，把过去靠经验判断的问题，变成平台能看见、能预警、能派单的管理对象。</p>
       <div class="tech-flow">
-        <div class="fl"><div class="sn">1</div><h4>感知层</h4><p>传感器<br>流量计</p></div>
-        <div class="fl"><div class="sn">2</div><h4>传输层</h4><p>5G/LoRa<br>物联网</p></div>
-        <div class="fl"><div class="sn">3</div><h4>平台层</h4><p>GIS一张图<br>数字孪生</p></div>
-        <div class="fl"><div class="sn">4</div><h4>分析层</h4><p>AI混接<br>识别</p></div>
-        <div class="fl"><div class="sn">5</div><h4>处置层</h4><p>工单<br>闭环</p></div>
+        <div class="fl"><div class="sn">1</div><h4>井位感知层</h4><p>液位、流量<br>COD、氨氮</p></div>
+        <div class="fl"><div class="sn">2</div><h4>数据传输层</h4><p>5G/LoRa<br>物联网</p></div>
+        <div class="fl"><div class="sn">3</div><h4>诊断平台层</h4><p>GIS一张图<br>AI分析</p></div>
+        <div class="fl"><div class="sn">4</div><h4>闭环处置层</h4><p>工单派发<br>整改复核</p></div>
+      </div>
+      <p class="tp-sub">重点识别四类异常：<strong style="color:var(--accent)">晴天有污、雨天倒灌、流量突增、水质突变</strong>。</p>
+      <div class="tech-price">
+        <h4>公开采购参考单价 [S6]</h4>
+        <div class="price-grid">
+          <div class="price-item"><span class="pn">窨井多参数采集仪</span><span class="pv">12,500元/台</span></div>
+          <div class="price-item"><span class="pn">超声波流量计</span><span class="pv">11,500元/台</span></div>
+          <div class="price-item"><span class="pn">COD传感器</span><span class="pv">16,800元/台</span></div>
+          <div class="price-item"><span class="pn">氨氮传感器</span><span class="pv">13,500元/台</span></div>
+        </div>
       </div>
     </div>
-    <div class="tech-visual fu"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80" alt=""></div>
+    <div class="tech-visual fu">
+      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80" alt="">
+      <div class="tech-case">
+        <h4>深圳已在探索 [S7]</h4>
+        <p>2026年3月6日，深圳市水务局启动"大型排水暗渠病险无人机可视化检测技术研究和试点应用项目"，预算95万元。深圳已开始把"智能检测、可视化诊断"用于排水设施安全和治理场景。</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- HISTORY (light) -->
+<!-- HISTORY (light) - Implementation Plan -->
 <section class="history" id="plan">
   <div class="history-inner">
-    <h2>三步走：<span class="hl">试点示范</span> → 平台建设 → 全市推广</h2>
-    <p class="h-sub">市长最关心"怎么落地"。我们用四个阶段，从一个试点片区逐步推广到全市。</p>
+    <h2>实施方案：<span class="hl">先试点</span>，再标准化，再推广</h2>
+    <p class="h-sub">我们建议先从一个老旧小区或居住区类城中村周边片区做样板，不追求一上来全市铺开。这样既能控制预算，也能把流程跑顺。</p>
     <div class="tl fu">
-      <div class="tl-item"><div class="ph">第一阶段 · 试点摸底（6个月）</div><h4>建账摸底，选定试点片区</h4><p>选择南山区某老旧住宅片区（约50个小区）作为试点，完成管网资产普查、检查井编号、重点风险点标注，建立管网"健康档案"。</p></div>
-      <div class="tl-item"><div class="ph">第二阶段 · 设备部署（8个月）</div><h4>安装传感器，开展体检检测</h4><p>在试点片区安装水质传感器、流量计、液位计等在线监测设备，同时使用CCTV机器人对重点管道进行结构性检测。</p></div>
-      <div class="tl-item"><div class="ph">第三阶段 · 平台上线（6个月）</div><h4>上线智慧平台，实现闭环管理</h4><p>搭建GIS管网一张图平台，接入实时监测数据和AI分析结果，实现混接诊断、病害评级、工单派发和修复复检的全流程闭环。</p></div>
-      <div class="tl-item"><div class="ph">第四阶段 · 全市推广（持续）</div><h4>总结经验，复制推广到全市</h4><p>形成可复制的"小区雨污分流体检标准流程"，逐步推广到福田、罗湖、宝安等区，最终覆盖深圳全市重点片区。</p></div>
+      <div class="tl-item">
+        <div class="ph">第一步 · 3个月建台账</div>
+        <h4>完成试点小区基础建档</h4>
+        <p>完成试点小区排水井、排水口、管线、历史问题的基础建档，建立管网"健康档案"。</p>
+      </div>
+      <div class="tl-item">
+        <div class="ph">第二步 · 6个月做体检</div>
+        <h4>布设重点井位监测</h4>
+        <p>布设重点井位监测，形成晴天-雨天对比诊断，锁定疑似错接混接和外水入渗点。</p>
+      </div>
+      <div class="tl-item">
+        <div class="ph">第三步 · 12个月闭环</div>
+        <h4>接入工单系统，完成整改复核</h4>
+        <p>接入工单系统，完成整改、复核、销项，沉淀成可复制的小区体检标准流程。</p>
+      </div>
     </div>
   </div>
 </section>
@@ -368,12 +378,24 @@
 <section class="goals">
   <div class="goals-inner">
     <div class="sec-tag">预期目标</div>
-    <h2>经济账 + 民生账，都要算清楚</h2>
-    <p class="desc">目标要能量化，不要只写"提升管理水平"。经济目标说回报，民生目标说感受。</p>
+    <h2>要把"提升效率"说成可量化结果</h2>
+    <p class="desc">市长最关心的不是"这个系统先进不先进"，而是"能不能带来确定结果"。所以我们的目标既要有居民能感知的结果，也要有管理部门能考核的结果。</p>
     <div class="g-grid fu">
-      <div class="g-card"><div class="g-ico">📈</div><h4>经济目标</h4><p>试点片区污水浓度提升15%以上，减少外水处理费用约120万元/年；减少盲目开挖和反复修复，节约养护成本约200万元/年。</p></div>
-      <div class="g-card"><div class="g-ico">🏘️</div><h4>民生目标</h4><p>污水冒溢投诉减少60%以上；雨天道路积水点减少40%；河道黑臭问题得到根本缓解，居民满意度显著提升。</p></div>
-      <div class="g-card"><div class="g-ico">🔧</div><h4>管理目标</h4><p>形成管网"体检报告"制度，实现管网健康状况可追溯、可比较、可预警；建立修复优先级排序机制。</p></div>
+      <div class="g-card">
+        <div class="g-ico">📈</div>
+        <h4>管理目标</h4>
+        <p>重点井位在线监测覆盖率<span class="g-highlight">100%</span>；异常工单<span class="g-highlight">24小时内</span>派发；疑似错接混接点<span class="g-highlight">100%建档</span>；整改复核闭环率<span class="g-highlight">90%以上</span>。</p>
+      </div>
+      <div class="g-card">
+        <div class="g-ico">🏘️</div>
+        <h4>民生结果</h4>
+        <p>少积水、少异味、少污水冒溢。居民能感知到排水环境改善，投诉量显著下降。</p>
+      </div>
+      <div class="g-card">
+        <div class="g-ico">🔧</div>
+        <h4>管理结果</h4>
+        <p>少盲查、少返工、少无效开挖。用数据驱动决策，把有限资金用在最需要的地方。</p>
+      </div>
     </div>
   </div>
 </section>
@@ -382,22 +404,21 @@
 <section class="budget" id="budget">
   <div class="budget-inner">
     <div class="sec-tag">预算测算</div>
-    <h2>申请预算：试点片区约580万元</h2>
-    <p class="desc">预算可以估算，但必须把假设写清楚。以下为试点片区（50个小区）的测算。</p>
+    <h2>申请预算：试点约85.9万元</h2>
+    <p class="desc">这是一套课堂版测算，依据公开中标单价，逻辑清楚、容易答辩。这笔钱是"智慧体检试点预算"，不含大规模土建改造、清淤修复和整区施工费用。</p>
     <div class="fu">
       <table class="b-tbl">
         <thead><tr><th>项目</th><th>测算依据</th><th>金额</th></tr></thead>
         <tbody>
-          <tr><td>管网资产普查</td><td>50个小区 × 2万元/小区</td><td>100万</td></tr>
-          <tr><td>在线监测设备</td><td>水质传感器120套 + 流量计60套 + 液位计80套</td><td>180万</td></tr>
-          <tr><td>CCTV管道检测</td><td>80公里 × 18元/米</td><td>144万</td></tr>
-          <tr><td>智慧平台开发</td><td>GIS一张图 + AI分析模块 + 工单系统</td><td>80万</td></tr>
-          <tr><td>安装与集成</td><td>设备安装、网络部署、数据对接</td><td>40万</td></tr>
-          <tr><td>运维与培训</td><td>首年运维 + 人员培训</td><td>20万</td></tr>
-          <tr><td>预备费（约3%）</td><td>不可预见费用</td><td>16万</td></tr>
+          <tr><td>单个重点井位设备</td><td>智能井盖980 + 采集仪12500 + 流量计11500 + COD16800 + 氨氮13500</td><td>5.53万</td></tr>
+          <tr><td>12个重点井位设备</td><td>12 × 55,280元</td><td>66.34万</td></tr>
+          <tr><td>云平台服务</td><td>数据存储、可视化、告警推送</td><td>5.90万</td></tr>
+          <tr><td>系统集成</td><td>设备调试、数据对接、平台部署</td><td>5.85万</td></tr>
+          <tr><td>预备费（10%）</td><td>不可预见费用</td><td>7.81万</td></tr>
         </tbody>
       </table>
-      <div class="b-total"><span class="bl">试点片区总预算</span><span class="bn">580</span><span class="bu">万元</span></div>
+      <div class="b-total"><span class="bl">试点总预算</span><span class="bn">85.9</span><span class="bu">万元</span></div>
+      <div class="b-note"><strong>注意：</strong>此预算为"智慧体检试点预算"，不含大规模土建改造、清淤修复和整区施工费用。公开采购数据来源：三明市沙县区排水管网监测管理建设项目结果公告 [S6]。</div>
     </div>
   </div>
 </section>
@@ -407,14 +428,18 @@
   <div class="team-inner">
     <div class="sec-tag">团队分工</div>
     <h2>分工与AI使用</h2>
-    <p class="desc">明确每个人负责什么，AI帮助做了什么，关键数据如何查证。</p>
+    <p class="desc">我们不是只会"让AI生成"。AI做辅助工具，但关键数字、政策原文和采购单价都做了人工复核和来源回溯。</p>
     <div class="tm-grid fu">
-      <div class="tm-card"><div class="tm-av">📋</div><h4>组长</h4><div class="tm-role">项目统筹</div><p>负责选题确认、进度把控、汇报串联，协调组员分工，AI辅助整理政策文件和数据。</p></div>
-      <div class="tm-card"><div class="tm-av">📊</div><h4>政策与现状</h4><div class="tm-role">资料调研</div><p>收集国家和深圳市相关政策文件，整理深圳排水管网现状数据和痛点问题。</p></div>
-      <div class="tm-card"><div class="tm-av">⚙️</div><h4>技术讲解</h4><div class="tm-role">技术方案</div><p>撰写技术原理介绍，绘制技术流程图，查找相关技术案例和产品参数。</p></div>
+      <div class="tm-card"><div class="tm-av">📋</div><h4>组长</h4><div class="tm-role">总体逻辑与汇报</div><p>负责选题确认、总体逻辑串联、汇报演讲和答辩准备。</p></div>
+      <div class="tm-card"><div class="tm-av">📊</div><h4>政策与数据</h4><div class="tm-role">资料调研</div><p>收集国家和深圳市政策文件，整理深圳排水管网现状数据和痛点问题。</p></div>
+      <div class="tm-card"><div class="tm-av">⚙️</div><h4>技术与案例</h4><div class="tm-role">技术方案</div><p>撰写技术原理介绍，绘制技术流程图，查找相关技术案例和设备参数。</p></div>
       <div class="tm-card"><div class="tm-av">💰</div><h4>预算测算</h4><div class="tm-role">经济分析</div><p>查阅公开采购信息确定设备单价，计算投入产出比，撰写预算测算报告。</p></div>
-      <div class="tm-card"><div class="tm-av">🎨</div><h4>网页设计</h4><div class="tm-role">视觉呈现</div><p>负责网页和海报的设计与制作，确保视觉效果专业美观，主题突出。</p></div>
-      <div class="tm-card"><div class="tm-av">🎤</div><h4>汇报答辩</h4><div class="tm-role">现场表现</div><p>负责汇报演讲和答辩准备，练习表达节奏，准备常见问题的回答。</p></div>
+      <div class="tm-card"><div class="tm-av">🎨</div><h4>视觉与海报</h4><div class="tm-role">PPT与海报设计</div><p>负责PPT视觉设计与A4海报制作，确保专业美观、主题突出。</p></div>
+      <div class="tm-card"><div class="tm-av">🎤</div><h4>答辩准备</h4><div class="tm-role">现场表现</div><p>负责答辩问题准备、表达节奏练习、常见问题回答准备。</p></div>
+    </div>
+    <div class="ai-note">
+      <h4>AI使用说明</h4>
+      <p>AI主要用于资料检索辅助、结构整理、文案润色；关键数据全部回溯到2026年官方原始页面或政府采购公告。</p>
     </div>
   </div>
 </section>
@@ -422,8 +447,30 @@
 <!-- CTA -->
 <section class="cta" id="cta">
   <h2 class="fu">让地下管网从<br><span class="hl">"隐患未知"走向"精准治理"</span></h2>
-  <p class="ct-sub fu">市长，城市内涝和污水冒溢，很多时候不是水厂问题，而是地下管网问题。给管网做一次体检，是对这座城市最负责任的投资。</p>
+  <p class="ct-sub fu">与其等污水冒溢后反复开挖，不如先给小区地下排水做一次智慧体检。建议决策：先试点、后推广；先体检、后整改；先精准识别、再精准投入。</p>
+  <div class="cta-quotes fu">
+    <div class="cta-q"><div class="cq-num">少积水</div><div class="cq-text">雨天道路不内涝</div></div>
+    <div class="cta-q"><div class="cq-num">少返工</div><div class="cq-text">精准识别不盲改</div></div>
+    <div class="cta-q"><div class="cq-num">少开挖</div><div class="cq-text">数据驱动不浪费</div></div>
+  </div>
   <a href="#top" class="cta-btn fu">回到顶部 ↑</a>
+</section>
+
+<!-- SOURCES -->
+<section class="sources">
+  <div class="sources-inner">
+    <h3>数据来源</h3>
+    <div class="src-grid">
+      <div class="src-item"><span class="src-tag">[S1]</span> 国家统计局，2026-06-03，《新型城镇化建设深入推进 城市高质量发展成效显著》：<a href="https://www.stats.gov.cn/sj/sjjd/202606/t20260603_1963868.html" target="_blank">链接</a></div>
+      <div class="src-item"><span class="src-tag">[S2]</span> 深圳市统计局，2026-05-25，《深圳市2025年国民经济和社会发展统计公报》：<a href="https://tjj.sz.gov.cn/zwgk/zfxxgkml/tjsj/tjgb/content/post_12803919.html" target="_blank">链接</a></div>
+      <div class="src-item"><span class="src-tag">[S3]</span> 深圳市水务局，2026-04-09，《深圳市水务局关于2025年度污水处理费征收使用情况的公示》：<a href="https://www.sz.gov.cn/cn/xxgk/zfxxgj/tzgg/content/post_12728178.html" target="_blank">链接</a></div>
+      <div class="src-item"><span class="src-tag">[S4]</span> 大鹏新区水务局，2026-03-11，《关于排水管理进小区工作有关事项的通告》：<a href="https://www.sz.gov.cn/szzt2010/wgkzl/jcgk/jcygk/zdzcjc/content/post_12679010.html" target="_blank">链接</a></div>
+      <div class="src-item"><span class="src-tag">[S5]</span> 坪山区坑梓街道办事处，2026-02-26，梓兴花园治理案例：<a href="https://www.sz.gov.cn/cn/xxgk/zfxxgj/gqdt/content/post_12655347.html" target="_blank">链接</a></div>
+      <div class="src-item"><span class="src-tag">[S6]</span> 沙县区人民政府，2026-02-05，《三明市沙县区排水管网综合整治项目结果公告》：<a href="https://www.fjsx.gov.cn/zwgk/ggzypz/zfzbcg/zbgg_8046/202602/t20260212_2190048.htm" target="_blank">链接</a></div>
+      <div class="src-item"><span class="src-tag">[S7]</span> 深圳市水务局，2026-03-06，《大型排水暗渠病险无人机可视化检测项目采购信息》：<a href="https://swj.sz.gov.cn/ydmh/xmxxgk/ztb/zbgg/content/post_12672884.html" target="_blank">链接</a></div>
+      <div class="src-item"><span class="src-tag">[S8]</span> 深圳市生态环境局，2026-05-06，《二〇二六年第一季度深圳市生态环境状况公报》：<a href="https://meeb.sz.gov.cn/xxgk/tjsj/jdhjzkgb/content/post_12764435.html" target="_blank">链接</a></div>
+    </div>
+  </div>
 </section>
 
 <!-- FOOTER -->
@@ -450,22 +497,11 @@
 <a href="#cta" class="float-btn">✉</a>
 
 <script>
-// Tabs
-document.querySelectorAll('.tab-btn').forEach(b=>{
-  b.addEventListener('click',()=>{
-    document.querySelectorAll('.tab-btn').forEach(x=>x.classList.remove('on'));
-    document.querySelectorAll('.tab-panel').forEach(x=>x.classList.remove('on'));
-    b.classList.add('on');
-    document.querySelector(`.tab-panel[data-p="${b.dataset.t}"]`).classList.add('on');
-  });
-});
-// Scroll anim
+document.querySelectorAll('.tab-btn').forEach(b=>{b.addEventListener('click',()=>{document.querySelectorAll('.tab-btn').forEach(x=>x.classList.remove('on'));document.querySelectorAll('.tab-panel').forEach(x=>x.classList.remove('on'));b.classList.add('on');document.querySelector(`.tab-panel[data-p="${b.dataset.t}"]`).classList.add('on')})});
 const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.fu').forEach(el=>obs.observe(el));
-// Active nav
 const secs=document.querySelectorAll('section[id]'),nls=document.querySelectorAll('.nav-center a');
 window.addEventListener('scroll',()=>{let c='';secs.forEach(s=>{if(window.scrollY>=s.offsetTop-120)c=s.id});nls.forEach(l=>{l.classList.remove('on');if(l.getAttribute('href')==='#'+c)l.classList.add('on')})});
-// Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(l=>{l.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(l.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'})})});
 </script>
 </body>
