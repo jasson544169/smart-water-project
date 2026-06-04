@@ -73,16 +73,15 @@ p{margin-bottom:14px}
 .intro-card h4{font-size:15px;font-weight:700;margin-bottom:4px}
 .intro-card p{font-size:13px;color:var(--muted);line-height:1.6}
 
-/* === 板块2：小区现状 - 瀑布流三列均分 === */
-.waterfall{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:start;min-width:0}
-.wf-item{border-radius:16px;overflow:hidden;background:var(--card);border:1px solid var(--border);box-shadow:var(--shadow);transition:all .4s}
+/* === 板块2：小区现状 - 三栏规整并列 === */
+.waterfall{display:grid;grid-template-columns:33.3% 33.3% 33.3%;gap:24px;align-items:stretch}
+.wf-item{border-radius:16px;overflow:hidden;background:var(--card);border:1px solid var(--border);box-shadow:var(--shadow);transition:all .4s;display:flex;flex-direction:column}
 .wf-item:hover{transform:translateY(-6px);box-shadow:0 16px 44px rgba(26,95,180,.12);border-color:rgba(37,99,235,.2)}
-.wf-item img{width:100%;display:block;transition:transform .5s}
+.wf-item img{width:100%;display:block;transition:transform .5s;object-fit:cover;flex-shrink:0}
 .wf-item:hover img{transform:scale(1.03)}
-.wf-item .wf-text{padding:16px}
+.wf-item .wf-text{padding:16px;flex:1}
 .wf-item h4{font-size:15px;font-weight:700;margin-bottom:4px}
 .wf-item p{font-size:13px;color:var(--muted);line-height:1.55}
-.wf-item.tall{grid-row:span 2}
 .data-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:24px}
 .data-card{padding:20px;border-radius:14px;background:var(--card);border:1px solid var(--border);box-shadow:var(--shadow);text-align:center}
 .data-card .big{font-size:36px;font-weight:900;color:var(--accent);line-height:1}
@@ -272,12 +271,9 @@ p{margin-bottom:14px}
     <h2 class="a-bounce">问题藏在<em>地下</em></h2>
     <p class="lead a-drop">2025年深圳全年累计处理污水<a href="https://www.sz.gov.cn/cn/xxgk/zfxxgj/tzgg/content/post_12728178.html" target="_blank"><strong>23.17亿立方米</strong>《深圳市2025年度污水处理费征收使用情况公示》[S3]</a>，纳入地理信息系统管理的市政排水管渠<strong>21709.80公里</strong>，市政污水泵站<strong>80座</strong>。</p>
     <div class="waterfall">
-      <div class="wf-item tall a-slide"><img src="img/02_1.jpg" alt="雨污混接"><div class="wf-text"><h4>阳台立管雨污混接实景</h4><p>雨水管与污水管混接，雨天污水溢流，旱天河水倒灌。</p></div></div>
-      <div class="wf-item a-scale"><img src="img/02_2.jpg" alt="管线错接"><div class="wf-text"><h4>楼顶管线错接实拍</h4><p>管线错接导致排水系统混乱。</p></div></div>
-      <div class="wf-item a-slide-r"><img src="img/02_status_1.jpg" alt="检查井"><div class="wf-text"><h4>老旧破损检查井实拍</h4><p>检查井老化破损，影响监测和维护。</p></div></div>
-      <div class="wf-item a-slide"><img src="img/06_before.jpg" alt="排水管网"><div class="wf-text"><h4>地下排水管网实景</h4><p>管网埋在地下，隐蔽性强、点多面广。</p></div></div>
-      <div class="wf-item a-scale"><img src="img/06_before.jpg" alt="污水冒溢"><div class="wf-text"><h4>污水冒溢现场</h4><p>雨天污水冒溢，影响居民生活。</p></div></div>
-      <div class="wf-item a-slide-r"><img src="img/06_clean.jpg" alt="道路积水"><div class="wf-text"><h4>道路积水实景</h4><p>排水不畅导致雨天道路积水。</p></div></div>
+      <div class="wf-item a-slide"><img src="img/02_1.jpg" alt="阳台立管错接"><div class="wf-text"><h4>阳台洗衣机污水管错接入雨水立管</h4><p>雨水管与污水管混接，雨天污水溢流，旱天河水倒灌。</p></div></div>
+      <div class="wf-item a-scale"><img src="img/02_3.jpg" alt="楼顶管线乱搭"><div class="wf-text"><h4>居民楼顶雨污管线私拉乱搭</h4><p>楼顶管线杂乱缠绕，雨污合流严重。</p></div></div>
+      <div class="wf-item a-slide-r"><img src="img/02_2.jpg" alt="破损检查井"><div class="wf-text"><h4>老旧小区破损开裂检查井</h4><p>井口开裂破损，影响监测和维护。</p></div></div>
     </div>
     <div class="data-row">
       <div class="data-card a-bounce"><div class="big">23.17<span class="unit">亿m³</span></div><h4>2025年累计处理污水</h4><p><a href="https://www.sz.gov.cn/cn/xxgk/zfxxgj/tzgg/content/post_12728178.html" target="_blank" class="lk">《污水处理费公示》[S3] →</a></p></div>
@@ -302,10 +298,11 @@ p{margin-bottom:14px}
         <div class="pol-item"><div class="year">2026</div><h4>运维责任明确</h4><p>4月1日起执行</p></div>
       </div>
       <div class="pol-content">
-        <div class="pol-text a-slide-r"><h3>城市生命线工程</h3><p>地下管网要加强监测预警。国务院安委办推动城市生命线安全工程，排水管网是核心组成部分。</p><a href="https://www.gov.cn/zhengce/zhengceku/202401/content_6926000.htm" target="_blank" class="lk">《城市生命线安全工程推进方案》→</a></div>
-        <div class="pol-img a-scale"><img src="img/03_gov.jpg" alt="城市排水"></div>
-        <div class="pol-text a-slide-r"><h3>排水防涝与韧性城市</h3><p>风险要提前发现。住建部要求加强城市排水防涝体系建设，提升城市应对极端天气的韧性能力。</p><a href="https://www.mohurd.gov.cn/gongkai/zhengce/zhengcefilelib/202303/20230322_771588.html" target="_blank" class="lk">《城市排水防涝体系建设》→</a></div>
-        <div class="pol-text a-slide-r"><h3>深圳智慧水务</h3><p>一张图、一张网、一平台。深圳市水务局构建水务物联网感知体系，实现管网水位、水质、流量实时监测。</p><a href="https://swj.sz.gov.cn/" target="_blank" class="lk">深圳市水务局官网 →</a></div>
+        <div class="pol-text a-slide-r"><h3>城市生命线工程</h3><p>地下管网要加强监测预警。国务院安委办推动城市生命线安全工程，排水管网是核心组成部分。</p><a href="https://www.gov.cn/zhengce/202412/content_6991173.htm" target="_blank" class="lk">《中共中央办公厅 国务院办公厅关于推进新型城市基础设施建设打造韧性城市的意见》→</a></div>
+        <div class="pol-img a-scale" style="float:right;max-width:400px;margin:0 0 20px 28px;border-radius:14px;overflow:hidden"><img src="img/03_gov.jpg" alt="政府改造现场" style="width:100%;display:block"></div>
+        <div class="pol-text a-slide-r"><h3>排水防涝与韧性城市</h3><p>风险要提前发现。住建部要求加强城市排水防涝体系建设，提升城市应对极端天气的韧性能力。</p><a href="https://www.gov.cn/zhengce/zhengceku/202510/content_7044617.htm" target="_blank" class="lk">《贯彻落实〈关于推进新型城市基础设施建设打造韧性城市的意见〉行动方案（2025—2027年）》→</a></div>
+        <div class="pol-text a-slide-r"><h3>深圳智慧水务</h3><p>一张图、一张网、一平台。深圳市水务局构建水务物联网感知体系，实现管网水位、水质、流量实时监测。</p><a href="https://swj.sz.gov.cn/gkmlpt/content/12/12334/post_12334561.html" target="_blank" class="lk">《深圳市水网建设规划（2025—2035年）》→</a></div>
+        <div class="pol-text a-slide-r"><h3>运维责任明确</h3><p>2026年4月1日起，未申请移交的居住区类建筑小区，其权属（管理）主体应做好本小区排水管渠日常运维。</p><a href="https://www.sz.gov.cn/zfgb/2025/gb1395/content/post_12529992.html" target="_blank" class="lk">《深圳经济特区排水条例（2025修订版）》→</a><a href="https://www.dpxq.gov.cn/isz/tzgg/content/post_12679009.html" target="_blank" class="lk" style="margin-left:6px">大鹏新区落地细则→</a></div>
       </div>
     </div>
   </div>
