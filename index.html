@@ -132,9 +132,9 @@ p{margin-bottom:14px}
 .impl-img img{width:100%;height:100%;object-fit:cover;display:block}
 
 /* === 板块6：项目效益 - 左右对比49%/49%+2%留白 === */
-.compare{display:grid;grid-template-columns:49% 2% 49%;gap:0;align-items:stretch;margin:30px 0;border-radius:20px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow)}
-.compare-side{position:relative}
-.compare-side img{width:100%;display:block;object-fit:cover}
+.compare{display:grid;grid-template-columns:49% 2% 49%;gap:0;align-items:stretch;margin:30px 0;border-radius:20px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow);max-height:420px}
+.compare-side{position:relative;aspect-ratio:1/1;overflow:hidden}
+.compare-side img{width:100%;height:100%;display:block;object-fit:cover}
 .compare-side .label{position:absolute;bottom:16px;left:16px;padding:6px 14px;border-radius:8px;font-size:13px;font-weight:700;color:#fff}
 .compare-side .label.before{background:rgba(239,68,68,.85)}
 .compare-side .label.after{background:rgba(16,185,129,.85)}
