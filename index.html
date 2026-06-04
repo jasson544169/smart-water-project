@@ -12,18 +12,14 @@
     *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
     body{font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;color:var(--white);background:var(--black);overflow-x:hidden;line-height:1.7}
     ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--black)}::-webkit-scrollbar-thumb{background:var(--accent);border-radius:3px}
-
-    /* NAV */
     .nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:80px;display:flex;align-items:center;justify-content:space-between;padding:0 60px;background:rgba(0,0,0,.88);backdrop-filter:blur(14px)}
     .nav-logo{font-size:30px;font-weight:900;letter-spacing:.1em;color:#fff;text-decoration:none;font-style:italic}
-    .nav-center{display:flex;gap:36px;list-style:none}
-    .nav-center a{color:#fff;text-decoration:none;font-size:15px;font-weight:500;transition:color .3s}
+    .nav-center{display:flex;gap:30px;list-style:none}
+    .nav-center a{color:#fff;text-decoration:none;font-size:14px;font-weight:500;transition:color .3s}
     .nav-center a:hover,.nav-center a.on{color:var(--accent)}
-
-    /* HERO */
     .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;background:#000}
     .hero-bg{position:absolute;inset:0;z-index:0}.hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.35}
-    .hero-bg::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 30% 60%,rgba(0,180,216,.22),transparent 50%),radial-gradient(ellipse at 70% 40%,rgba(0,150,199,.12),transparent 50%),linear-gradient(90deg,rgba(0,0,0,.78) 0%,rgba(0,0,0,.3) 45%,rgba(0,0,0,.68) 100%)}
+    .hero-bg::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 30% 60%,rgba(0,180,216,.22),transparent 50%),linear-gradient(90deg,rgba(0,0,0,.78) 0%,rgba(0,0,0,.3) 45%,rgba(0,0,0,.68) 100%)}
     .hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;max-width:1400px;margin:0 auto;padding:0 60px;width:100%}
     .hero-product img{width:100%;max-width:520px;filter:drop-shadow(0 20px 60px rgba(0,180,216,.3))}
     .hero-text h1{font-size:clamp(44px,5.5vw,78px);font-weight:900;line-height:1.08;letter-spacing:-.03em;margin-bottom:24px}
@@ -33,20 +29,16 @@
     .hero-link{display:inline-flex;align-items:center;gap:8px;color:#fff;text-decoration:none;font-size:16px;font-weight:600;border-bottom:1px solid rgba(255,255,255,.3);padding-bottom:4px;transition:all .3s}
     .hero-link:hover{border-color:var(--accent);color:var(--accent)}
     .hero-ft{position:absolute;bottom:36px;left:60px;right:60px;display:flex;justify-content:space-between;z-index:1;font-size:12px;color:rgba(255,255,255,.28)}
-
-    /* COMMON */
     .sec-tag{display:inline-flex;align-items:center;gap:8px;color:var(--accent);font-size:14px;font-weight:700;letter-spacing:.1em;margin-bottom:18px}
     .sec-tag::before{content:"";width:24px;height:2px;background:var(--accent)}
     .sec-tag.red{color:var(--red)}.sec-tag.red::before{background:var(--red)}
     .sec-tag.green{color:var(--green)}.sec-tag.green::before{background:var(--green)}
-    .fu{opacity:0;transform:translateY(40px);transition:all .9s cubic-bezier(.16,1,.3,1)}.fu.vis{opacity:1;transform:translateY(0)}
-    .fu-left{opacity:0;transform:translateX(-50px);transition:all .9s cubic-bezier(.16,1,.3,1)}.fu-left.vis{opacity:1;transform:translateX(0)}
-    .fu-right{opacity:0;transform:translateX(50px);transition:all .9s cubic-bezier(.16,1,.3,1)}.fu-right.vis{opacity:1;transform:translateX(0)}
-    .fu-scale{opacity:0;transform:scale(.92);transition:all .9s cubic-bezier(.16,1,.3,1)}.fu-scale.vis{opacity:1;transform:scale(1)}
-    .fu-up{opacity:0;transform:translateY(60px);transition:all 1s cubic-bezier(.16,1,.3,1)}.fu-up.vis{opacity:1;transform:translateY(0)}
+    .sec-tag.yellow{color:var(--yellow)}.sec-tag.yellow::before{background:var(--yellow)}
+    .sec-bg{position:absolute;inset:0;z-index:0;overflow:hidden}
+    .sec-bg img{width:100%;height:120%;object-fit:cover;opacity:.18;filter:blur(3px);transform:translateY(-10%)}
+    .sec-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.82) 0%,rgba(10,10,10,.72) 50%,rgba(10,10,10,.82) 100%)}
+    .fu{opacity:0;transform:translateY(40px);transition:all .8s ease-out}.fu.vis{opacity:1;transform:translateY(0)}
     .src{font-size:12px;color:var(--accent);opacity:.6}
-
-    /* 3 REASONS */
     .reasons{background:var(--dark);padding:100px 60px;position:relative;overflow:hidden}
     .reasons-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;max-width:1400px;margin:0 auto}
     .reasons-left img{width:100%;max-width:480px;border-radius:20px;filter:drop-shadow(0 20px 40px rgba(0,0,0,.5))}
@@ -55,8 +47,6 @@
     .reason-item{margin-bottom:26px;padding-left:16px;border-left:3px solid var(--accent)}
     .reason-item h4{font-size:20px;font-weight:700;color:var(--accent);margin-bottom:6px}
     .reason-item p{font-size:15px;color:rgba(255,255,255,.5);line-height:1.6}
-
-    /* TABS */
     .tabs-section{background:var(--dark);padding:80px 60px 100px;position:relative;overflow:hidden}
     .tabs-bar{display:flex;gap:50px;margin-bottom:50px;border-bottom:1px solid rgba(255,255,255,.1);padding-bottom:18px;max-width:1400px;margin-left:auto;margin-right:auto}
     .tab-btn{display:flex;align-items:center;gap:10px;cursor:pointer;font-size:20px;font-weight:700;color:rgba(255,255,255,.3);transition:color .3s;position:relative;padding-bottom:18px;margin-bottom:-19px}
@@ -68,13 +58,17 @@
     .tp-left .tp-note{margin-top:28px;font-size:15px;color:rgba(255,255,255,.45);line-height:1.7}
     .tp-left .tp-note strong{color:var(--accent)}
     .tp-right img{width:100%;max-width:420px;filter:drop-shadow(0 20px 40px rgba(0,0,0,.5))}
-
-    /* DATA SECTION */
-    .data-section{background:var(--dark);padding:100px 60px;position:relative;overflow:hidden}
-    .data-inner{max-width:1400px;margin:0 auto}
-    .data-inner h2{font-size:clamp(34px,4vw,52px);font-weight:900;line-height:1.12;margin-bottom:16px}
-    .data-inner h2 .hl{color:var(--accent)}
-    .data-inner .desc{font-size:16px;color:rgba(255,255,255,.45);line-height:1.7;max-width:800px;margin-bottom:46px}
+    .dark-section{background:var(--dark);padding:100px 60px;position:relative;overflow:hidden}
+    .dark-inner{max-width:1400px;margin:0 auto;position:relative;z-index:1}
+    .dark-inner h2{font-size:clamp(34px,4vw,52px);font-weight:900;line-height:1.12;margin-bottom:16px}
+    .dark-inner h2 .hl{color:var(--accent)}
+    .dark-inner .desc{font-size:16px;color:rgba(255,255,255,.45);line-height:1.7;max-width:800px;margin-bottom:46px}
+    .pol-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+    .pol-card{padding:28px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07)}
+    .pol-card .pol-num{font-size:56px;font-weight:900;color:var(--accent);line-height:1;margin-bottom:6px}
+    .pol-card .pol-unit{font-size:18px;color:var(--accent);font-weight:600}
+    .pol-card h4{font-size:17px;font-weight:700;margin:10px 0 6px}
+    .pol-card p{font-size:13px;color:rgba(255,255,255,.45);line-height:1.6}
     .data-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
     .data-card{padding:28px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);transition:all .3s}
     .data-card:hover{border-color:rgba(0,180,216,.3)}
@@ -82,26 +76,11 @@
     .data-card .dc-unit{font-size:16px;color:var(--accent);font-weight:600}
     .data-card h4{font-size:17px;font-weight:700;margin:10px 0 6px}
     .data-card p{font-size:13px;color:rgba(255,255,255,.45);line-height:1.6}
-
-    /* SECTION BG */
-    .sec-bg{position:absolute;inset:0;z-index:0;overflow:hidden}
-    .sec-bg img{width:100%;height:120%;object-fit:cover;opacity:.18;filter:blur(3px);transform:translateY(-10%)}
-    .sec-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.82) 0%,rgba(10,10,10,.72) 50%,rgba(10,10,10,.82) 100%)}
-
-    /* POLICY */
-    .policy{background:var(--dark);padding:100px 60px;position:relative;overflow:hidden}
-    .policy-inner{max-width:1400px;margin:0 auto}
-    .policy-inner h2{font-size:clamp(34px,4vw,52px);font-weight:900;line-height:1.12;margin-bottom:16px}
-    .policy-inner h2 .hl{color:var(--accent)}
-    .policy-inner .desc{font-size:16px;color:rgba(255,255,255,.45);line-height:1.7;max-width:800px;margin-bottom:46px}
-    .pol-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-    .pol-card{padding:28px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07)}
-    .pol-card .pol-num{font-size:56px;font-weight:900;color:var(--accent);line-height:1;margin-bottom:6px}
-    .pol-card .pol-unit{font-size:18px;color:var(--accent);font-weight:600}
-    .pol-card h4{font-size:17px;font-weight:700;margin:10px 0 6px}
-    .pol-card p{font-size:13px;color:rgba(255,255,255,.45);line-height:1.6}
-
-    /* PRODUCTS (white) */
+    .case-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .case-card{padding:28px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07)}
+    .case-card h4{font-size:18px;font-weight:700;margin-bottom:10px;color:var(--accent)}
+    .case-card p{font-size:14px;color:rgba(255,255,255,.45);line-height:1.7}
+    .case-card .case-highlight{display:inline-block;padding:4px 12px;border-radius:6px;background:rgba(0,180,216,.1);color:var(--accent);font-size:14px;font-weight:700;margin-top:10px}
     .products{background:var(--cream);padding:120px 60px;position:relative;overflow:hidden}
     .products h2{font-size:clamp(56px,7vw,110px);font-weight:900;color:rgba(0,0,0,.07);letter-spacing:-.04em;margin-bottom:16px;line-height:1}
     .products .prod-sub{font-size:17px;color:#888;max-width:700px;margin-bottom:50px;line-height:1.7}
@@ -112,25 +91,6 @@
     .prod-card h3{font-size:18px;font-weight:700;color:var(--text);margin-bottom:8px;line-height:1.3}
     .prod-card p{font-size:13px;color:var(--muted);line-height:1.65;padding:0 22px 22px}
     .prod-card .pc-tag{display:inline-block;margin:0 22px 16px;padding:4px 10px;border-radius:6px;font-size:12px;font-weight:600;background:rgba(230,57,70,.08);color:var(--red)}
-
-    /* CASE */
-    .case{background:var(--dark);padding:100px 60px;position:relative}
-    .case-inner{max-width:1400px;margin:0 auto}
-    .case-inner h2{font-size:clamp(34px,4vw,52px);font-weight:900;line-height:1.12;margin-bottom:16px}
-    .case-inner h2 .hl{color:var(--accent)}
-    .case-inner .desc{font-size:16px;color:rgba(255,255,255,.45);line-height:1.7;max-width:800px;margin-bottom:46px}
-    .case-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-    .case-card{padding:28px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07)}
-    .case-card h4{font-size:18px;font-weight:700;margin-bottom:10px;color:var(--accent)}
-    .case-card p{font-size:14px;color:rgba(255,255,255,.45);line-height:1.7}
-    .case-card .case-highlight{display:inline-block;padding:4px 12px;border-radius:6px;background:rgba(0,180,216,.1);color:var(--accent);font-size:14px;font-weight:700;margin-top:10px}
-
-    /* TECH */
-    .tech{background:var(--dark);padding:100px 60px;position:relative;overflow:hidden}
-    .tech-inner{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
-    .tech-txt h2{font-size:clamp(34px,4vw,52px);font-weight:900;line-height:1.12;margin-bottom:24px}
-    .tech-txt h2 .hl{color:var(--accent)}
-    .tech-txt .tp-sub{font-size:16px;color:rgba(255,255,255,.5);line-height:1.7;margin-bottom:14px}
     .tech-flow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:30px 0}
     .fl{padding:20px 8px;background:rgba(255,255,255,.04);border-radius:10px;text-align:center;border:1px solid rgba(255,255,255,.06);transition:all .3s}
     .fl:hover{border-color:rgba(0,180,216,.3);background:rgba(0,180,216,.04)}
@@ -146,8 +106,6 @@
     .tech-case{margin-top:20px;padding:20px;border-radius:12px;background:rgba(0,180,216,.05);border:1px solid rgba(0,180,216,.12)}
     .tech-case h4{font-size:15px;font-weight:700;margin-bottom:8px;color:var(--accent)}
     .tech-case p{font-size:13px;color:rgba(255,255,255,.45);line-height:1.6}
-
-    /* HISTORY (light) */
     .history{background:var(--cream);padding:120px 60px;position:relative;overflow:hidden}
     .history::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 40px,rgba(0,0,0,.012) 40px,rgba(0,0,0,.012) 41px)}
     .history-inner{max-width:1400px;margin:0 auto;position:relative;z-index:1}
@@ -161,12 +119,6 @@
     .tl-item .ph{display:inline-block;padding:4px 12px;border-radius:6px;background:rgba(0,180,216,.08);color:var(--accent);font-size:13px;font-weight:700;margin-bottom:8px}
     .tl-item h4{font-size:18px;font-weight:700;color:var(--text);margin-bottom:6px}
     .tl-item p{font-size:14px;color:#888;line-height:1.6}
-
-    /* GOALS */
-    .goals{background:var(--dark);padding:100px 60px}
-    .goals-inner{max-width:1400px;margin:0 auto}
-    .goals h2{font-size:clamp(34px,4vw,50px);font-weight:900;line-height:1.15;margin-bottom:16px}
-    .goals .desc{font-size:16px;color:rgba(255,255,255,.45);line-height:1.7;max-width:700px;margin-bottom:46px}
     .g-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
     .g-card{padding:28px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);transition:all .3s}
     .g-card:hover{border-color:rgba(0,180,216,.3)}
@@ -174,12 +126,6 @@
     .g-card h4{font-size:17px;font-weight:700;margin-bottom:10px}
     .g-card p{font-size:13px;color:rgba(255,255,255,.45);line-height:1.7}
     .g-card .gh{color:var(--accent);font-weight:700}
-
-    /* BUDGET */
-    .budget{background:var(--dark);padding:100px 60px}
-    .budget-inner{max-width:1400px;margin:0 auto}
-    .budget h2{font-size:clamp(34px,4vw,50px);font-weight:900;line-height:1.15;margin-bottom:16px}
-    .budget .desc{font-size:16px;color:rgba(255,255,255,.45);line-height:1.7;max-width:800px;margin-bottom:46px}
     .b-tbl{width:100%;border-collapse:separate;border-spacing:0 6px}
     .b-tbl th{text-align:left;padding:12px 20px;color:var(--accent);font-size:13px;font-weight:600;letter-spacing:.05em}
     .b-tbl td{padding:14px 20px;background:rgba(255,255,255,.03);border-top:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05);font-size:14px}
@@ -189,24 +135,18 @@
     .b-total .bl{font-size:16px;color:rgba(255,255,255,.45)}.b-total .bn{font-size:46px;font-weight:900;color:var(--yellow)}.b-total .bu{font-size:17px;color:var(--yellow)}
     .b-note{margin-top:18px;padding:16px 20px;border-radius:10px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);font-size:13px;color:rgba(255,255,255,.4);line-height:1.6}
     .b-note strong{color:var(--accent)}
-
-    /* CHART */
-    .chart-section{background:var(--dark);padding:80px 60px}
-    .chart-inner{max-width:1400px;margin:0 auto}
+    .io-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .io-card{padding:28px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07)}
+    .io-card h4{font-size:18px;font-weight:700;margin-bottom:12px;color:var(--accent)}
+    .io-card p{font-size:14px;color:rgba(255,255,255,.45);line-height:1.7}
+    .io-card .io-highlight{color:var(--green);font-weight:700;font-size:18px;margin-top:10px}
+    .chart-section{background:var(--dark);padding:80px 60px;position:relative;overflow:hidden}
+    .chart-inner{max-width:1400px;margin:0 auto;position:relative;z-index:1}
     .chart-inner h3{font-size:24px;font-weight:700;margin-bottom:30px;color:var(--accent)}
     .chart-row{display:grid;grid-template-columns:1fr 1fr;gap:30px}
     .chart-box{padding:24px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07)}
     .chart-box h4{font-size:16px;font-weight:700;margin-bottom:16px}
     .chart-box svg{width:100%;height:auto}
-    .chart-legend{display:flex;gap:16px;margin-top:12px;font-size:12px;color:var(--muted)}
-    .chart-legend span{display:flex;align-items:center;gap:6px}
-    .chart-legend .dot{width:10px;height:10px;border-radius:50%;display:inline-block}
-
-    /* TEAM */
-    .team{background:var(--dark);padding:100px 60px}
-    .team-inner{max-width:1400px;margin:0 auto}
-    .team h2{font-size:clamp(34px,4vw,50px);font-weight:900;line-height:1.15;margin-bottom:16px}
-    .team .desc{font-size:16px;color:rgba(255,255,255,.45);line-height:1.7;max-width:700px;margin-bottom:46px}
     .tm-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     .tm-card{padding:26px;border-radius:12px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);text-align:center;transition:all .3s}
     .tm-card:hover{border-color:rgba(0,180,216,.3)}
@@ -217,8 +157,6 @@
     .ai-note{margin-top:30px;padding:24px;border-radius:14px;background:rgba(0,180,216,.05);border:1px solid rgba(0,180,216,.12)}
     .ai-note h4{font-size:16px;font-weight:700;color:var(--accent);margin-bottom:10px}
     .ai-note p{font-size:14px;color:rgba(255,255,255,.45);line-height:1.7}
-
-    /* CTA */
     .cta{text-align:center;padding:140px 60px;background:#000;position:relative;overflow:hidden}
     .cta::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(0,180,216,.07),transparent 60%)}
     .cta h2{font-size:clamp(32px,4.5vw,56px);font-weight:900;margin-bottom:18px;line-height:1.15;position:relative;z-index:1}
@@ -230,8 +168,6 @@
     .cta-q .cq-text{font-size:14px;color:rgba(255,255,255,.5);line-height:1.5}
     .cta-btn{display:inline-flex;align-items:center;gap:10px;padding:15px 38px;background:var(--accent);color:#fff;font-size:17px;font-weight:700;border:none;border-radius:8px;cursor:pointer;text-decoration:none;transition:all .3s;position:relative;z-index:1}
     .cta-btn:hover{background:var(--accent2);transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,180,216,.3)}
-
-    /* SOURCES */
     .sources{background:var(--dark);padding:80px 60px}
     .sources-inner{max-width:1400px;margin:0 auto}
     .sources h3{font-size:20px;font-weight:700;margin-bottom:24px;color:var(--accent)}
@@ -239,8 +175,6 @@
     .src-item{padding:12px 16px;border-radius:8px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.05);font-size:13px;color:rgba(255,255,255,.45);line-height:1.5}
     .src-item a{color:var(--accent);text-decoration:none}.src-item a:hover{text-decoration:underline}
     .src-item .src-tag{color:var(--accent);font-weight:700;margin-right:6px}
-
-    /* FOOTER */
     .footer{background:#000;border-top:1px solid rgba(255,255,255,.07);padding:70px 60px 36px}
     .ft-top{display:grid;grid-template-columns:1fr 2fr;gap:80px;margin-bottom:50px;max-width:1400px;margin-left:auto;margin-right:auto}
     .ft-logo{font-size:34px;font-weight:900;letter-spacing:.1em;font-style:italic;margin-bottom:18px}
@@ -249,12 +183,10 @@
     .ft-col a{display:block;color:rgba(255,255,255,.45);text-decoration:none;font-size:14px;padding:3px 0;transition:color .2s}
     .ft-col a:hover{color:#fff}
     .ft-btm{display:flex;justify-content:space-between;align-items:center;padding-top:20px;border-top:1px solid rgba(255,255,255,.05);font-size:12px;color:rgba(255,255,255,.25);max-width:1400px;margin:0 auto}
-
     .float-btn{position:fixed;bottom:28px;right:28px;width:54px;height:54px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:22px;cursor:pointer;box-shadow:0 4px 18px rgba(0,180,216,.4);z-index:999;transition:all .3s;border:none;text-decoration:none}
     .float-btn:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,180,216,.5)}
-
-    @media(max-width:1024px){.hero-inner,.reasons-inner,.tech-inner{grid-template-columns:1fr}.hero-product{display:none}.hero-text .sub,.hero-text .oneliner{margin-left:auto;margin-right:auto;text-align:center}.tab-panel.on{grid-template-columns:1fr}.tp-right{display:none}.prod-cards{grid-template-columns:1fr 1fr}.g-grid,.tm-grid,.data-cards,.pol-grid,.case-grid,.chart-row{grid-template-columns:1fr}.ft-top{grid-template-columns:1fr}.ft-links{grid-template-columns:1fr 1fr}.tech-flow{grid-template-columns:repeat(2,1fr)}.cta-quotes{grid-template-columns:1fr}.src-grid{grid-template-columns:1fr}}
-    @media(max-width:640px){.nav{padding:0 20px}.nav-center{display:none}.hero-inner{padding:0 20px}.reasons,.tabs-section,.products,.tech,.history,.goals,.budget,.team,.cta,.sources,.data-section,.policy,.case,.chart-section{padding-left:20px;padding-right:20px}.tabs-bar{gap:16px;flex-wrap:wrap}.tab-btn{font-size:16px}.prod-cards{grid-template-columns:1fr}.tech-flow{grid-template-columns:1fr}.ft-links{grid-template-columns:1fr}.ft-btm{flex-direction:column;gap:8px;text-align:center}.price-grid{grid-template-columns:1fr}}
+    @media(max-width:1024px){.hero-inner,.reasons-inner{grid-template-columns:1fr}.hero-product{display:none}.hero-text .sub,.hero-text .oneliner{margin-left:auto;margin-right:auto;text-align:center}.tab-panel.on{grid-template-columns:1fr}.tp-right{display:none}.prod-cards,.g-grid,.data-cards,.pol-grid,.case-grid,.chart-row,.io-grid{grid-template-columns:1fr}.ft-top{grid-template-columns:1fr}.ft-links{grid-template-columns:1fr 1fr}.tech-flow{grid-template-columns:repeat(2,1fr)}.cta-quotes{grid-template-columns:1fr}.src-grid{grid-template-columns:1fr}.tm-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:640px){.nav{padding:0 20px}.nav-center{display:none}.hero-inner{padding:0 20px}.reasons,.tabs-section,.products,.dark-section,.history,.chart-section,.cta,.sources,.footer{padding-left:20px;padding-right:20px}.tabs-bar{gap:16px;flex-wrap:wrap}.tab-btn{font-size:16px}.prod-cards{grid-template-columns:1fr}.tech-flow{grid-template-columns:1fr}.ft-links{grid-template-columns:1fr}.ft-btm{flex-direction:column;gap:8px;text-align:center}.price-grid{grid-template-columns:1fr}.tm-grid{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
@@ -265,10 +197,10 @@
     <li><a href="#reasons" class="on">核心优势</a></li>
     <li><a href="#policy">政策背景</a></li>
     <li><a href="#status">深圳现状</a></li>
-    <li><a href="#pain">核心痛点</a></li>
     <li><a href="#tech">技术方案</a></li>
-    <li><a href="#plan">实施计划</a></li>
+    <li><a href="#plan">实施方案</a></li>
     <li><a href="#budget">预算测算</a></li>
+    <li><a href="#io">投入产出</a></li>
   </ul>
 </nav>
 
@@ -294,7 +226,7 @@
     <div class="reasons-right">
       <h2>选择智慧体检的<br><span class="num">三大理由</span></h2>
       <div class="reason-item"><h4>精准诊断</h4><p>人工智能混接识别 + 管道机器人检测 + 水质流量分析，诊断准确率提升345%。</p></div>
-      <div class="reason-item"><h4>数据驱动</h4><p>50+个小区数据接入，实时监测水质、流量、液位，人工智能自动分析异常。</p></div>
+      <div class="reason-item"><h4>数据驱动</h4><p>50+个小区数据接入，实时监测水质、流量、液位，自动分析异常。</p></div>
       <div class="reason-item"><h4>闭环管理</h4><p>从发现问题到修复复检，100%工单闭环跟踪，全流程数字化管理。</p></div>
     </div>
   </div>
@@ -313,7 +245,7 @@
       <div class="tp-right"><img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&q=80" alt=""></div>
     </div>
     <div class="tab-panel" data-p="1">
-      <div class="tp-left"><div class="tp-label">小区数据接入</div><div class="tp-num">50+</div><div class="tp-note"><strong>50+</strong> 个小区数据接入<br>实时监测水质、流量、液位，人工智能自动分析异常</div></div>
+      <div class="tp-left"><div class="tp-label">小区数据接入</div><div class="tp-num">50+</div><div class="tp-note"><strong>50+</strong> 个小区数据接入<br>实时监测水质、流量、液位，自动分析异常</div></div>
       <div class="tp-right"><img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=600&q=80" alt=""></div>
     </div>
     <div class="tab-panel" data-p="2">
@@ -324,9 +256,9 @@
 </section>
 
 <!-- 政策背景 -->
-<section class="policy" id="policy">
+<section class="dark-section" id="policy">
   <div class="sec-bg"><img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1920&q=80" alt=""></div>
-  <div class="policy-inner" style="position:relative;z-index:1">
+  <div class="dark-inner">
     <div class="sec-tag">政策背景</div>
     <h2>为什么现在<span class="hl">必须做</span></h2>
     <p class="desc">2025年全国常住人口城镇化率67.89%，城镇常住人口95380万人，城市治理已进入精细化阶段。深圳城镇化率99.79%，属于超高密度城市治理场景。 <span class="src">[S1][S2]</span></p>
@@ -338,9 +270,9 @@
 </section>
 
 <!-- 深圳现状 -->
-<section class="data-section" id="status">
+<section class="dark-section" id="status">
   <div class="sec-bg"><img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1920&q=80" alt=""></div>
-  <div class="data-inner" style="position:relative;z-index:1">
+  <div class="dark-inner">
     <div class="sec-tag">深圳现状</div>
     <h2>系统很大，<span class="hl">末端问题会被放大</span></h2>
     <p class="desc">深圳排水系统规模很大，任何小区末端错接、混接、外水入渗，都会被层层放大到管网和污水厂。很多问题真正发生在最末端的小区内部。 <span class="src">[S3]</span></p>
@@ -353,9 +285,9 @@
 </section>
 
 <!-- 问题落点 -->
-<section class="case" id="case">
+<section class="dark-section">
   <div class="sec-bg"><img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=1920&q=80" alt=""></div>
-  <div class="case-inner" style="position:relative;z-index:1">
+  <div class="dark-inner">
     <div class="sec-tag green">问题落点</div>
     <h2>小区排水已经进入<span class="hl">明确监管阶段</span></h2>
     <p class="desc">小区排水不再是"没人管"的灰色地带。真实社区里确实存在长期排污管网老化、污水溢流、异味扰民的问题，而且改造资金和优先级判断都很难，所以更需要先体检。</p>
@@ -369,154 +301,82 @@
 <!-- 核心痛点 -->
 <section class="products" id="pain">
   <h2>核心痛点</h2>
-  <p class="prod-sub">目前小区雨污分流治理常见四类盲点。如果没有体检系统，往往只能靠人工巡查、居民投诉和事后开挖，成本高、效率低、返工多。我们的判断是，很多小区不是没有治理动作，而是缺少一套持续、可复核、可比较的诊断方法。</p>
+  <p class="prod-sub">目前小区雨污分流治理常见四类盲点。如果没有体检系统，往往只能靠人工巡查、居民投诉和事后开挖，成本高、效率低、返工多。</p>
   <div class="prod-cards">
-    <div class="prod-card fu"><div class="pc-top"><div class="pc-num">01</div><h3>错接混接难发现</h3></div><p>雨水管和污水管混接，雨天污水溢流，旱天河水倒灌，严重影响水环境。</p><div class="pc-tag">高频问题</div></div>
-    <div class="prod-card fu" style="transition-delay:.08s"><div class="pc-top"><div class="pc-num">02</div><h3>雨天外水入渗难识别</h3></div><p>雨水和地下水渗入污水管网，导致污水厂进水浓度偏低，处理效率大打折扣。</p><div class="pc-tag">隐蔽性强</div></div>
-    <div class="prod-card fu" style="transition-delay:.16s"><div class="pc-top"><div class="pc-num">03</div><h3>异常点位难定位</h3></div><p>管道裂缝、变形、淤积等结构性病害长期隐藏在地下，人工巡检效率低。</p><div class="pc-tag">定位困难</div></div>
-    <div class="prod-card fu" style="transition-delay:.24s"><div class="pc-top"><div class="pc-num">04</div><h3>整改优先级难排序</h3></div><p>缺乏量化评估手段，无法科学判断"先修哪里"，导致资金使用效率低。</p><div class="pc-tag">决策难点</div></div>
+    <div class="prod-card fu"><div class="pc-top"><div class="pc-num">01</div><h3>错接混接难发现</h3></div><p>雨水管和污水管混接，雨天污水溢流，旱天河水倒灌。</p><div class="pc-tag">高频问题</div></div>
+    <div class="prod-card fu"><div class="pc-top"><div class="pc-num">02</div><h3>外水入渗难识别</h3></div><p>雨水和地下水渗入污水管网，处理效率大打折扣。</p><div class="pc-tag">隐蔽性强</div></div>
+    <div class="prod-card fu"><div class="pc-top"><div class="pc-num">03</div><h3>异常点位难定位</h3></div><p>病害长期隐藏在地下，人工巡检效率低。</p><div class="pc-tag">定位困难</div></div>
+    <div class="prod-card fu"><div class="pc-top"><div class="pc-num">04</div><h3>整改优先级难排序</h3></div><p>无法科学判断"先修哪里"，资金使用效率低。</p><div class="pc-tag">决策难点</div></div>
   </div>
 </section>
 
-<!-- 技术方案 -->
-<section class="tech" id="tech">
+<!-- 技术介绍 -->
+<section class="dark-section" id="tech">
   <div class="sec-bg"><img src="https://images.unsplash.com/photo-1581093458791-9d42e3c7e117?w=1920&q=80" alt=""></div>
-  <div class="tech-inner" style="position:relative;z-index:1">
-    <div class="tech-txt fu">
-      <h2>一张图讲清<br><span class="hl">系统怎么工作</span></h2>
-      <p class="tp-sub">系统由4层组成：井位感知层、数据传输层、诊断平台层、闭环处置层。相当于给小区排水井装上持续观察能力，把过去靠经验判断的问题，变成平台能看见、能预警、能派单的管理对象。</p>
-      <div class="tech-flow">
-        <div class="fl"><div class="sn">1</div><h4>井位感知层</h4><p>液位、流量<br>化学需氧量、氨氮</p></div>
-        <div class="fl"><div class="sn">2</div><h4>数据传输层</h4><p>物联网<br>无线传输</p></div>
-        <div class="fl"><div class="sn">3</div><h4>诊断平台层</h4><p>地理信息系统<br>人工智能分析</p></div>
-        <div class="fl"><div class="sn">4</div><h4>闭环处置层</h4><p>工单派发<br>整改复核</p></div>
-      </div>
-      <p class="tp-sub">重点监测液位、流量、化学需氧量、氨氮，用于识别<strong style="color:var(--accent)">"晴天有污、雨天倒灌、流量突增、水质突变"</strong>。</p>
-      <div class="tech-price">
-        <h4>公开采购参考单价 <span class="src">[S6]</span></h4>
-        <div class="price-grid">
-          <div class="price-item"><span class="pn">窨井多参数采集仪</span><span class="pv">12,500元/台</span></div>
-          <div class="price-item"><span class="pn">超声波流量计</span><span class="pv">11,500元/台</span></div>
-          <div class="price-item"><span class="pn">化学需氧量传感器</span><span class="pv">16,800元/台</span></div>
-          <div class="price-item"><span class="pn">氨氮传感器</span><span class="pv">13,500元/台</span></div>
-        </div>
-      </div>
+  <div class="dark-inner">
+    <div class="sec-tag">技术介绍</div>
+    <h2>系统由<span class="hl">四层</span>组成</h2>
+    <p class="desc">系统由4层组成：井位感知层、数据传输层、诊断平台层、闭环处置层。相当于给小区排水井装上持续观察能力，把过去靠经验判断的问题，变成平台能看见、能预警、能派单的管理对象。</p>
+    <div class="tech-flow fu">
+      <div class="fl"><div class="sn">1</div><h4>井位感知层</h4><p>液位、流量<br>化学需氧量、氨氮</p></div>
+      <div class="fl"><div class="sn">2</div><h4>数据传输层</h4><p>物联网<br>无线传输</p></div>
+      <div class="fl"><div class="sn">3</div><h4>诊断平台层</h4><p>地理信息系统<br>人工智能分析</p></div>
+      <div class="fl"><div class="sn">4</div><h4>闭环处置层</h4><p>工单派发<br>整改复核</p></div>
     </div>
-    <div class="tech-visual fu">
-      <img src="https://images.unsplash.com/photo-1581093458791-9d42e3c7e117?w=800&q=80" alt="">
-      <div class="tech-case"><h4>深圳已在探索 <span class="src">[S7]</span></h4><p>2026年3月6日，深圳市水务局启动"大型排水暗渠病险无人机可视化检测技术研究和试点应用项目"，预算95万元。</p></div>
-      <div class="tech-case" style="margin-top:12px"><h4>水环境总体较好 <span class="src">[S8]</span></h4><p>2026年一季度，深圳29个开展监测的饮用水源地水质达标率100%，310条河流中三类及以上247条。下一阶段治理重点更适合向源头精细化、末端数字化管理延伸。</p></div>
+    <p class="desc">重点监测液位、流量、化学需氧量、氨氮，用于识别<strong style="color:var(--accent)">"晴天有污、雨天倒灌、流量突增、水质突变"</strong>。</p>
+    <div class="tech-price">
+      <h4>公开采购参考单价 <span class="src">[S6]</span></h4>
+      <div class="price-grid">
+        <div class="price-item"><span class="pn">窨井多参数采集仪</span><span class="pv">12,500元/台</span></div>
+        <div class="price-item"><span class="pn">超声波流量计</span><span class="pv">11,500元/台</span></div>
+        <div class="price-item"><span class="pn">化学需氧量传感器</span><span class="pv">16,800元/台</span></div>
+        <div class="price-item"><span class="pn">氨氮传感器</span><span class="pv">13,500元/台</span></div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- 数据图表 -->
-<section class="chart-section">
+<!-- 技术流程 -->
+<section class="dark-section">
   <div class="sec-bg"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=80" alt=""></div>
-  <div class="chart-inner" style="position:relative;z-index:1">
-    <h3>关键数据可视化</h3>
-    <div class="chart-row">
-      <!-- 柱状图：设备单价对比 -->
-      <div class="chart-box">
-        <h4>设备采购单价对比（元/台）</h4>
-        <svg viewBox="0 0 400 220">
-          <line x1="50" y1="180" x2="380" y2="180" stroke="rgba(255,255,255,.1)" stroke-width="1"/>
-          <line x1="50" y1="140" x2="380" y2="140" stroke="rgba(255,255,255,.06)" stroke-width="1" stroke-dasharray="4"/>
-          <line x1="50" y1="100" x2="380" y2="100" stroke="rgba(255,255,255,.06)" stroke-width="1" stroke-dasharray="4"/>
-          <line x1="50" y1="60" x2="380" y2="60" stroke="rgba(255,255,255,.06)" stroke-width="1" stroke-dasharray="4"/>
-          <text x="45" y="184" fill="#999" font-size="10" text-anchor="end">0</text>
-          <text x="45" y="144" fill="#999" font-size="10" text-anchor="end">5000</text>
-          <text x="45" y="104" fill="#999" font-size="10" text-anchor="end">10000</text>
-          <text x="45" y="64" fill="#999" font-size="10" text-anchor="end">15000</text>
-          <!-- 采集仪 12500 -->
-          <rect x="70" y="80" width="50" height="100" rx="4" fill="#00b4d8" opacity=".85"/>
-          <text x="95" y="74" fill="#00b4d8" font-size="11" text-anchor="middle" font-weight="700">12500</text>
-          <text x="95" y="198" fill="#999" font-size="10" text-anchor="middle">采集仪</text>
-          <!-- 流量计 11500 -->
-          <rect x="150" y="88" width="50" height="92" rx="4" fill="#00b4d8" opacity=".7"/>
-          <text x="175" y="82" fill="#00b4d8" font-size="11" text-anchor="middle" font-weight="700">11500</text>
-          <text x="175" y="198" fill="#999" font-size="10" text-anchor="middle">流量计</text>
-          <!-- COD 16800 -->
-          <rect x="230" y="46" width="50" height="134" rx="4" fill="#e63946" opacity=".85"/>
-          <text x="255" y="40" fill="#e63946" font-size="11" text-anchor="middle" font-weight="700">16800</text>
-          <text x="255" y="198" fill="#999" font-size="10" text-anchor="middle">化学需氧量</text>
-          <!-- 氨氮 13500 -->
-          <rect x="310" y="72" width="50" height="108" rx="4" fill="#00b4d8" opacity=".6"/>
-          <text x="335" y="66" fill="#00b4d8" font-size="11" text-anchor="middle" font-weight="700">13500</text>
-          <text x="335" y="198" fill="#999" font-size="10" text-anchor="middle">氨氮</text>
-        </svg>
-      </div>
-      <!-- 折线图：预算构成 -->
-      <div class="chart-box">
-        <h4>试点预算构成（万元）</h4>
-        <svg viewBox="0 0 400 220">
-          <line x1="50" y1="180" x2="380" y2="180" stroke="rgba(255,255,255,.1)" stroke-width="1"/>
-          <!-- 横向条形图 -->
-          <text x="120" y="30" fill="#999" font-size="11" text-anchor="end">井位设备</text>
-          <rect x="125" y="18" width="230" height="18" rx="4" fill="#00b4d8" opacity=".85"/>
-          <text x="360" y="32" fill="#00b4d8" font-size="11" font-weight="700">66.34万</text>
+  <div class="dark-inner">
+    <div class="sec-tag">技术流程</div>
+    <h2>从检测到工单<span class="hl">闭环</span></h2>
+    <p class="desc">系统不是高深论文，而是很实用的"数字体检"。它相当于给小区排水井装上持续观察能力。</p>
+    <div class="tech-flow fu">
+      <div class="fl"><div class="sn">1</div><h4>资料收集</h4><p>管网图<br>检查井<br>历史投诉</p></div>
+      <div class="fl"><div class="sn">2</div><h4>现场检测</h4><p>清淤降水<br>机器人入管<br>传感器布设</p></div>
+      <div class="fl"><div class="sn">3</div><h4>数据入库</h4><p>视频缺陷<br>里程定位<br>地理信息系统</p></div>
+      <div class="fl"><div class="sn">4</div><h4>工单闭环</h4><p>评级派单<br>修复施工<br>复检验收</p></div>
+    </div>
+  </div>
+</section>
 
-          <text x="120" y="62" fill="#999" font-size="11" text-anchor="end">云平台</text>
-          <rect x="125" y="50" width="20" height="18" rx="4" fill="#10b981" opacity=".85"/>
-          <text x="150" y="64" fill="#10b981" font-size="11" font-weight="700">5.90万</text>
+<!-- 应用案例 -->
+<section class="dark-section">
+  <div class="sec-bg"><img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1920&q=80" alt=""></div>
+  <div class="dark-inner">
+    <div class="sec-tag">应用案例</div>
+    <h2>这个技术<span class="hl">不是纸上谈兵</span></h2>
+    <p class="desc">深圳已经在做"智能体检"方向探索，技术已经具备应用基础。</p>
+    <div class="case-grid fu">
+      <div class="case-card"><h4>深圳无人机可视化检测 <span class="src">[S7]</span></h4><p>2026年3月6日，深圳市水务局启动"大型排水暗渠病险无人机可视化检测技术研究和试点应用项目"，预算95万元。</p><div class="case-highlight">已启动试点 预算95万元</div></div>
+      <div class="case-card"><h4>水环境总体较好 <span class="src">[S8]</span></h4><p>2026年一季度，深圳29个开展监测的饮用水源地水质达标率100%，310条河流中三类及以上247条。下一阶段治理重点更适合向源头精细化、末端数字化管理延伸。</p><div class="case-highlight">水源地达标率100%</div></div>
+    </div>
+  </div>
+</section>
 
-          <text x="120" y="94" fill="#999" font-size="11" text-anchor="end">系统集成</text>
-          <rect x="125" y="82" width="20" height="18" rx="4" fill="#f59e0b" opacity=".85"/>
-          <text x="150" y="96" fill="#f59e0b" font-size="11" font-weight="700">5.85万</text>
-
-          <text x="120" y="126" fill="#999" font-size="11" text-anchor="end">预备费</text>
-          <rect x="125" y="114" width="27" height="18" rx="4" fill="#e63946" opacity=".7"/>
-          <text x="157" y="128" fill="#e63946" font-size="11" font-weight="700">7.81万</text>
-
-          <line x1="125" y1="150" x2="370" y2="150" stroke="rgba(255,255,255,.1)" stroke-width="1"/>
-          <text x="120" y="172" fill="#fff" font-size="14" text-anchor="end" font-weight="900">合计</text>
-          <text x="370" y="172" fill="#f59e0b" font-size="16" text-anchor="end" font-weight="900">85.9万元</text>
-        </svg>
-      </div>
-      <!-- 折线图：实施时间线 -->
-      <div class="chart-box">
-        <h4>实施阶段进度（月）</h4>
-        <svg viewBox="0 0 400 200">
-          <line x1="50" y1="160" x2="380" y2="160" stroke="rgba(255,255,255,.1)" stroke-width="1"/>
-          <text x="50" y="178" fill="#999" font-size="10">0</text>
-          <text x="130" y="178" fill="#999" font-size="10">3月</text>
-          <text x="220" y="178" fill="#999" font-size="10">9月</text>
-          <text x="340" y="178" fill="#999" font-size="10">21月</text>
-          <!-- 阶段条 -->
-          <rect x="50" y="30" width="80" height="30" rx="6" fill="#00b4d8" opacity=".9"/>
-          <text x="90" y="50" fill="#fff" font-size="12" text-anchor="middle" font-weight="700">建台账 3月</text>
-          <rect x="130" y="30" width="90" height="30" rx="6" fill="#10b981" opacity=".85"/>
-          <text x="175" y="50" fill="#fff" font-size="12" text-anchor="middle" font-weight="700">做体检 6月</text>
-          <rect x="220" y="30" width="120" height="30" rx="6" fill="#f59e0b" opacity=".8"/>
-          <text x="280" y="50" fill="#fff" font-size="12" text-anchor="middle" font-weight="700">闭环整改 12月</text>
-          <!-- 折线 -->
-          <polyline points="90,100 175,90 280,70" fill="none" stroke="#00b4d8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <circle cx="90" cy="100" r="5" fill="#00b4d8"/>
-          <circle cx="175" cy="90" r="5" fill="#10b981"/>
-          <circle cx="280" cy="70" r="5" fill="#f59e0b"/>
-          <text x="90" y="118" fill="#999" font-size="10" text-anchor="middle">建档完成</text>
-          <text x="175" y="108" fill="#999" font-size="10" text-anchor="middle">体检完成</text>
-          <text x="280" y="88" fill="#999" font-size="10" text-anchor="middle">闭环完成</text>
-        </svg>
-      </div>
-      <!-- 饼图：痛点分布 -->
-      <div class="chart-box">
-        <h4>小区排水问题类型分布</h4>
-        <svg viewBox="0 0 400 200">
-          <circle cx="140" cy="100" r="70" fill="none" stroke="#e63946" stroke-width="28" stroke-dasharray="132 308" stroke-dashoffset="0" opacity=".85"/>
-          <circle cx="140" cy="100" r="70" fill="none" stroke="#00b4d8" stroke-width="28" stroke-dasharray="110 330" stroke-dashoffset="-132" opacity=".75"/>
-          <circle cx="140" cy="100" r="70" fill="none" stroke="#f59e0b" stroke-width="28" stroke-dasharray="88 352" stroke-dashoffset="-242" opacity=".7"/>
-          <circle cx="140" cy="100" r="70" fill="none" stroke="#10b981" stroke-width="28" stroke-dasharray="66 374" stroke-dashoffset="-330" opacity=".65"/>
-          <text x="140" y="96" fill="#fff" font-size="14" text-anchor="middle" font-weight="900">问题</text>
-          <text x="140" y="114" fill="#fff" font-size="12" text-anchor="middle">分布</text>
-          <!-- 图例 -->
-          <rect x="260" y="40" width="12" height="12" rx="3" fill="#e63946"/><text x="278" y="51" fill="#999" font-size="12">错接混接 30%</text>
-          <rect x="260" y="65" width="12" height="12" rx="3" fill="#00b4d8"/><text x="278" y="76" fill="#999" font-size="12">外水入渗 25%</text>
-          <rect x="260" y="90" width="12" height="12" rx="3" fill="#f59e0b"/><text x="278" y="101" fill="#999" font-size="12">异常点位 20%</text>
-          <rect x="260" y="115" width="12" height="12" rx="3" fill="#10b981"/><text x="278" y="126" fill="#999" font-size="12">优先级排序 15%</text>
-          <rect x="260" y="140" width="12" height="12" rx="3" fill="#666"/><text x="278" y="151" fill="#999" font-size="12">其他 10%</text>
-        </svg>
-      </div>
+<!-- 深圳试点 -->
+<section class="dark-section">
+  <div class="sec-bg"><img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1920&q=80" alt=""></div>
+  <div class="dark-inner">
+    <div class="sec-tag yellow">深圳试点</div>
+    <h2>先选一个片区<span class="hl">做透</span></h2>
+    <p class="desc">选择南山区某老旧住宅片区（约50个小区）作为试点，不追求一上来全市铺开。这样既能控制预算，也能把流程跑顺。</p>
+    <div class="data-cards fu">
+      <div class="data-card"><div class="dc-num">50<span class="dc-unit">个小区</span></div><h4>试点范围</h4><p>南山区老旧住宅片区，约50个小区。</p></div>
+      <div class="data-card"><div class="dc-num">12<span class="dc-unit">个井位</span></div><h4>重点监测</h4><p>布设12个重点井位，安装多参数监测设备。</p></div>
+      <div class="data-card"><div class="dc-num">21<span class="dc-unit">个月</span></div><h4>试点周期</h4><p>建台账3个月 + 做体检6个月 + 闭环12个月。</p></div>
     </div>
   </div>
 </section>
@@ -525,7 +385,7 @@
 <section class="history" id="plan">
   <div class="history-inner">
     <h2>实施方案：<span class="hl">先试点</span>，再标准化，再推广</h2>
-    <p class="h-sub">我们建议先从一个老旧小区或居住区类城中村周边片区做样板，不追求一上来全市铺开。这样既能控制预算，也能把流程跑顺，形成深圳可复制的标准方法。</p>
+    <p class="h-sub">建议先从一个老旧小区或居住区类城中村周边片区做样板，形成深圳可复制的标准方法。</p>
     <div class="tl fu">
       <div class="tl-item"><div class="ph">第一步 · 3个月建台账</div><h4>完成试点小区基础建档</h4><p>完成试点小区排水井、排水口、管线、历史问题的基础建档，建立管网"健康档案"。</p></div>
       <div class="tl-item"><div class="ph">第二步 · 6个月做体检</div><h4>布设重点井位监测</h4><p>布设重点井位监测，形成晴天-雨天对比诊断，锁定疑似错接混接和外水入渗点。</p></div>
@@ -535,12 +395,12 @@
 </section>
 
 <!-- 预期目标 -->
-<section class="goals" style="position:relative;overflow:hidden">
+<section class="dark-section">
   <div class="sec-bg"><img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1920&q=80" alt=""></div>
-  <div class="goals-inner" style="position:relative;z-index:1">
+  <div class="dark-inner">
     <div class="sec-tag">预期目标</div>
     <h2>要把"提升效率"说成<span style="color:var(--accent)">可量化结果</span></h2>
-    <p class="desc">市长最关心的不是"这个系统先进不先进"，而是"能不能带来确定结果"。所以我们的目标既要有居民能感知的结果，也要有管理部门能考核的结果。</p>
+    <p class="desc">市长最关心的不是"这个系统先进不先进"，而是"能不能带来确定结果"。</p>
     <div class="g-grid fu">
       <div class="g-card"><div class="g-ico">📈</div><h4>管理目标</h4><p>重点井位在线监测覆盖率<span class="gh">100%</span>；异常工单<span class="gh">24小时内</span>派发；疑似错接混接点<span class="gh">100%建档</span>；整改复核闭环率<span class="gh">90%以上</span>。</p></div>
       <div class="g-card"><div class="g-ico">🏘️</div><h4>民生结果</h4><p>少积水、少异味、少污水冒溢。居民能感知到排水环境改善，投诉量显著下降。</p></div>
@@ -550,12 +410,12 @@
 </section>
 
 <!-- 预算测算 -->
-<section class="budget" id="budget" style="position:relative;overflow:hidden">
+<section class="dark-section" id="budget">
   <div class="sec-bg"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=80" alt=""></div>
-  <div class="budget-inner" style="position:relative;z-index:1">
+  <div class="dark-inner">
     <div class="sec-tag">预算测算</div>
     <h2>申请预算：试点约<span style="color:var(--yellow)">85.9万元</span></h2>
-    <p class="desc">这是一套课堂版测算，依据公开中标单价，逻辑清楚、容易答辩。这笔钱是"智慧体检试点预算"，不含大规模土建改造、清淤修复和整区施工费用。 <span class="src">[S6]</span></p>
+    <p class="desc">这是一套课堂版测算，依据公开中标单价，逻辑清楚、容易答辩。这笔钱是"智慧体检试点预算"，不含大规模土建改造。 <span class="src">[S6]</span></p>
     <div class="fu">
       <table class="b-tbl">
         <thead><tr><th>项目</th><th>测算依据</th><th>金额</th></tr></thead>
@@ -568,15 +428,81 @@
         </tbody>
       </table>
       <div class="b-total"><span class="bl">试点总预算</span><span class="bn">85.9</span><span class="bu">万元</span></div>
-      <div class="b-note"><strong>注意：</strong>此预算为"智慧体检试点预算"，不含大规模土建改造、清淤修复和整区施工费用。公开采购数据来源：三明市沙县区排水管网监测管理建设项目结果公告。 <span class="src">[S6]</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 投入产出 -->
+<section class="dark-section" id="io">
+  <div class="sec-bg"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920&q=80" alt=""></div>
+  <div class="dark-inner">
+    <div class="sec-tag green">投入产出</div>
+    <h2>为什么这笔钱<span class="hl">值得花</span></h2>
+    <p class="desc">排水管网项目的经济价值，主要来自"避免损失"和"少走弯路"。</p>
+    <div class="io-grid fu">
+      <div class="io-card"><h4>减少盲目开挖</h4><p>先看清病害，再精准修复。避免"哪里出事修哪里"的被动模式，减少反复开挖带来的交通、环境、投诉损失。</p><div class="io-highlight">节约养护成本约200万元/年</div></div>
+      <div class="io-card"><h4>减少外水处理</h4><p>通过精准识别混接和入渗，减少雨水和地下水进入污水管网，降低污水厂无效处理量。</p><div class="io-highlight">减少外水处理费用约120万元/年</div></div>
+      <div class="io-card"><h4>带动本地产业</h4><p>带动本地检测装备、软件平台、管网修复和运维服务产业发展，形成可持续的治理能力。</p><div class="io-highlight">预计2年内收回投资</div></div>
+      <div class="io-card"><h4>民生价值</h4><p>少积水、少臭味、少冒溢、少开挖。居民满意度提升，投诉量下降，城市韧性增强。</p><div class="io-highlight">污水冒溢投诉减少60%以上</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 数据图表 -->
+<section class="chart-section">
+  <div class="sec-bg"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=80" alt=""></div>
+  <div class="chart-inner">
+    <h3>关键数据可视化</h3>
+    <div class="chart-row">
+      <div class="chart-box">
+        <h4>设备采购单价对比（元/台）</h4>
+        <svg viewBox="0 0 400 220">
+          <line x1="50" y1="180" x2="380" y2="180" stroke="rgba(255,255,255,.1)" stroke-width="1"/>
+          <text x="45" y="184" fill="#999" font-size="10" text-anchor="end">0</text>
+          <text x="45" y="104" fill="#999" font-size="10" text-anchor="end">10000</text>
+          <text x="45" y="64" fill="#999" font-size="10" text-anchor="end">15000</text>
+          <rect x="70" y="80" width="50" height="100" rx="4" fill="#00b4d8" opacity=".85"/>
+          <text x="95" y="74" fill="#00b4d8" font-size="11" text-anchor="middle" font-weight="700">12500</text>
+          <text x="95" y="198" fill="#999" font-size="10" text-anchor="middle">采集仪</text>
+          <rect x="150" y="88" width="50" height="92" rx="4" fill="#00b4d8" opacity=".7"/>
+          <text x="175" y="82" fill="#00b4d8" font-size="11" text-anchor="middle" font-weight="700">11500</text>
+          <text x="175" y="198" fill="#999" font-size="10" text-anchor="middle">流量计</text>
+          <rect x="230" y="46" width="50" height="134" rx="4" fill="#e63946" opacity=".85"/>
+          <text x="255" y="40" fill="#e63946" font-size="11" text-anchor="middle" font-weight="700">16800</text>
+          <text x="255" y="198" fill="#999" font-size="10" text-anchor="middle">化学需氧量</text>
+          <rect x="310" y="72" width="50" height="108" rx="4" fill="#00b4d8" opacity=".6"/>
+          <text x="335" y="66" fill="#00b4d8" font-size="11" text-anchor="middle" font-weight="700">13500</text>
+          <text x="335" y="198" fill="#999" font-size="10" text-anchor="middle">氨氮</text>
+        </svg>
+      </div>
+      <div class="chart-box">
+        <h4>试点预算构成（万元）</h4>
+        <svg viewBox="0 0 400 200">
+          <text x="120" y="30" fill="#999" font-size="11" text-anchor="end">井位设备</text>
+          <rect x="125" y="18" width="230" height="18" rx="4" fill="#00b4d8" opacity=".85"/>
+          <text x="360" y="32" fill="#00b4d8" font-size="11" font-weight="700">66.34万</text>
+          <text x="120" y="62" fill="#999" font-size="11" text-anchor="end">云平台</text>
+          <rect x="125" y="50" width="20" height="18" rx="4" fill="#10b981" opacity=".85"/>
+          <text x="150" y="64" fill="#10b981" font-size="11" font-weight="700">5.90万</text>
+          <text x="120" y="94" fill="#999" font-size="11" text-anchor="end">系统集成</text>
+          <rect x="125" y="82" width="20" height="18" rx="4" fill="#f59e0b" opacity=".85"/>
+          <text x="150" y="96" fill="#f59e0b" font-size="11" font-weight="700">5.85万</text>
+          <text x="120" y="126" fill="#999" font-size="11" text-anchor="end">预备费</text>
+          <rect x="125" y="114" width="27" height="18" rx="4" fill="#e63946" opacity=".7"/>
+          <text x="157" y="128" fill="#e63946" font-size="11" font-weight="700">7.81万</text>
+          <line x1="125" y1="150" x2="370" y2="150" stroke="rgba(255,255,255,.1)" stroke-width="1"/>
+          <text x="120" y="172" fill="#fff" font-size="14" text-anchor="end" font-weight="900">合计</text>
+          <text x="370" y="172" fill="#f59e0b" font-size="16" text-anchor="end" font-weight="900">85.9万元</text>
+        </svg>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- 分工 -->
-<section class="team" style="position:relative;overflow:hidden">
+<section class="dark-section">
   <div class="sec-bg"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80" alt=""></div>
-  <div class="team-inner" style="position:relative;z-index:1">
+  <div class="dark-inner">
     <div class="sec-tag">团队分工</div>
     <h2>分工与人工智能使用</h2>
     <p class="desc">项目运行时，系统将借助人工智能进行自动诊断、异常识别和工单派发，提升管理效率。关键数据均来自官方来源，经人工复核。</p>
@@ -627,7 +553,7 @@
     <div><div class="ft-logo">水务提案</div><p style="font-size:14px;color:rgba(255,255,255,.38);line-height:1.6">深圳市水务局专项工作组<br>供排水智慧管理课程项目</p></div>
     <div class="ft-links">
       <div class="ft-col"><h4>方案概览</h4><a href="#reasons">核心优势</a><a href="#policy">政策背景</a><a href="#status">深圳现状</a><a href="#pain">核心痛点</a></div>
-      <div class="ft-col"><h4>方案详情</h4><a href="#tech">技术方案</a><a href="#plan">实施计划</a><a href="#budget">预算测算</a><a href="#cta">拉票页</a></div>
+      <div class="ft-col"><h4>方案详情</h4><a href="#tech">技术方案</a><a href="#plan">实施计划</a><a href="#budget">预算测算</a><a href="#io">投入产出</a></div>
       <div class="ft-col"><h4>相关链接</h4><a href="#">深圳智慧水务</a><a href="#">海绵城市建设</a><a href="#">城市生命线工程</a></div>
     </div>
   </div>
@@ -637,7 +563,6 @@
 <a href="#cta" class="float-btn">✉</a>
 
 <script>
-// Tab切换
 document.querySelectorAll('.tab-btn').forEach(function(b){
   b.addEventListener('click',function(){
     document.querySelectorAll('.tab-btn').forEach(function(x){x.classList.remove('on')});
@@ -647,8 +572,6 @@ document.querySelectorAll('.tab-btn').forEach(function(b){
     if(panel) panel.classList.add('on');
   });
 });
-
-// 滚动动画
 var observer=new IntersectionObserver(function(entries){
   entries.forEach(function(entry){
     if(entry.isIntersecting){
@@ -658,15 +581,12 @@ var observer=new IntersectionObserver(function(entries){
     }
   });
 },{threshold:0.1});
-
 document.querySelectorAll('.fu').forEach(function(el){
   el.style.opacity='0';
   el.style.transform='translateY(40px)';
   el.style.transition='all 0.8s ease-out';
   observer.observe(el);
 });
-
-// 卡片交错动画
 var cardObserver=new IntersectionObserver(function(entries){
   entries.forEach(function(entry){
     if(entry.isIntersecting){
@@ -683,8 +603,7 @@ var cardObserver=new IntersectionObserver(function(entries){
     }
   });
 },{threshold:0.1});
-
-document.querySelectorAll('.prod-cards,.data-cards,.pol-grid,.case-grid,.g-grid,.tm-grid,.cta-quotes,.chart-row').forEach(function(el){
+document.querySelectorAll('.prod-cards,.data-cards,.pol-grid,.case-grid,.g-grid,.tm-grid,.cta-quotes,.chart-row,.io-grid').forEach(function(el){
   for(var i=0;i<el.children.length;i++){
     el.children[i].style.opacity='0';
     el.children[i].style.transform='translateY(30px)';
@@ -692,8 +611,6 @@ document.querySelectorAll('.prod-cards,.data-cards,.pol-grid,.case-grid,.g-grid,
   }
   cardObserver.observe(el);
 });
-
-// 导航高亮
 var sections=document.querySelectorAll('section[id]');
 var navLinks=document.querySelectorAll('.nav-center a');
 window.addEventListener('scroll',function(){
@@ -706,8 +623,6 @@ window.addEventListener('scroll',function(){
     if(l.getAttribute('href')==='#'+current) l.classList.add('on');
   });
 });
-
-// 平滑滚动
 document.querySelectorAll('a[href^="#"]').forEach(function(l){
   l.addEventListener('click',function(e){
     e.preventDefault();
@@ -715,38 +630,6 @@ document.querySelectorAll('a[href^="#"]').forEach(function(l){
     if(t) t.scrollIntoView({behavior:'smooth',block:'start'});
   });
 });
-
-// 数字滚动
-var numObserver=new IntersectionObserver(function(entries){
-  entries.forEach(function(entry){
-    if(entry.isIntersecting){
-      var el=entry.target;
-      var text=el.textContent;
-      var match=text.match(/([\d.]+)/);
-      if(!match){numObserver.unobserve(el);return;}
-      var target=parseFloat(match[1]);
-      var before=text.substring(0,text.indexOf(match[1]));
-      var after=text.substring(text.indexOf(match[1])+match[1].length);
-      var duration=1200;
-      var startTime=null;
-      function animate(timestamp){
-        if(!startTime) startTime=timestamp;
-        var progress=Math.min((timestamp-startTime)/duration,1);
-        var eased=1-Math.pow(1-progress,3);
-        var current=target*eased;
-        if(target%1!==0) el.textContent=before+current.toFixed(1)+after;
-        else el.textContent=before+Math.round(current)+after;
-        if(progress<1) requestAnimationFrame(animate);
-        else el.textContent=text;
-      }
-      requestAnimationFrame(animate);
-      numObserver.unobserve(el);
-    }
-  });
-},{threshold:0.5});
-document.querySelectorAll('.dc-num,.pol-num,.tp-num,.b-total .bn').forEach(function(el){numObserver.observe(el)});
-
-// 背景视差
 window.addEventListener('scroll',function(){
   document.querySelectorAll('.sec-bg img').forEach(function(img){
     var rect=img.parentElement.parentElement.getBoundingClientRect();
