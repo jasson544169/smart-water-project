@@ -10,97 +10,96 @@
 body{
   width:210mm;height:297mm;margin:0 auto;
   font-family:'PingFang SC','Microsoft YaHei','Noto Sans SC',sans-serif;
-  background:#f8fafc;color:#1e293b;overflow:hidden;position:relative;
+  background:#0c1929;color:#fff;overflow:hidden;position:relative;
 }
-/* bg */
-.bg{position:absolute;inset:0;background:linear-gradient(160deg,#f8fafc 0%,#ecfeff 30%,#f0fdf4 60%,#f8fafc 100%);z-index:0}
-.grid-overlay{position:absolute;inset:0;background-image:linear-gradient(rgba(8,145,178,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(8,145,178,0.03) 1px,transparent 1px);background-size:24px 24px;z-index:1;pointer-events:none}
-.deco{position:absolute;border-radius:50%;pointer-events:none;z-index:1}
-.deco-1{width:350px;height:350px;top:-100px;right:-80px;background:radial-gradient(circle,rgba(8,145,178,0.06),transparent 70%)}
-.deco-2{width:280px;height:280px;bottom:-60px;left:-70px;background:radial-gradient(circle,rgba(5,150,105,0.05),transparent 70%)}
-
+.bg{position:absolute;inset:0;background:linear-gradient(160deg,#0c1929 0%,#0f2744 40%,#0c1929 100%);z-index:0}
+.glow{position:absolute;top:10%;left:50%;transform:translateX(-50%);width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(34,211,238,0.06),transparent 70%);pointer-events:none;z-index:1}
 .content{position:relative;z-index:2;width:100%;height:100%;padding:28px 32px;display:flex;flex-direction:column}
 
-/* header */
-.hdr{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px}
-.brand{display:flex;align-items:center;gap:10px}
-.brand .drop{width:28px;height:28px;border-radius:50% 50% 50% 8px;transform:rotate(45deg);background:linear-gradient(135deg,#0891b2,#059669)}
-.brand span{font-size:13px;color:#64748b;font-weight:500}
-.badge{padding:5px 14px;border-radius:99px;background:#ecfeff;border:1px solid rgba(8,145,178,0.15);color:#0891b2;font-size:11px;font-weight:700}
+/* nav bar */
+.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.logo{font-size:20px;font-weight:900;letter-spacing:.08em}
+.logo span{color:#22d3ee}
+.topbar .badge{padding:5px 14px;border-radius:99px;background:rgba(34,211,238,0.1);border:1px solid rgba(34,211,238,0.2);color:#22d3ee;font-size:11px;font-weight:700}
 
 /* hero */
-.hero{text-align:center;margin-bottom:16px}
-.hero .tag{display:inline-block;padding:4px 14px;border-radius:99px;background:#ecfeff;border:1px solid rgba(8,145,178,0.12);color:#0891b2;font-size:11px;font-weight:700;letter-spacing:.08em;margin-bottom:12px}
+.hero{text-align:center;margin-bottom:14px}
+.hero .tag{display:inline-block;padding:4px 14px;border-radius:99px;border:1px solid rgba(34,211,238,0.2);background:rgba(34,211,238,0.06);color:#22d3ee;font-size:11px;font-weight:700;letter-spacing:.08em;margin-bottom:10px}
 .hero h1{font-size:40px;font-weight:900;line-height:1.1;letter-spacing:-.03em;margin-bottom:8px}
-.hero h1 .g{background:linear-gradient(135deg,#0891b2,#059669);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero .sub{font-size:14px;color:#64748b;line-height:1.5;max-width:420px;margin:0 auto}
+.hero h1 .g{background:linear-gradient(135deg,#22d3ee,#059669);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .sub{font-size:13px;color:rgba(255,255,255,0.5);line-height:1.5;max-width:420px;margin:0 auto}
 
-.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(8,145,178,0.2),transparent);margin:14px 0}
+/* divider */
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(34,211,238,0.2),transparent);margin:12px 0}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px}
+.stat{text-align:center;padding:10px 6px;border-radius:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06)}
+.stat .n{font-size:22px;font-weight:900;background:linear-gradient(135deg,#22d3ee,#059669);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat .l{font-size:9px;color:rgba(255,255,255,0.4);margin-top:2px;line-height:1.3}
 
 /* main */
 .main{display:grid;grid-template-columns:1fr 1fr;gap:14px;flex:1}
 .col{display:flex;flex-direction:column;gap:12px}
 
 /* panel */
-.panel{border-radius:16px;padding:16px;background:#fff;border:1px solid #e2e8f0;box-shadow:0 2px 12px rgba(0,0,0,0.04)}
-.ptitle{font-size:15px;font-weight:900;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.panel{border-radius:16px;padding:16px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06)}
+.ptitle{font-size:14px;font-weight:900;margin-bottom:8px;display:flex;align-items:center;gap:7px}
 .dot{width:7px;height:7px;border-radius:50%}
-.dot-t{background:#0891b2;box-shadow:0 0 6px #0891b2}
+.dot-t{background:#22d3ee;box-shadow:0 0 6px #22d3ee}
 .dot-g{background:#059669;box-shadow:0 0 6px #059669}
-.dot-y{background:#d97706;box-shadow:0 0 6px #d97706}
+.dot-y{background:#fbbf24;box-shadow:0 0 6px #fbbf24}
 
-/* pain items */
-.pi{display:flex;align-items:flex-start;gap:8px;margin-bottom:6px}
+/* pain */
+.pi{display:flex;align-items:flex-start;gap:8px;margin-bottom:5px}
 .pi:last-child{margin-bottom:0}
-.pi-n{min-width:22px;height:22px;border-radius:7px;display:grid;place-items:center;background:#ecfeff;color:#0891b2;font-size:11px;font-weight:900}
-.pi-t{font-size:11px;color:#475569;line-height:1.5}
-.pi-t strong{color:#1e293b}
+.pi-n{min-width:20px;height:20px;border-radius:6px;display:grid;place-items:center;background:rgba(34,211,238,0.1);color:#22d3ee;font-size:10px;font-weight:900}
+.pi-t{font-size:10px;color:rgba(255,255,255,0.5);line-height:1.4}
+.pi-t strong{color:#fff}
 
 /* tech */
-.ts{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;margin-top:8px}
-.t{padding:7px 3px;border-radius:10px;background:#ecfeff;border:1px solid rgba(8,145,178,0.12);text-align:center}
-.t .n{font-size:14px;font-weight:900;color:#0891b2;margin-bottom:1px}
-.t .nm{font-size:10px;font-weight:700;margin-bottom:1px}
-.t .d{font-size:8px;color:#94a3b8;line-height:1.3}
+.ts{display:grid;grid-template-columns:repeat(5,1fr);gap:4px;margin-top:6px}
+.t{padding:6px 2px;border-radius:8px;background:rgba(34,211,238,0.06);border:1px solid rgba(34,211,238,0.12);text-align:center}
+.t .n{font-size:13px;font-weight:900;color:#22d3ee;margin-bottom:1px}
+.t .nm{font-size:9px;font-weight:700;margin-bottom:1px}
+.t .d{font-size:7px;color:rgba(255,255,255,0.3);line-height:1.2}
 
 /* plan */
-.pg{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:7px}
-.pi2{padding:9px;border-radius:10px;background:#f8fafc;border:1px solid #e2e8f0}
-.pi2 .sl{font-size:9px;color:#0891b2;font-weight:700;letter-spacing:.04em;margin-bottom:2px}
-.pi2 .st{font-size:12px;font-weight:900;margin-bottom:2px}
-.pi2 .sd{font-size:9px;color:#64748b;line-height:1.4}
+.pg{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:6px}
+.pi2{padding:8px;border-radius:10px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06)}
+.pi2 .sl{font-size:8px;color:#22d3ee;font-weight:700;letter-spacing:.04em;margin-bottom:2px}
+.pi2 .st{font-size:11px;font-weight:900;margin-bottom:2px}
+.pi2 .sd{font-size:8px;color:rgba(255,255,255,0.4);line-height:1.3}
 
 /* budget */
-.bgr{display:grid;grid-template-columns:1fr 1fr;gap:5px;margin-top:7px}
-.bi{display:flex;justify-content:space-between;padding:5px 9px;border-radius:7px;background:#f8fafc;font-size:10px}
-.bi .l{color:#64748b}.bi .v{color:#d97706;font-weight:900}
+.bgr{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:6px}
+.bi{display:flex;justify-content:space-between;padding:4px 8px;border-radius:6px;background:rgba(0,0,0,0.2);font-size:9px}
+.bi .l{color:rgba(255,255,255,0.4)}.bi .v{color:#fbbf24;font-weight:900}
 
 /* goals */
-.gl{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:7px}
-.gb{padding:9px;border-radius:10px;background:#f0fdf4;border:1px solid rgba(5,150,105,0.12)}
-.gb .gt{font-size:11px;font-weight:900;color:#059669;margin-bottom:3px}
-.gb p{font-size:9px;color:#475569;line-height:1.4;margin-bottom:2px}
+.gl{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:6px}
+.gb{padding:8px;border-radius:10px;background:rgba(5,150,105,0.06);border:1px solid rgba(5,150,105,0.12)}
+.gb .gt{font-size:10px;font-weight:900;color:#059669;margin-bottom:3px}
+.gb p{font-size:8px;color:rgba(255,255,255,0.4);line-height:1.3;margin-bottom:2px}
 
 /* bottom */
-.btm{display:flex;justify-content:space-between;align-items:center;margin-top:12px;padding-top:12px;border-top:1px solid #e2e8f0}
-.cta{font-size:15px;font-weight:900;line-height:1.3}
-.cta .g{background:linear-gradient(135deg,#0891b2,#059669);-webkit-background-clip:text;background-clip:text;color:transparent}
-.team{text-align:right;font-size:10px;color:#94a3b8;line-height:1.6}
-.team strong{color:#64748b}
+.btm{display:flex;justify-content:space-between;align-items:center;margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,0.06)}
+.cta{font-size:14px;font-weight:900;line-height:1.3}
+.cta .g{background:linear-gradient(135deg,#22d3ee,#059669);-webkit-background-clip:text;background-clip:text;color:transparent}
+.team{text-align:right;font-size:9px;color:rgba(255,255,255,0.3);line-height:1.6}
+.team strong{color:rgba(255,255,255,0.5)}
 
 @media print{body{width:210mm;height:297mm;margin:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
-@media screen{body{margin:20px auto;box-shadow:0 16px 48px rgba(0,0,0,0.08);border-radius:8px}}
+@media screen{body{margin:20px auto;box-shadow:0 16px 48px rgba(0,0,0,0.3);border-radius:8px}}
 </style>
 </head>
 <body>
 <div class="bg"></div>
-<div class="grid-overlay"></div>
-<div class="deco deco-1"></div>
-<div class="deco deco-2"></div>
+<div class="glow"></div>
 
 <div class="content">
-  <div class="hdr">
-    <div class="brand"><span class="drop"></span><span>供排水智慧管理课程项目</span></div>
+  <div class="topbar">
+    <div class="logo">WATER<span>CHECK</span></div>
     <div class="badge">4-6人小组 · 12分钟汇报</div>
   </div>
 
@@ -112,13 +111,20 @@ body{
 
   <div class="divider"></div>
 
+  <div class="stats">
+    <div class="stat"><div class="n">78%</div><div class="l">管网错接混接率</div></div>
+    <div class="stat"><div class="n">3.2亿</div><div class="l">年度改造投入</div></div>
+    <div class="stat"><div class="n">681万</div><div class="l">试点申请预算</div></div>
+    <div class="stat"><div class="n">-80%</div><div class="l">投诉预计下降</div></div>
+  </div>
+
   <div class="main">
     <div class="col">
       <div class="panel">
         <div class="ptitle"><span class="dot dot-t"></span>三大管网"病"</div>
-        <div class="pi"><div class="pi-n">1</div><div class="pi-t"><strong>错接混接</strong> — 污水管接雨水管，清污不分，深圳老旧小区普遍存在</div></div>
-        <div class="pi"><div class="pi-n">2</div><div class="pi-t"><strong>外水入渗</strong> — 地下水渗入污水管，稀释浓度，浪费处理能力</div></div>
-        <div class="pi"><div class="pi-n">3</div><div class="pi-t"><strong>管道破损</strong> — 老旧管道裂缝变形，雨天溢流、旱天冒臭</div></div>
+        <div class="pi"><div class="pi-n">1</div><div class="pi-t"><strong>错接混接</strong> — 污水管接雨水管，清污不分</div></div>
+        <div class="pi"><div class="pi-n">2</div><div class="pi-t"><strong>外水入渗</strong> — 地下水渗入污水管，浪费处理能力</div></div>
+        <div class="pi"><div class="pi-n">3</div><div class="pi-t"><strong>管道破损</strong> — 老旧管道裂缝变形，雨天溢流</div></div>
       </div>
       <div class="panel">
         <div class="ptitle"><span class="dot dot-g"></span>智慧体检技术路径</div>
@@ -136,8 +142,8 @@ body{
         <div class="ptitle"><span class="dot dot-y"></span>实施方案：四步走</div>
         <div class="pg">
           <div class="pi2"><div class="sl">STEP 1</div><div class="st">建账摸底</div><div class="sd">收集管网GIS数据，建立电子病历</div></div>
-          <div class="pi2"><div class="sl">STEP 2</div><div class="st">智慧体检</div><div class="sd">部署传感器+CCTV检测，AI自动诊断</div></div>
-          <div class="pi2"><div class="sl">STEP 3</div><div class="st">精准修复</div><div class="sd">生成病害清单，派发工单，修复闭环</div></div>
+          <div class="pi2"><div class="sl">STEP 2</div><div class="st">智慧体检</div><div class="sd">部署传感器+CCTV检测，AI诊断</div></div>
+          <div class="pi2"><div class="sl">STEP 3</div><div class="st">精准修复</div><div class="sd">生成病害清单，派发工单闭环</div></div>
           <div class="pi2"><div class="sl">STEP 4</div><div class="st">全市推广</div><div class="sd">形成深圳标准，纳入智慧水务平台</div></div>
         </div>
       </div>
@@ -151,9 +157,9 @@ body{
           <div class="bi"><span class="l">GIS+AI平台</span><span class="v">140万</span></div>
           <div class="bi"><span class="l">运维+预备费</span><span class="v">127万</span></div>
         </div>
-        <div style="text-align:center;margin-top:6px;padding:5px;border-radius:8px;background:#fef3c7;border:1px solid rgba(217,119,6,0.15)">
-          <span style="font-size:13px;font-weight:900;color:#d97706">总预算：681万元</span>
-          <span style="font-size:9px;color:#94a3b8;margin-left:6px">投资回收期约2年</span>
+        <div style="text-align:center;margin-top:6px;padding:5px;border-radius:8px;background:rgba(251,191,36,0.1);border:1px solid rgba(251,191,36,0.2)">
+          <span style="font-size:12px;font-weight:900;color:#fbbf24">总预算：681万元</span>
+          <span style="font-size:8px;color:rgba(255,255,255,0.3);margin-left:6px">投资回收期约2年</span>
         </div>
       </div>
       <div class="panel">
