@@ -31,6 +31,11 @@
     .sec h2 .hl{color:var(--accent)}
     .sec .desc{font-size:16px;color:rgba(255,255,255,.45);line-height:1.8;max-width:800px;margin-bottom:40px}
     .fu{opacity:0;transform:translateY(36px);transition:opacity .7s ease-out,transform .7s ease-out}.fu.vis{opacity:1!important;transform:translateY(0)!important}
+    .fl{opacity:0;transform:translateX(-40px);transition:opacity .7s ease-out,transform .7s ease-out}.fl.vis{opacity:1!important;transform:translateX(0)!important}
+    .fr{opacity:0;transform:translateX(40px);transition:opacity .7s ease-out,transform .7s ease-out}.fr.vis{opacity:1!important;transform:translateX(0)!important}
+    .fs{opacity:0;transform:scale(.92);transition:opacity .7s ease-out,transform .7s ease-out}.fs.vis{opacity:1!important;transform:scale(1)!important}
+    .fz{opacity:0;transform:scale(1.08);transition:opacity .7s ease-out,transform .7s ease-out}.fz.vis{opacity:1!important;transform:scale(1)!important}
+    .frt{opacity:0;transform:rotate(-3deg) translateY(20px);transition:opacity .7s ease-out,transform .7s ease-out}.frt.vis{opacity:1!important;transform:rotate(0) translateY(0)!important}
     .src{font-size:11px;color:var(--accent);opacity:.55}
     .link-card{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:8px;background:rgba(0,180,216,.08);border:1px solid rgba(0,180,216,.15);font-size:13px;font-weight:600;color:var(--accent);margin:4px 4px 4px 0;transition:all .2s}
     .link-card:hover{background:rgba(0,180,216,.15);color:var(--accent2);text-decoration:none}
@@ -154,17 +159,17 @@
     <h2>为什么现在<span class="hl">必须做</span></h2>
     <p class="desc">当一个城市几乎全部人口都生活在城镇空间里，排水问题就不只是工程问题，而是民生和城市韧性问题。</p>
     <div class="grid-3 fu">
-      <div class="card">
+      <div class="card fl">
         <h4>城市生命线工程</h4>
         <p>地下管网要加强监测预警。国务院安委办推动城市生命线安全工程，要求对城市地下管网加强监测预警，排水管网是核心组成部分。</p>
         <a href="https://www.gov.cn/zhengce/zhengceku/202401/content_6926000.htm" target="_blank" class="link-card">国务院安委办 · 城市生命线 →</a>
       </div>
-      <div class="card">
+      <div class="card fs">
         <h4>排水防涝与韧性城市</h4>
         <p>风险要提前发现。住建部要求加强城市排水防涝体系建设，提升城市应对极端天气的韧性能力。</p>
         <a href="https://www.mohurd.gov.cn/gongkai/zhengce/zhengcefilelib/202303/20230322_771588.html" target="_blank" class="link-card">住建部 · 排水防涝 →</a>
       </div>
-      <div class="card">
+      <div class="card fr">
         <h4>深圳智慧水务</h4>
         <p>一张图、一张网、一平台。深圳市水务局提出构建水务物联网感知体系，实现管网水位、水质、流量等关键数据实时监测。</p>
         <a href="https://swj.sz.gov.cn/" target="_blank" class="link-card">深圳市水务局 →</a>
@@ -182,11 +187,11 @@
   <div class="inner">
     <div class="tag">03 深圳现状</div>
     <h2>问题藏在<span class="hl">地下</span></h2>
-    <p class="desc">这一页要突出"痛点"，说明为什么需要检测。排水管网埋在地下，隐蔽性强、点多面广；错接混接、外水入渗、淤积、破损会影响水环境；人工开井检查效率低，难以系统掌握健康状况。</p>
+    <p class="desc">排水管网埋在地下，隐蔽性强、点多面广；错接混接、外水入渗、淤积、破损会影响水环境；人工开井检查效率低，难以系统掌握健康状况。</p>
     <div class="grid-3 fu">
-      <div class="card"><div class="num">23.17<span class="unit">亿m³</span></div><h4>2025年累计处理污水</h4><p>深圳全年累计处理污水23.17亿立方米，排水系统规模庞大。</p><a href="https://www.sz.gov.cn/cn/xxgk/zfxxgj/tzgg/content/post_12728178.html" target="_blank" class="link-card">数据来源 [S3] →</a></div>
-      <div class="card"><div class="num">21709<span class="unit">公里</span></div><h4>纳入地理信息系统管理的市政排水管渠</h4><p>纳入地理信息系统管理的市政排水管渠总长度，覆盖面广但末端监管难度大。</p><a href="https://www.sz.gov.cn/cn/xxgk/zfxxgj/tzgg/content/post_12728178.html" target="_blank" class="link-card">数据来源 [S3] →</a></div>
-      <div class="card"><div class="num">80<span class="unit">座</span></div><h4>市政污水（截污）泵站</h4><p>市政污水（截污）泵站数量，任何小区末端问题都会被放大到这些设施。</p><a href="https://www.sz.gov.cn/cn/xxgk/zfxxgj/tzgg/content/post_12728178.html" target="_blank" class="link-card">数据来源 [S3] →</a></div>
+      <div class="card fl"><div class="num">23.17<span class="unit">亿m³</span></div><h4>2025年累计处理污水</h4><p>深圳全年累计处理污水23.17亿立方米，排水系统规模庞大。</p><a href="https://www.sz.gov.cn/cn/xxgk/zfxxgj/tzgg/content/post_12728178.html" target="_blank" class="link-card">数据来源 [S3] →</a></div>
+      <div class="card fs"><div class="num">21709<span class="unit">公里</span></div><h4>纳入地理信息系统管理的市政排水管渠</h4><p>纳入地理信息系统管理的市政排水管渠总长度，覆盖面广但末端监管难度大。</p><a href="https://www.sz.gov.cn/cn/xxgk/zfxxgj/tzgg/content/post_12728178.html" target="_blank" class="link-card">数据来源 [S3] →</a></div>
+      <div class="card fr"><div class="num">80<span class="unit">座</span></div><h4>市政污水（截污）泵站</h4><p>市政污水（截污）泵站数量，任何小区末端问题都会被放大到这些设施。</p><a href="https://www.sz.gov.cn/cn/xxgk/zfxxgj/tzgg/content/post_12728178.html" target="_blank" class="link-card">数据来源 [S3] →</a></div>
     </div>
   </div>
 </section>
@@ -197,11 +202,11 @@
   <div class="inner">
     <div class="tag">04 技术介绍</div>
     <h2>智慧体检系统<span class="hl">是什么</span></h2>
-    <p class="desc">用学生能听懂的话讲技术。系统由感知层、传输层、平台层、处置层组成。传感器进入排水井内部，实时监测液位、流量、化学需氧量、氨氮，可识别裂缝、破损、变形、淤积、障碍物等。</p>
+    <p class="desc">系统由感知层、传输层、平台层、处置层组成。传感器进入排水井内部，实时监测液位、流量、化学需氧量、氨氮，可识别裂缝、破损、变形、淤积、障碍物等。</p>
     <div class="grid-3 fu">
-      <div class="card"><div class="num" style="font-size:28px">感知</div><h4>井位感知层</h4><p>液位、流量、化学需氧量、氨氮传感器，安装在排水井内，实时采集数据。</p><a href="https://www.fjsx.gov.cn/zwgk/ggzypz/zfzbcg/zbgg_8046/202602/t20260212_2190048.htm" target="_blank" class="link-card">采购参考 [S6] →</a></div>
-      <div class="card"><div class="num" style="font-size:28px">传输</div><h4>数据传输层</h4><p>通过物联网无线传输，将监测数据实时上传至云平台。</p></div>
-      <div class="card"><div class="num" style="font-size:28px">分析</div><h4>诊断平台层</h4><p>地理信息系统一张图展示，人工智能自动识别异常，生成诊断报告。</p></div>
+      <div class="card fl"><div class="num" style="font-size:28px">感知</div><h4>井位感知层</h4><p>液位、流量、化学需氧量、氨氮传感器，安装在排水井内，实时采集数据。</p><a href="https://www.fjsx.gov.cn/zwgk/ggzypz/zfzbcg/zbgg_8046/202602/t20260212_2190048.htm" target="_blank" class="link-card">采购参考 [S6] →</a></div>
+      <div class="card fs"><div class="num" style="font-size:28px">传输</div><h4>数据传输层</h4><p>通过物联网无线传输，将监测数据实时上传至云平台。</p></div>
+      <div class="card fr"><div class="num" style="font-size:28px">分析</div><h4>诊断平台层</h4><p>地理信息系统一张图展示，人工智能自动识别异常，生成诊断报告。</p></div>
     </div>
     <div style="margin-top:20px" class="fu">
       <h4 style="font-size:15px;font-weight:700;margin-bottom:12px;color:var(--accent)">公开采购参考单价</h4>
@@ -222,7 +227,7 @@
   <div class="inner">
     <div class="tag">05 技术流程</div>
     <h2>从检测到工单<span class="hl">闭环</span></h2>
-    <p class="desc">建议做成流程图，体现"智慧管理"而不是单纯检测。</p>
+    <p class="desc">系统实现从检测到工单的全流程闭环管理，体现"智慧管理"的核心价值。</p>
     <div class="flow fu">
       <div class="flow-item"><div class="sn">1</div><h4>资料收集</h4><p>管网图<br>检查井<br>历史投诉</p></div>
       <div class="flow-item"><div class="sn">2</div><h4>现场检测</h4><p>清淤降水<br>机器人入管<br>传感器布设</p></div>
@@ -241,7 +246,7 @@
   <div class="inner">
     <div class="tag">06 应用案例</div>
     <h2>这个技术<span class="hl">不是纸上谈兵</span></h2>
-    <p class="desc">找1—2个公开案例即可，重点是说明技术已经具备应用基础。深圳不是从零开始，而是要把已有平台和检测技术结合起来。</p>
+    <p class="desc">深圳已有多个智慧排水相关项目落地，技术已经具备应用基础。</p>
     <div class="grid-2 fu">
       <div class="card">
         <h4>深圳无人机可视化检测</h4>
@@ -263,7 +268,7 @@
   <div class="inner">
     <div class="tag yellow">07 深圳试点</div>
     <h2>先选一个片区<span class="hl">做透</span></h2>
-    <p class="desc">选点要具体，避免"全市全面铺开"这种空话。试点对象：老旧城区、低洼易涝片区、沿河截污管周边。重点目标：查明结构病害、淤积堵塞、错接混接和外水入渗风险。</p>
+    <p class="desc">试点对象：老旧城区、低洼易涝片区、沿河截污管周边。重点目标：查明结构病害、淤积堵塞、错接混接和外水入渗风险。</p>
     <div class="grid-3 fu">
       <div class="card"><div class="num">100<span class="unit">公里</span></div><h4>试点范围</h4><p>约100公里排水管网，覆盖老旧城区和低洼易涝片区。</p></div>
       <div class="card"><div class="num">12<span class="unit">个井位</span></div><h4>重点监测</h4><p>布设12个重点井位，安装多参数监测设备。</p></div>
@@ -278,7 +283,7 @@
   <div class="inner">
     <div class="tag">08 实施方案</div>
     <h2>三步走：<span class="hl">先体检</span>，再分级，后修复</h2>
-    <p class="desc">市长最关心"怎么落地"。建议用三阶段路线图。</p>
+    <p class="desc">项目分三个阶段推进，确保从试点到推广的可行路径。</p>
     <div class="tl fu">
       <div class="tl-item"><div class="ph">第一步 · 建账摸底</div><h4>整理管网资产和重点风险点</h4><p>完成试点小区排水井、排水口、管线、历史问题的基础建档，建立管网"健康档案"，标注重点风险点位。</p></div>
       <div class="tl-item"><div class="ph">第二步 · 机器人检测</div><h4>形成缺陷评级和病害清单</h4><p>布设重点井位监测，使用管道机器人进行结构性检测，形成缺陷评级和病害清单，锁定疑似错接混接和外水入渗点。</p></div>
@@ -293,7 +298,7 @@
   <div class="inner">
     <div class="tag">09 预期目标</div>
     <h2>经济账 + <span class="hl">民生账</span></h2>
-    <p class="desc">市长最关心的不是"这个系统先进不先进"，而是"能不能带来确定结果"。所以我们的目标既要有居民能感知的结果，也要有管理部门能考核的结果。</p>
+    <p class="desc">目标设定兼顾居民可感知的民生结果和管理部门可考核的管理指标。</p>
     <div class="grid-3 fu">
       <div class="card"><div class="highlight">管理目标</div><h4 style="margin-top:12px">可量化考核</h4><p>重点井位在线监测覆盖率<span style="color:var(--accent);font-weight:700">100%</span>；异常工单<span style="color:var(--accent);font-weight:700">24小时内</span>派发；疑似错接混接点<span style="color:var(--accent);font-weight:700">100%建档</span>；整改复核闭环率<span style="color:var(--accent);font-weight:700">90%以上</span>。</p></div>
       <div class="card"><div class="highlight green">民生价值</div><h4 style="margin-top:12px">居民可感知</h4><p>少积水、少臭味、少冒溢、少开挖。减少污水冒溢、道路积水、反复开挖和群众投诉。</p></div>
@@ -311,16 +316,16 @@
   <div class="inner">
     <div class="tag">10 预算测算</div>
     <h2>课堂版试点预算：<span style="color:var(--yellow)">85.9万元</span></h2>
-    <p class="desc">预算可以估算，但必须把假设写出来。以下是依据公开中标单价的测算。</p>
+    <p class="desc">以下是依据公开中标单价的试点预算测算。</p>
     <div class="fu">
       <table class="tbl">
         <thead><tr><th>项目</th><th>测算依据</th><th>金额</th></tr></thead>
         <tbody>
-          <tr><td>单个重点井位设备</td><td>智能井盖980 + 采集仪12,500 + 流量计11,500 + 化学需氧量16,800 + 氨氮13,500</td><td>5.53万</td></tr>
-          <tr><td>12个重点井位设备</td><td>12 × 55,280元</td><td>66.34万</td></tr>
-          <tr><td>云平台服务</td><td>数据存储、可视化、告警推送</td><td>5.90万</td></tr>
-          <tr><td>系统集成</td><td>设备调试、数据对接、平台部署</td><td>5.85万</td></tr>
-          <tr><td>预备费（10%）</td><td>不可预见费用</td><td>7.81万</td></tr>
+          <tr><td>单个重点井位设备</td><td>智能井盖980元 + 多参数采集仪12,500元 + 超声波流量计11,500元 + 化学需氧量传感器16,800元 + 氨氮传感器13,500元 = 55,280元/个</td><td>5.53万</td></tr>
+          <tr><td>12个重点井位设备</td><td>试点片区约50个小区，按每4-5个小区布设1个重点监测井位，共需12个；12 × 55,280元</td><td>66.34万</td></tr>
+          <tr><td>云平台服务</td><td>含数据存储、可视化大屏、告警推送、手机端查看，按年服务费计算</td><td>5.90万</td></tr>
+          <tr><td>系统集成</td><td>设备安装调试、与现有地理信息系统数据对接、平台部署上线</td><td>5.85万</td></tr>
+          <tr><td>预备费（10%）</td><td>设备运输、现场协调、不可预见费用</td><td>7.81万</td></tr>
         </tbody>
       </table>
       <div class="total-bar"><span class="bl">试点总预算</span><span class="bn">85.9</span><span class="bu">万元</span></div>
@@ -413,21 +418,21 @@ var obs=new IntersectionObserver(function(entries){
     }
   });
 },{threshold:0.08,rootMargin:'0px 0px -20px 0px'});
-document.querySelectorAll('.fu').forEach(function(el){obs.observe(el)});
+document.querySelectorAll('.fu,.fl,.fr,.fs,.fz,.frt').forEach(function(el){obs.observe(el)});
 
 // 卡片交错动画（进入时播放，离开时重置）
 var cObs=new IntersectionObserver(function(entries){
   entries.forEach(function(e){
     var c=e.target.children;
     if(e.isIntersecting){
-      for(var i=0;i<c.length;i++){(function(j){setTimeout(function(){c[j].style.opacity='1';c[j].style.transform='translateY(0)'},j*100)})(i)}
+      for(var i=0;i<c.length;i++){(function(j){setTimeout(function(){c[j].style.opacity='1';c[j].style.transform='translateY(0) scale(1)'},j*120)})(i)}
     }else{
-      for(var i=0;i<c.length;i++){c[i].style.opacity='0';c[i].style.transform='translateY(28px)'}
+      for(var i=0;i<c.length;i++){c[i].style.opacity='0';c[i].style.transform='translateY(28px) scale(.96)'}
     }
   });
 },{threshold:0.08,rootMargin:'0px 0px -20px 0px'});
 document.querySelectorAll('.grid-2,.grid-3,.grid-4,.cta-cards').forEach(function(el){
-  for(var i=0;i<el.children.length;i++){el.children[i].style.opacity='0';el.children[i].style.transform='translateY(28px)';el.children[i].style.transition='all .6s ease-out'}
+  for(var i=0;i<el.children.length;i++){el.children[i].style.opacity='0';el.children[i].style.transform='translateY(28px) scale(.96)';el.children[i].style.transition='all .6s ease-out'}
   cObs.observe(el);
 });
 
