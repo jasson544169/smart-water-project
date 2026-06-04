@@ -9,16 +9,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
   <style>
     :root{--black:#000;--dark:#0a0a0a;--white:#fff;--cream:#f5f0eb;--accent:#00b4d8;--accent2:#0096c7;--red:#e63946;--muted:#999;--text:#222;--green:#10b981;--yellow:#f59e0b}
-    *{margin:0;padding:0;box-sizing:border-box}
-    html{scroll-behavior:smooth}
+    *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
     body{font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;color:var(--white);background:var(--black);overflow-x:hidden;line-height:1.7}
     ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--black)}::-webkit-scrollbar-thumb{background:var(--accent);border-radius:3px}
 
     /* NAV */
     .nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:80px;display:flex;align-items:center;justify-content:space-between;padding:0 60px;background:rgba(0,0,0,.88);backdrop-filter:blur(14px)}
     .nav-logo{font-size:30px;font-weight:900;letter-spacing:.1em;color:#fff;text-decoration:none;font-style:italic}
-    .nav-center{display:flex;gap:40px;list-style:none}
-    .nav-center a{color:#fff;text-decoration:none;font-size:16px;font-weight:500;transition:color .3s}
+    .nav-center{display:flex;gap:36px;list-style:none}
+    .nav-center a{color:#fff;text-decoration:none;font-size:15px;font-weight:500;transition:color .3s}
     .nav-center a:hover,.nav-center a.on{color:var(--accent)}
     .nav-right{display:flex;align-items:center;gap:14px}
     .nav-lang{color:#fff;font-size:14px;font-weight:600;padding:8px 18px;border:1px solid rgba(255,255,255,.3);border-radius:6px}
@@ -39,6 +38,15 @@
     .hero-link:hover{border-color:var(--accent);color:var(--accent)}
     .hero-ft{position:absolute;bottom:36px;left:60px;right:60px;display:flex;justify-content:space-between;z-index:1;font-size:12px;color:rgba(255,255,255,.28)}
 
+    /* COMMON */
+    .sec-tag{display:inline-flex;align-items:center;gap:8px;color:var(--accent);font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:18px}
+    .sec-tag::before{content:"";width:24px;height:2px;background:var(--accent)}
+    .sec-tag.red{color:var(--red)}.sec-tag.red::before{background:var(--red)}
+    .sec-tag.green{color:var(--green)}.sec-tag.green::before{background:var(--green)}
+    .dots-deco{position:absolute;width:180px;height:180px;background-image:radial-gradient(circle,var(--red) 2px,transparent 2px);background-size:14px 14px;opacity:.12}
+    .fu{opacity:0;transform:translateY(36px);transition:all .8s cubic-bezier(.16,1,.3,1)}.fu.vis{opacity:1;transform:translateY(0)}
+    .src{font-size:12px;color:var(--accent);opacity:.6}
+
     /* 3 REASONS */
     .reasons{background:var(--dark);padding:100px 60px;position:relative;overflow:hidden}
     .reasons-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;max-width:1400px;margin:0 auto}
@@ -48,7 +56,6 @@
     .reason-item{margin-bottom:26px;padding-left:16px;border-left:3px solid var(--accent)}
     .reason-item h4{font-size:20px;font-weight:700;color:var(--accent);margin-bottom:6px}
     .reason-item p{font-size:15px;color:rgba(255,255,255,.5);line-height:1.6}
-    .dots-deco{position:absolute;width:180px;height:180px;background-image:radial-gradient(circle,var(--red) 2px,transparent 2px);background-size:14px 14px;opacity:.12}
 
     /* TABS */
     .tabs-section{background:var(--dark);padding:80px 60px 100px;position:relative;overflow:hidden}
@@ -63,6 +70,33 @@
     .tp-left .tp-note strong{color:var(--accent)}
     .tp-right img{width:100%;max-width:420px;filter:drop-shadow(0 20px 40px rgba(0,0,0,.5))}
 
+    /* DATA SECTION (dark) */
+    .data-section{background:var(--dark);padding:100px 60px;position:relative}
+    .data-inner{max-width:1400px;margin:0 auto}
+    .data-inner h2{font-size:clamp(34px,4vw,52px);font-weight:900;line-height:1.12;margin-bottom:16px}
+    .data-inner h2 .hl{color:var(--accent)}
+    .data-inner .desc{font-size:16px;color:rgba(255,255,255,.45);line-height:1.7;max-width:800px;margin-bottom:46px}
+    .data-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .data-card{padding:28px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);transition:all .3s}
+    .data-card:hover{border-color:rgba(0,180,216,.3)}
+    .data-card .dc-num{font-size:42px;font-weight:900;color:var(--accent);line-height:1;margin-bottom:8px}
+    .data-card .dc-unit{font-size:16px;color:var(--accent);font-weight:600}
+    .data-card h4{font-size:17px;font-weight:700;margin:10px 0 6px}
+    .data-card p{font-size:13px;color:rgba(255,255,255,.45);line-height:1.6}
+
+    /* POLICY (dark) */
+    .policy{background:var(--dark);padding:100px 60px;position:relative}
+    .policy-inner{max-width:1400px;margin:0 auto}
+    .policy-inner h2{font-size:clamp(34px,4vw,52px);font-weight:900;line-height:1.12;margin-bottom:16px}
+    .policy-inner h2 .hl{color:var(--accent)}
+    .policy-inner .desc{font-size:16px;color:rgba(255,255,255,.45);line-height:1.7;max-width:800px;margin-bottom:46px}
+    .pol-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+    .pol-card{padding:28px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07)}
+    .pol-card .pol-num{font-size:56px;font-weight:900;color:var(--accent);line-height:1;margin-bottom:6px}
+    .pol-card .pol-unit{font-size:18px;color:var(--accent);font-weight:600}
+    .pol-card h4{font-size:17px;font-weight:700;margin:10px 0 6px}
+    .pol-card p{font-size:13px;color:rgba(255,255,255,.45);line-height:1.6}
+
     /* PRODUCTS (white) */
     .products{background:var(--cream);padding:120px 60px;position:relative;overflow:hidden}
     .products h2{font-size:clamp(56px,7vw,110px);font-weight:900;color:rgba(0,0,0,.07);letter-spacing:-.04em;margin-bottom:16px;line-height:1}
@@ -75,8 +109,20 @@
     .prod-card p{font-size:13px;color:var(--muted);line-height:1.65;padding:0 22px 22px}
     .prod-card .pc-tag{display:inline-block;margin:0 22px 16px;padding:4px 10px;border-radius:6px;font-size:12px;font-weight:600;background:rgba(230,57,70,.08);color:var(--red)}
 
+    /* CASE (dark) */
+    .case{background:var(--dark);padding:100px 60px;position:relative}
+    .case-inner{max-width:1400px;margin:0 auto}
+    .case-inner h2{font-size:clamp(34px,4vw,52px);font-weight:900;line-height:1.12;margin-bottom:16px}
+    .case-inner h2 .hl{color:var(--accent)}
+    .case-inner .desc{font-size:16px;color:rgba(255,255,255,.45);line-height:1.7;max-width:800px;margin-bottom:46px}
+    .case-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .case-card{padding:28px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07)}
+    .case-card h4{font-size:18px;font-weight:700;margin-bottom:10px;color:var(--accent)}
+    .case-card p{font-size:14px;color:rgba(255,255,255,.45);line-height:1.7}
+    .case-card .case-highlight{display:inline-block;padding:4px 12px;border-radius:6px;background:rgba(0,180,216,.1);color:var(--accent);font-size:14px;font-weight:700;margin-top:10px}
+
     /* TECH (dark) */
-    .tech{background:var(--dark);padding:120px 60px;position:relative;overflow:hidden}
+    .tech{background:var(--dark);padding:100px 60px;position:relative;overflow:hidden}
     .tech-inner{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
     .tech-txt h2{font-size:clamp(34px,4vw,52px);font-weight:900;line-height:1.12;margin-bottom:24px}
     .tech-txt h2 .hl{color:var(--accent)}
@@ -113,10 +159,8 @@
     .tl-item p{font-size:14px;color:#888;line-height:1.6}
 
     /* GOALS (dark) */
-    .goals{background:var(--dark);padding:120px 60px}
+    .goals{background:var(--dark);padding:100px 60px}
     .goals-inner{max-width:1400px;margin:0 auto}
-    .sec-tag{display:inline-flex;align-items:center;gap:8px;color:var(--accent);font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:18px}
-    .sec-tag::before{content:"";width:24px;height:2px;background:var(--accent)}
     .goals h2{font-size:clamp(34px,4vw,50px);font-weight:900;line-height:1.15;margin-bottom:16px}
     .goals .desc{font-size:16px;color:rgba(255,255,255,.45);line-height:1.7;max-width:700px;margin-bottom:46px}
     .g-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
@@ -125,13 +169,13 @@
     .g-card .g-ico{font-size:28px;margin-bottom:12px}
     .g-card h4{font-size:17px;font-weight:700;margin-bottom:10px}
     .g-card p{font-size:13px;color:rgba(255,255,255,.45);line-height:1.7}
-    .g-card .g-highlight{color:var(--accent);font-weight:700}
+    .g-card .gh{color:var(--accent);font-weight:700}
 
     /* BUDGET (dark) */
-    .budget{background:var(--dark);padding:120px 60px}
+    .budget{background:var(--dark);padding:100px 60px}
     .budget-inner{max-width:1400px;margin:0 auto}
     .budget h2{font-size:clamp(34px,4vw,50px);font-weight:900;line-height:1.15;margin-bottom:16px}
-    .budget .desc{font-size:16px;color:rgba(255,255,255,.45);line-height:1.7;max-width:700px;margin-bottom:46px}
+    .budget .desc{font-size:16px;color:rgba(255,255,255,.45);line-height:1.7;max-width:800px;margin-bottom:46px}
     .b-tbl{width:100%;border-collapse:separate;border-spacing:0 6px}
     .b-tbl th{text-align:left;padding:12px 20px;color:var(--accent);font-size:13px;font-weight:600;letter-spacing:.05em}
     .b-tbl td{padding:14px 20px;background:rgba(255,255,255,.03);border-top:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05);font-size:14px}
@@ -143,7 +187,7 @@
     .b-note strong{color:var(--accent)}
 
     /* TEAM (dark) */
-    .team{background:var(--dark);padding:120px 60px}
+    .team{background:var(--dark);padding:100px 60px}
     .team-inner{max-width:1400px;margin:0 auto}
     .team h2{font-size:clamp(34px,4vw,50px);font-weight:900;line-height:1.15;margin-bottom:16px}
     .team .desc{font-size:16px;color:rgba(255,255,255,.45);line-height:1.7;max-width:700px;margin-bottom:46px}
@@ -177,8 +221,7 @@
     .sources h3{font-size:20px;font-weight:700;margin-bottom:24px;color:var(--accent)}
     .src-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
     .src-item{padding:12px 16px;border-radius:8px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.05);font-size:13px;color:rgba(255,255,255,.45);line-height:1.5}
-    .src-item a{color:var(--accent);text-decoration:none}
-    .src-item a:hover{text-decoration:underline}
+    .src-item a{color:var(--accent);text-decoration:none}.src-item a:hover{text-decoration:underline}
     .src-item .src-tag{color:var(--accent);font-weight:700;margin-right:6px}
 
     /* FOOTER */
@@ -194,26 +237,22 @@
     .ft-contact .ic{color:var(--accent)}
     .ft-btm{display:flex;justify-content:space-between;align-items:center;padding-top:20px;border-top:1px solid rgba(255,255,255,.05);font-size:12px;color:rgba(255,255,255,.25);max-width:1400px;margin:0 auto}
 
-    /* FLOAT */
     .float-btn{position:fixed;bottom:28px;right:28px;width:54px;height:54px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:22px;cursor:pointer;box-shadow:0 4px 18px rgba(0,180,216,.4);z-index:999;transition:all .3s;border:none;text-decoration:none}
     .float-btn:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,180,216,.5)}
 
-    /* ANIM */
-    .fu{opacity:0;transform:translateY(36px);transition:all .8s cubic-bezier(.16,1,.3,1)}.fu.vis{opacity:1;transform:translateY(0)}
-
-    /* RESPONSIVE */
-    @media(max-width:1024px){.hero-inner,.reasons-inner,.tech-inner{grid-template-columns:1fr}.hero-product{display:none}.hero-text .sub,.hero-text .oneliner{margin-left:auto;margin-right:auto;text-align:center}.tab-panel.on{grid-template-columns:1fr}.tp-right{display:none}.prod-cards{grid-template-columns:1fr 1fr}.g-grid,.tm-grid{grid-template-columns:1fr}.ft-top{grid-template-columns:1fr}.ft-links{grid-template-columns:1fr 1fr}.tech-flow{grid-template-columns:repeat(2,1fr)}.cta-quotes{grid-template-columns:1fr}.src-grid{grid-template-columns:1fr}}
-    @media(max-width:640px){.nav{padding:0 20px}.nav-center{display:none}.hero-inner{padding:0 20px}.reasons,.tabs-section,.products,.tech,.history,.goals,.budget,.team,.cta,.sources,.footer{padding-left:20px;padding-right:20px}.tabs-bar{gap:16px;flex-wrap:wrap}.tab-btn{font-size:16px}.prod-cards{grid-template-columns:1fr}.tech-flow{grid-template-columns:1fr}.ft-links{grid-template-columns:1fr}.ft-mid{grid-template-columns:1fr}.ft-btm{flex-direction:column;gap:8px;text-align:center}.price-grid{grid-template-columns:1fr}}
+    @media(max-width:1024px){.hero-inner,.reasons-inner,.tech-inner{grid-template-columns:1fr}.hero-product{display:none}.hero-text .sub,.hero-text .oneliner{margin-left:auto;margin-right:auto;text-align:center}.tab-panel.on{grid-template-columns:1fr}.tp-right{display:none}.prod-cards{grid-template-columns:1fr 1fr}.g-grid,.tm-grid,.data-cards,.pol-grid,.case-grid{grid-template-columns:1fr}.ft-top{grid-template-columns:1fr}.ft-links{grid-template-columns:1fr 1fr}.tech-flow{grid-template-columns:repeat(2,1fr)}.cta-quotes{grid-template-columns:1fr}.src-grid{grid-template-columns:1fr}}
+    @media(max-width:640px){.nav{padding:0 20px}.nav-center{display:none}.hero-inner{padding:0 20px}.reasons,.tabs-section,.products,.tech,.history,.goals,.budget,.team,.cta,.sources,.footer,.data-section,.policy,.case{padding-left:20px;padding-right:20px}.tabs-bar{gap:16px;flex-wrap:wrap}.tab-btn{font-size:16px}.prod-cards{grid-template-columns:1fr}.tech-flow{grid-template-columns:1fr}.ft-links{grid-template-columns:1fr}.ft-mid{grid-template-columns:1fr}.ft-btm{flex-direction:column;gap:8px;text-align:center}.price-grid{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav class="nav">
   <a href="#top" class="nav-logo">水务提案</a>
   <ul class="nav-center">
     <li><a href="#reasons" class="on">核心优势</a></li>
-    <li><a href="#pain">现状痛点</a></li>
+    <li><a href="#policy">政策背景</a></li>
+    <li><a href="#status">深圳现状</a></li>
+    <li><a href="#pain">核心痛点</a></li>
     <li><a href="#tech">技术方案</a></li>
     <li><a href="#plan">实施计划</a></li>
     <li><a href="#budget">预算测算</a></li>
@@ -224,7 +263,7 @@
   </div>
 </nav>
 
-<!-- HERO -->
+<!-- 1. HERO -->
 <section class="hero" id="top">
   <div class="hero-bg"><img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1920&q=80" alt=""></div>
   <div class="hero-inner">
@@ -239,7 +278,7 @@
   <div class="hero-ft"><span>© 2026 供排水智慧管理课程项目</span><span>深圳市水务局专项工作组</span></div>
 </section>
 
-<!-- 3 REASONS -->
+<!-- 2. 3 REASONS -->
 <section class="reasons" id="reasons">
   <div class="dots-deco" style="top:30px;right:60px"></div>
   <div class="reasons-inner">
@@ -253,8 +292,8 @@
   </div>
 </section>
 
-<!-- TABS -->
-<section class="tabs-section" id="pain">
+<!-- 3. TABS -->
+<section class="tabs-section">
   <div class="tabs-bar">
     <div class="tab-btn on" data-t="0"><span class="ico">🔍</span> 精准诊断</div>
     <div class="tab-btn" data-t="1"><span class="ico">📊</span> 数据驱动</div>
@@ -262,61 +301,103 @@
   </div>
   <div class="tab-panels">
     <div class="tab-panel on" data-p="0">
-      <div class="tp-left">
-        <div class="tp-label">Longer Lasting</div>
-        <div class="tp-num">+345%</div>
-        <div class="tp-note"><strong>+345%</strong> 诊断准确率提升<br>AI混接识别 + CCTV管道检测 + 水质流量分析</div>
-      </div>
+      <div class="tp-left"><div class="tp-label">Longer Lasting</div><div class="tp-num">+345%</div><div class="tp-note"><strong>+345%</strong> 诊断准确率提升<br>AI混接识别 + CCTV管道检测 + 水质流量分析</div></div>
       <div class="tp-right"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80" alt=""></div>
     </div>
     <div class="tab-panel" data-p="1">
-      <div class="tp-left">
-        <div class="tp-label">Data Driven</div>
-        <div class="tp-num">50+</div>
-        <div class="tp-note"><strong>50+</strong> 个小区数据接入<br>实时监测水质、流量、液位，AI自动分析异常</div>
-      </div>
+      <div class="tp-left"><div class="tp-label">Data Driven</div><div class="tp-num">50+</div><div class="tp-note"><strong>50+</strong> 个小区数据接入<br>实时监测水质、流量、液位，AI自动分析异常</div></div>
       <div class="tp-right"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80" alt=""></div>
     </div>
     <div class="tab-panel" data-p="2">
-      <div class="tp-left">
-        <div class="tp-label">Closed Loop</div>
-        <div class="tp-num">100%</div>
-        <div class="tp-note"><strong>100%</strong> 工单闭环跟踪<br>从发现问题到修复复检，全流程数字化管理</div>
-      </div>
+      <div class="tp-left"><div class="tp-label">Closed Loop</div><div class="tp-num">100%</div><div class="tp-note"><strong>100%</strong> 工单闭环跟踪<br>从发现问题到修复复检，全流程数字化管理</div></div>
       <div class="tp-right"><img src="https://images.unsplash.com/photo-1581093458791-9d42e3c7e117?w=600&q=80" alt=""></div>
     </div>
   </div>
 </section>
 
-<!-- PRODUCTS (white) - 4 pain points -->
-<section class="products" id="prod">
-  <h2>核心痛点</h2>
-  <p class="prod-sub">目前小区雨污分流治理常见四类盲点。如果没有体检系统，往往只能靠人工巡查、居民投诉和事后开挖，成本高、效率低、返工多。</p>
-  <div class="prod-cards">
-    <div class="prod-card fu">
-      <div class="pc-top"><div class="pc-num">01</div><h3>错接混接难发现</h3></div>
-      <p>雨水管和污水管混接，雨天污水溢流，旱天河水倒灌，严重影响水环境。</p>
-      <div class="pc-tag">高频问题</div>
-    </div>
-    <div class="prod-card fu" style="transition-delay:.08s">
-      <div class="pc-top"><div class="pc-num">02</div><h3>雨天外水入渗难识别</h3></div>
-      <p>雨水和地下水渗入污水管网，导致污水厂进水浓度偏低，处理效率大打折扣。</p>
-      <div class="pc-tag">隐蔽性强</div>
-    </div>
-    <div class="prod-card fu" style="transition-delay:.16s">
-      <div class="pc-top"><div class="pc-num">03</div><h3>异常点位难定位</h3></div>
-      <p>管道裂缝、变形、淤积等结构性病害长期隐藏在地下，人工巡检效率低。</p>
-      <div class="pc-tag">定位困难</div>
-    </div>
-    <div class="prod-card fu" style="transition-delay:.24s">
-      <div class="pc-top"><div class="pc-num">04</div><h3>整改优先级难排序</h3></div>
-      <p>缺乏量化评估手段，无法科学判断"先修哪里"，导致资金使用效率低。</p>
-      <div class="pc-tag">决策难点</div>
+<!-- 4. 政策背景 -->
+<section class="policy" id="policy">
+  <div class="policy-inner">
+    <div class="sec-tag">政策背景</div>
+    <h2>为什么现在<span class="hl">必须做</span></h2>
+    <p class="desc">2025年全国常住人口城镇化率67.89%，城镇常住人口95380万人，城市治理已进入精细化阶段。深圳城镇化率99.79%，属于超高密度城市治理场景。 <span class="src">[S1][S2]</span></p>
+    <div class="pol-grid fu">
+      <div class="pol-card">
+        <div class="pol-num">67.89%</div>
+        <div class="pol-unit">全国城镇化率</div>
+        <h4>2025年全国常住人口城镇化率</h4>
+        <p>城镇常住人口95380万人，城市治理已进入精细化阶段。当一个城市几乎全部人口都生活在城镇空间里，排水问题就不只是工程问题，而是民生和城市韧性问题。 <span class="src">[S1]</span></p>
+      </div>
+      <div class="pol-card">
+        <div class="pol-num">99.79%</div>
+        <div class="pol-unit">深圳城镇化率</div>
+        <h4>2025年末深圳常住人口1824.85万人</h4>
+        <p>深圳已经不是"有没有管网"的阶段，而是"能不能更精准治理末端排水系统"的阶段。 <span class="src">[S2]</span></p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- TECH (dark) -->
+<!-- 5. 深圳现状 -->
+<section class="data-section" id="status">
+  <div class="data-inner">
+    <div class="sec-tag">深圳现状</div>
+    <h2>系统很大，<span class="hl">末端问题会被放大</span></h2>
+    <p class="desc">深圳排水系统规模很大，任何小区末端错接、混接、外水入渗，都会被层层放大到管网和污水厂。很多问题真正发生在最末端的小区内部。 <span class="src">[S3]</span></p>
+    <div class="data-cards fu">
+      <div class="data-card">
+        <div class="dc-num">23.17<span class="dc-unit">亿m³</span></div>
+        <h4>2025年累计处理污水</h4>
+        <p>深圳全年累计处理污水23.17亿立方米。 <span class="src">[S3]</span></p>
+      </div>
+      <div class="data-card">
+        <div class="dc-num">21709.80<span class="dc-unit">km</span></div>
+        <h4>纳入GIS管理的市政排水管渠</h4>
+        <p>纳入GIS系统管理的市政排水管渠总长度。 <span class="src">[S3]</span></p>
+      </div>
+      <div class="data-card">
+        <div class="dc-num">80<span class="dc-unit">座</span></div>
+        <h4>市政污水（截污）泵站</h4>
+        <p>市政污水（截污）泵站数量。 <span class="src">[S3]</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. 问题落点 -->
+<section class="case" id="case">
+  <div class="case-inner">
+    <div class="sec-tag green">问题落点</div>
+    <h2>小区排水已经进入<span class="hl">明确监管阶段</span></h2>
+    <p class="desc">小区排水不再是"没人管"的灰色地带。真实社区里确实存在长期排污管网老化、污水溢流、异味扰民的问题，而且改造资金和优先级判断都很难，所以更需要先体检。</p>
+    <div class="case-grid fu">
+      <div class="case-card">
+        <h4>政策明确：2026年4月1日起</h4>
+        <p>未申请移交的居住区类建筑小区，其权属（管理）主体应做好本小区排水管渠日常运维。 <span class="src">[S4]</span></p>
+        <div class="case-highlight">小区排水运维责任进一步明确</div>
+      </div>
+      <div class="case-card">
+        <h4>真实案例：梓兴花园</h4>
+        <p>深圳坪山区梓兴花园在2025年因排污管网老化整治，居民及商户自愿筹资14.8万元，改造后污水溢流和环境异味问题得到根治。 <span class="src">[S5]</span></p>
+        <div class="case-highlight">居民筹资14.8万元 根治污水溢流</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. 核心痛点 (white) -->
+<section class="products" id="pain">
+  <h2>核心痛点</h2>
+  <p class="prod-sub">目前小区雨污分流治理常见四类盲点。如果没有体检系统，往往只能靠人工巡查、居民投诉和事后开挖，成本高、效率低、返工多。我们的判断是，很多小区不是没有治理动作，而是缺少一套持续、可复核、可比较的诊断方法。</p>
+  <div class="prod-cards">
+    <div class="prod-card fu"><div class="pc-top"><div class="pc-num">01</div><h3>错接混接难发现</h3></div><p>雨水管和污水管混接，雨天污水溢流，旱天河水倒灌，严重影响水环境。</p><div class="pc-tag">高频问题</div></div>
+    <div class="prod-card fu" style="transition-delay:.08s"><div class="pc-top"><div class="pc-num">02</div><h3>雨天外水入渗难识别</h3></div><p>雨水和地下水渗入污水管网，导致污水厂进水浓度偏低，处理效率大打折扣。</p><div class="pc-tag">隐蔽性强</div></div>
+    <div class="prod-card fu" style="transition-delay:.16s"><div class="pc-top"><div class="pc-num">03</div><h3>异常点位难定位</h3></div><p>管道裂缝、变形、淤积等结构性病害长期隐藏在地下，人工巡检效率低。</p><div class="pc-tag">定位困难</div></div>
+    <div class="prod-card fu" style="transition-delay:.24s"><div class="pc-top"><div class="pc-num">04</div><h3>整改优先级难排序</h3></div><p>缺乏量化评估手段，无法科学判断"先修哪里"，导致资金使用效率低。</p><div class="pc-tag">决策难点</div></div>
+  </div>
+</section>
+
+<!-- 8. 技术方案 -->
 <section class="tech" id="tech">
   <div class="tech-inner">
     <div class="tech-txt fu">
@@ -328,9 +409,9 @@
         <div class="fl"><div class="sn">3</div><h4>诊断平台层</h4><p>GIS一张图<br>AI分析</p></div>
         <div class="fl"><div class="sn">4</div><h4>闭环处置层</h4><p>工单派发<br>整改复核</p></div>
       </div>
-      <p class="tp-sub">重点识别四类异常：<strong style="color:var(--accent)">晴天有污、雨天倒灌、流量突增、水质突变</strong>。</p>
+      <p class="tp-sub">重点监测液位、流量、COD、氨氮，用于识别<strong style="color:var(--accent)">"晴天有污、雨天倒灌、流量突增、水质突变"</strong>。</p>
       <div class="tech-price">
-        <h4>公开采购参考单价 [S6]</h4>
+        <h4>公开采购参考单价 <span class="src">[S6]</span></h4>
         <div class="price-grid">
           <div class="price-item"><span class="pn">窨井多参数采集仪</span><span class="pv">12,500元/台</span></div>
           <div class="price-item"><span class="pn">超声波流量计</span><span class="pv">11,500元/台</span></div>
@@ -342,75 +423,55 @@
     <div class="tech-visual fu">
       <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80" alt="">
       <div class="tech-case">
-        <h4>深圳已在探索 [S7]</h4>
-        <p>2026年3月6日，深圳市水务局启动"大型排水暗渠病险无人机可视化检测技术研究和试点应用项目"，预算95万元。深圳已开始把"智能检测、可视化诊断"用于排水设施安全和治理场景。</p>
+        <h4>深圳已在探索 <span class="src">[S7]</span></h4>
+        <p>2026年3月6日，深圳市水务局启动"大型排水暗渠病险无人机可视化检测技术研究和试点应用项目"，预算95万元。</p>
+      </div>
+      <div class="tech-case" style="margin-top:12px">
+        <h4>水环境总体较好 <span class="src">[S8]</span></h4>
+        <p>2026年一季度，深圳29个开展监测的饮用水源地水质达标率100%，310条河流中Ⅲ类及以上247条。下一阶段治理重点更适合向源头精细化、末端数字化管理延伸。</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- HISTORY (light) - Implementation Plan -->
+<!-- 9. 实施方案 (light) -->
 <section class="history" id="plan">
   <div class="history-inner">
     <h2>实施方案：<span class="hl">先试点</span>，再标准化，再推广</h2>
-    <p class="h-sub">我们建议先从一个老旧小区或居住区类城中村周边片区做样板，不追求一上来全市铺开。这样既能控制预算，也能把流程跑顺。</p>
+    <p class="h-sub">我们建议先从一个老旧小区或居住区类城中村周边片区做样板，不追求一上来全市铺开。这样既能控制预算，也能把流程跑顺，形成深圳可复制的标准方法。</p>
     <div class="tl fu">
-      <div class="tl-item">
-        <div class="ph">第一步 · 3个月建台账</div>
-        <h4>完成试点小区基础建档</h4>
-        <p>完成试点小区排水井、排水口、管线、历史问题的基础建档，建立管网"健康档案"。</p>
-      </div>
-      <div class="tl-item">
-        <div class="ph">第二步 · 6个月做体检</div>
-        <h4>布设重点井位监测</h4>
-        <p>布设重点井位监测，形成晴天-雨天对比诊断，锁定疑似错接混接和外水入渗点。</p>
-      </div>
-      <div class="tl-item">
-        <div class="ph">第三步 · 12个月闭环</div>
-        <h4>接入工单系统，完成整改复核</h4>
-        <p>接入工单系统，完成整改、复核、销项，沉淀成可复制的小区体检标准流程。</p>
-      </div>
+      <div class="tl-item"><div class="ph">第一步 · 3个月建台账</div><h4>完成试点小区基础建档</h4><p>完成试点小区排水井、排水口、管线、历史问题的基础建档，建立管网"健康档案"。</p></div>
+      <div class="tl-item"><div class="ph">第二步 · 6个月做体检</div><h4>布设重点井位监测</h4><p>布设重点井位监测，形成晴天-雨天对比诊断，锁定疑似错接混接和外水入渗点。</p></div>
+      <div class="tl-item"><div class="ph">第三步 · 12个月闭环</div><h4>接入工单系统，完成整改复核</h4><p>接入工单系统，完成整改、复核、销项，沉淀成可复制的小区体检标准流程。</p></div>
     </div>
   </div>
 </section>
 
-<!-- GOALS (dark) -->
+<!-- 10. 预期目标 -->
 <section class="goals">
   <div class="goals-inner">
     <div class="sec-tag">预期目标</div>
-    <h2>要把"提升效率"说成可量化结果</h2>
+    <h2>要把"提升效率"说成<span class="hl" style="color:var(--accent)">可量化结果</span></h2>
     <p class="desc">市长最关心的不是"这个系统先进不先进"，而是"能不能带来确定结果"。所以我们的目标既要有居民能感知的结果，也要有管理部门能考核的结果。</p>
     <div class="g-grid fu">
-      <div class="g-card">
-        <div class="g-ico">📈</div>
-        <h4>管理目标</h4>
-        <p>重点井位在线监测覆盖率<span class="g-highlight">100%</span>；异常工单<span class="g-highlight">24小时内</span>派发；疑似错接混接点<span class="g-highlight">100%建档</span>；整改复核闭环率<span class="g-highlight">90%以上</span>。</p>
-      </div>
-      <div class="g-card">
-        <div class="g-ico">🏘️</div>
-        <h4>民生结果</h4>
-        <p>少积水、少异味、少污水冒溢。居民能感知到排水环境改善，投诉量显著下降。</p>
-      </div>
-      <div class="g-card">
-        <div class="g-ico">🔧</div>
-        <h4>管理结果</h4>
-        <p>少盲查、少返工、少无效开挖。用数据驱动决策，把有限资金用在最需要的地方。</p>
-      </div>
+      <div class="g-card"><div class="g-ico">📈</div><h4>管理目标</h4><p>重点井位在线监测覆盖率<span class="gh">100%</span>；异常工单<span class="gh">24小时内</span>派发；疑似错接混接点<span class="gh">100%建档</span>；整改复核闭环率<span class="gh">90%以上</span>。</p></div>
+      <div class="g-card"><div class="g-ico">🏘️</div><h4>民生结果</h4><p>少积水、少异味、少污水冒溢。居民能感知到排水环境改善，投诉量显著下降。</p></div>
+      <div class="g-card"><div class="g-ico">🔧</div><h4>管理结果</h4><p>少盲查、少返工、少无效开挖。用数据驱动决策，把有限资金用在最需要的地方。</p></div>
     </div>
   </div>
 </section>
 
-<!-- BUDGET (dark) -->
+<!-- 11. 预算 -->
 <section class="budget" id="budget">
   <div class="budget-inner">
     <div class="sec-tag">预算测算</div>
-    <h2>申请预算：试点约85.9万元</h2>
-    <p class="desc">这是一套课堂版测算，依据公开中标单价，逻辑清楚、容易答辩。这笔钱是"智慧体检试点预算"，不含大规模土建改造、清淤修复和整区施工费用。</p>
+    <h2>申请预算：试点约<span class="hl" style="color:var(--yellow)">85.9万元</span></h2>
+    <p class="desc">这是一套课堂版测算，依据公开中标单价，逻辑清楚、容易答辩。这笔钱是"智慧体检试点预算"，不含大规模土建改造、清淤修复和整区施工费用。 <span class="src">[S6]</span></p>
     <div class="fu">
       <table class="b-tbl">
         <thead><tr><th>项目</th><th>测算依据</th><th>金额</th></tr></thead>
         <tbody>
-          <tr><td>单个重点井位设备</td><td>智能井盖980 + 采集仪12500 + 流量计11500 + COD16800 + 氨氮13500</td><td>5.53万</td></tr>
+          <tr><td>单个重点井位设备</td><td>智能井盖980 + 采集仪12,500 + 流量计11,500 + COD16,800 + 氨氮13,500</td><td>5.53万</td></tr>
           <tr><td>12个重点井位设备</td><td>12 × 55,280元</td><td>66.34万</td></tr>
           <tr><td>云平台服务</td><td>数据存储、可视化、告警推送</td><td>5.90万</td></tr>
           <tr><td>系统集成</td><td>设备调试、数据对接、平台部署</td><td>5.85万</td></tr>
@@ -418,12 +479,12 @@
         </tbody>
       </table>
       <div class="b-total"><span class="bl">试点总预算</span><span class="bn">85.9</span><span class="bu">万元</span></div>
-      <div class="b-note"><strong>注意：</strong>此预算为"智慧体检试点预算"，不含大规模土建改造、清淤修复和整区施工费用。公开采购数据来源：三明市沙县区排水管网监测管理建设项目结果公告 [S6]。</div>
+      <div class="b-note"><strong>注意：</strong>此预算为"智慧体检试点预算"，不含大规模土建改造、清淤修复和整区施工费用。公开采购数据来源：三明市沙县区排水管网监测管理建设项目结果公告。 <span class="src">[S6]</span></div>
     </div>
   </div>
 </section>
 
-<!-- TEAM (dark) -->
+<!-- 12. 分工 -->
 <section class="team">
   <div class="team-inner">
     <div class="sec-tag">团队分工</div>
@@ -437,10 +498,7 @@
       <div class="tm-card"><div class="tm-av">🎨</div><h4>视觉与海报</h4><div class="tm-role">PPT与海报设计</div><p>负责PPT视觉设计与A4海报制作，确保专业美观、主题突出。</p></div>
       <div class="tm-card"><div class="tm-av">🎤</div><h4>答辩准备</h4><div class="tm-role">现场表现</div><p>负责答辩问题准备、表达节奏练习、常见问题回答准备。</p></div>
     </div>
-    <div class="ai-note">
-      <h4>AI使用说明</h4>
-      <p>AI主要用于资料检索辅助、结构整理、文案润色；关键数据全部回溯到2026年官方原始页面或政府采购公告。</p>
-    </div>
+    <div class="ai-note"><h4>AI使用说明</h4><p>AI主要用于资料检索辅助、结构整理、文案润色；关键数据全部回溯到2026年官方原始页面或政府采购公告。</p></div>
   </div>
 </section>
 
@@ -478,8 +536,8 @@
   <div class="ft-top">
     <div><div class="ft-logo">水务提案</div><p style="font-size:14px;color:rgba(255,255,255,.38);line-height:1.6">深圳市水务局专项工作组<br>供排水智慧管理课程项目</p></div>
     <div class="ft-links">
-      <div class="ft-col"><h4>方案概览</h4><a href="#reasons">核心优势</a><a href="#pain">现状痛点</a><a href="#tech">技术方案</a><a href="#plan">实施计划</a></div>
-      <div class="ft-col"><h4>方案详情</h4><a href="#budget">预算测算</a><a href="#cta">预期目标</a><a href="#">团队分工</a><a href="#">应用案例</a></div>
+      <div class="ft-col"><h4>方案概览</h4><a href="#reasons">核心优势</a><a href="#policy">政策背景</a><a href="#status">深圳现状</a><a href="#pain">核心痛点</a></div>
+      <div class="ft-col"><h4>方案详情</h4><a href="#tech">技术方案</a><a href="#plan">实施计划</a><a href="#budget">预算测算</a><a href="#cta">拉票页</a></div>
       <div class="ft-col"><h4>相关链接</h4><a href="#">深圳智慧水务</a><a href="#">海绵城市建设</a><a href="#">城市生命线工程</a><a href="#">GitHub仓库</a></div>
     </div>
   </div>
