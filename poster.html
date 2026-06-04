@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小区雨污分流智慧体检系统 — A4海报</title>
+<style>
+@page { size: A4 portrait; margin: 0; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  width: 210mm;
+  height: 297mm;
+  margin: 0 auto;
+  font-family: 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+  background: #050d18;
+  color: #e4edf8;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Background effects */
+.poster-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 15%, rgba(0,229,255,0.18), transparent 40%),
+    radial-gradient(ellipse at 80% 85%, rgba(0,230,118,0.14), transparent 35%),
+    radial-gradient(ellipse at 50% 50%, rgba(77,163,255,0.06), transparent 50%),
+    linear-gradient(160deg, #050d18 0%, #0a1929 35%, #0d2137 65%, #081a2e 100%);
+  z-index: 0;
+}
+
+/* Grid overlay */
+.poster-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,229,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,229,255,0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Content */
+.content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #00e5ff, #00e676);
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+}
+
+.brand-text {
+  font-size: 13px;
+  color: #5a7a9a;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.badge {
+  padding: 6px 14px;
+  border-radius: 99px;
+  background: rgba(0,229,255,0.1);
+  border: 1px solid rgba(0,229,255,0.25);
+  color: #00e5ff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+/* Main title */
+.hero {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.hero .kicker {
+  display: inline-block;
+  padding: 5px 16px;
+  border-radius: 99px;
+  background: rgba(0,229,255,0.06);
+  border: 1px solid rgba(0,229,255,0.2);
+  color: #26c6da;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  margin-bottom: 14px;
+}
+
+.hero h1 {
+  font-size: 42px;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 10px;
+}
+
+.hero h1 .gradient {
+  background: linear-gradient(90deg, #fff 0%, #00e5ff 40%, #00e676 75%, #ffd740 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero .subtitle {
+  font-size: 15px;
+  color: #8fa8c8;
+  line-height: 1.5;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+/* Divider */
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0,229,255,0.3), transparent);
+  margin: 16px 0;
+}
+
+/* Main content area */
+.main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  flex: 1;
+}
+
+/* Pain points */
+.panel {
+  border-radius: 16px;
+  padding: 18px;
+  background: rgba(12,28,52,0.75);
+  border: 1px solid rgba(0,229,255,0.12);
+}
+
+.panel-title {
+  font-size: 16px;
+  font-weight: 900;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.panel-title .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.dot-cyan { background: #00e5ff; box-shadow: 0 0 8px #00e5ff; }
+.dot-green { background: #00e676; box-shadow: 0 0 8px #00e676; }
+.dot-gold { background: #ffd740; box-shadow: 0 0 8px #ffd740; }
+
+.pain-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.pain-item:last-child { margin-bottom: 0; }
+
+.pain-num {
+  min-width: 24px;
+  height: 24px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  background: rgba(0,229,255,0.12);
+  color: #00e5ff;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.pain-text {
+  font-size: 12px;
+  color: #b7c8d9;
+  line-height: 1.5;
+}
+
+.pain-text strong {
+  color: #e4edf8;
+  font-weight: 700;
+}
+
+/* Tech flow */
+.tech-steps {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.tech-step {
+  text-align: center;
+  padding: 8px 4px;
+  border-radius: 10px;
+  background: rgba(0,229,255,0.06);
+  border: 1px solid rgba(0,229,255,0.18);
+}
+
+.tech-step .num {
+  font-size: 16px;
+  font-weight: 900;
+  color: #00e5ff;
+  margin-bottom: 2px;
+}
+
+.tech-step .name {
+  font-size: 11px;
+  font-weight: 700;
+  color: #e4edf8;
+  margin-bottom: 2px;
+}
+
+.tech-step .desc {
+  font-size: 9px;
+  color: #5a7a9a;
+  line-height: 1.3;
+}
+
+/* Plan steps */
+.plan-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.plan-item {
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(0,229,255,0.05);
+  border: 1px solid rgba(0,229,255,0.12);
+}
+
+.plan-item .step-label {
+  font-size: 10px;
+  color: #00e5ff;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 3px;
+}
+
+.plan-item .step-title {
+  font-size: 13px;
+  font-weight: 900;
+  color: #e4edf8;
+  margin-bottom: 3px;
+}
+
+.plan-item .step-desc {
+  font-size: 10px;
+  color: #8fa8c8;
+  line-height: 1.4;
+}
+
+/* Budget */
+.budget-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.budget-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.04);
+  font-size: 11px;
+}
+
+.budget-item .label { color: #8fa8c8; }
+.budget-item .val { color: #ffd740; font-weight: 900; }
+
+/* Goals */
+.goals {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.goal-box {
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(0,230,118,0.06);
+  border: 1px solid rgba(0,230,118,0.15);
+}
+
+.goal-box .goal-title {
+  font-size: 12px;
+  font-weight: 900;
+  color: #00e676;
+  margin-bottom: 4px;
+}
+
+.goal-box p {
+  font-size: 10px;
+  color: #b7c8d9;
+  line-height: 1.4;
+  margin-bottom: 3px;
+}
+
+/* Bottom CTA */
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(0,229,255,0.12);
+}
+
+.cta-text {
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 1.3;
+}
+
+.cta-text .gradient {
+  background: linear-gradient(90deg, #00e5ff, #00e676);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.cta-sub {
+  font-size: 11px;
+  color: #5a7a9a;
+  margin-top: 4px;
+}
+
+.team-info {
+  text-align: right;
+  font-size: 11px;
+  color: #5a7a9a;
+  line-height: 1.6;
+}
+
+.team-info strong {
+  color: #8fa8c8;
+  font-weight: 700;
+}
+
+/* Decorative elements */
+.deco-circle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.deco-1 {
+  width: 300px;
+  height: 300px;
+  top: -80px;
+  right: -60px;
+  background: radial-gradient(circle, rgba(0,229,255,0.08), transparent 70%);
+}
+
+.deco-2 {
+  width: 250px;
+  height: 250px;
+  bottom: -40px;
+  left: -50px;
+  background: radial-gradient(circle, rgba(0,230,118,0.06), transparent 70%);
+}
+
+.deco-3 {
+  width: 180px;
+  height: 180px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(77,163,255,0.04), transparent 70%);
+}
+
+/* Print styles */
+@media print {
+  body {
+    width: 210mm;
+    height: 297mm;
+    margin: 0;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
+@media screen {
+  body {
+    margin: 20px auto;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    border-radius: 8px;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="poster-bg"></div>
+<div class="poster-grid"></div>
+<div class="deco-circle deco-1"></div>
+<div class="deco-circle deco-2"></div>
+<div class="deco-circle deco-3"></div>
+
+<div class="content">
+  <!-- Header -->
+  <div class="header">
+    <div class="brand">
+      <div class="brand-icon">💧</div>
+      <div class="brand-text">供排水智慧管理课程项目</div>
+    </div>
+    <div class="badge">4-6人小组 · 12分钟汇报</div>
+  </div>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="kicker">深圳市水务局专项工作组提案</div>
+    <h1>
+      给小区排水管网<br>
+      做一次<span class="gradient">智慧体检</span>
+    </h1>
+    <div class="subtitle">
+      通过水质、流量和管网图，精准判断雨污分流是否合格——<br>
+      哪些管道错接了、哪些混接了、哪些在渗水，一张图看清楚。
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Main Content -->
+  <div class="main">
+    <!-- Left column -->
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <!-- Pain points -->
+      <div class="panel">
+        <div class="panel-title"><span class="dot dot-cyan"></span>三大管网"病"</div>
+        <div class="pain-item">
+          <div class="pain-num">1</div>
+          <div class="pain-text"><strong>错接混接</strong> — 污水管接雨水管，清污不分，深圳老旧小区普遍存在</div>
+        </div>
+        <div class="pain-item">
+          <div class="pain-num">2</div>
+          <div class="pain-text"><strong>外水入渗</strong> — 地下水渗入污水管，稀释浓度，浪费处理能力</div>
+        </div>
+        <div class="pain-item">
+          <div class="pain-num">3</div>
+          <div class="pain-text"><strong>管道破损</strong> — 老旧管道裂缝变形，雨天溢流、旱天冒臭</div>
+        </div>
+      </div>
+
+      <!-- Tech -->
+      <div class="panel">
+        <div class="panel-title"><span class="dot dot-green"></span>智慧体检技术路径</div>
+        <div class="tech-steps">
+          <div class="tech-step">
+            <div class="num">01</div>
+            <div class="name">感知</div>
+            <div class="desc">水质传感器<br>流量计<br>CCTV机器人</div>
+          </div>
+          <div class="tech-step">
+            <div class="num">02</div>
+            <div class="name">传输</div>
+            <div class="desc">物联网<br>5G/LoRa<br>边缘计算</div>
+          </div>
+          <div class="tech-step">
+            <div class="num">03</div>
+            <div class="name">平台</div>
+            <div class="desc">GIS一张图<br>数据中台<br>管网模型</div>
+          </div>
+          <div class="tech-step">
+            <div class="num">04</div>
+            <div class="name">分析</div>
+            <div class="desc">AI诊断<br>异常识别<br>溯源算法</div>
+          </div>
+          <div class="tech-step">
+            <div class="num">05</div>
+            <div class="name">应用</div>
+            <div class="desc">体检报告<br>工单调度<br>修复闭环</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right column -->
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <!-- Implementation -->
+      <div class="panel">
+        <div class="panel-title"><span class="dot dot-gold"></span>实施方案：四步走</div>
+        <div class="plan-grid">
+          <div class="plan-item">
+            <div class="step-label">STEP 1</div>
+            <div class="step-title">建账摸底</div>
+            <div class="step-desc">收集管网GIS数据，建立电子病历</div>
+          </div>
+          <div class="plan-item">
+            <div class="step-label">STEP 2</div>
+            <div class="step-title">智慧体检</div>
+            <div class="step-desc">部署传感器+CCTV检测，AI自动诊断</div>
+          </div>
+          <div class="plan-item">
+            <div class="step-label">STEP 3</div>
+            <div class="step-title">精准修复</div>
+            <div class="step-desc">生成病害清单，派发工单，修复闭环</div>
+          </div>
+          <div class="plan-item">
+            <div class="step-label">STEP 4</div>
+            <div class="step-title">全市推广</div>
+            <div class="step-desc">形成深圳标准，纳入智慧水务平台</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Budget + Goals -->
+      <div class="panel">
+        <div class="panel-title"><span class="dot dot-cyan"></span>预算与目标</div>
+        <div class="budget-grid">
+          <div class="budget-item"><span class="label">水质传感器 50套</span><span class="val">60万</span></div>
+          <div class="budget-item"><span class="label">流量计 30套</span><span class="val">24万</span></div>
+          <div class="budget-item"><span class="label">CCTV检测 150km</span><span class="val">180万</span></div>
+          <div class="budget-item"><span class="label">清淤 60km</span><span class="val">150万</span></div>
+          <div class="budget-item"><span class="label">GIS+AI平台</span><span class="val">140万</span></div>
+          <div class="budget-item"><span class="label">运维+预备费</span><span class="val">127万</span></div>
+        </div>
+        <div style="text-align:center;margin-top:8px;padding:6px;border-radius:8px;background:rgba(255,215,64,0.1);border:1px solid rgba(255,215,64,0.2);">
+          <span style="font-size:14px;font-weight:900;color:#ffd740;">总预算：681万元</span>
+          <span style="font-size:10px;color:#8fa8c8;margin-left:8px;">投资回收期约2年</span>
+        </div>
+      </div>
+
+      <!-- Goals -->
+      <div class="panel">
+        <div class="goals">
+          <div class="goal-box">
+            <div class="goal-title">经济目标</div>
+            <p>污水收集率 65%→90%</p>
+            <p>年节省处理费 120万</p>
+            <p>带动产业 2000万</p>
+          </div>
+          <div class="goal-box">
+            <div class="goal-title">民生目标</div>
+            <p>投诉下降 80%</p>
+            <p>河道黑臭消除</p>
+            <p>少冒溢·少臭味·少开挖</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom -->
+  <div class="bottom">
+    <div class="cta-text">
+      给管网做一次体检<br>
+      <span class="gradient">是给城市买一份最划算的保险</span>
+    </div>
+    <div class="team-info">
+      <strong>小组成员</strong>：[请填写]<br>
+      <strong>选题</strong>：小区雨污分流智慧体检系统<br>
+      <strong>课程</strong>：供排水智慧管理
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
