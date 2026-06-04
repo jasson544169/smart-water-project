@@ -39,7 +39,11 @@
     .sec-tag::before{content:"";width:24px;height:2px;background:var(--accent)}
     .sec-tag.red{color:var(--red)}.sec-tag.red::before{background:var(--red)}
     .sec-tag.green{color:var(--green)}.sec-tag.green::before{background:var(--green)}
-    .fu{opacity:0;transform:translateY(36px);transition:all .8s cubic-bezier(.16,1,.3,1)}.fu.vis{opacity:1;transform:translateY(0)}
+    .fu{opacity:0;transform:translateY(40px);transition:all .9s cubic-bezier(.16,1,.3,1)}.fu.vis{opacity:1;transform:translateY(0)}
+    .fu-left{opacity:0;transform:translateX(-50px);transition:all .9s cubic-bezier(.16,1,.3,1)}.fu-left.vis{opacity:1;transform:translateX(0)}
+    .fu-right{opacity:0;transform:translateX(50px);transition:all .9s cubic-bezier(.16,1,.3,1)}.fu-right.vis{opacity:1;transform:translateX(0)}
+    .fu-scale{opacity:0;transform:scale(.92);transition:all .9s cubic-bezier(.16,1,.3,1)}.fu-scale.vis{opacity:1;transform:scale(1)}
+    .fu-up{opacity:0;transform:translateY(60px);transition:all 1s cubic-bezier(.16,1,.3,1)}.fu-up.vis{opacity:1;transform:translateY(0)}
     .src{font-size:12px;color:var(--accent);opacity:.6}
 
     /* 3 REASONS */
@@ -66,7 +70,7 @@
     .tp-right img{width:100%;max-width:420px;filter:drop-shadow(0 20px 40px rgba(0,0,0,.5))}
 
     /* DATA SECTION */
-    .data-section{background:var(--dark);padding:100px 60px;position:relative}
+    .data-section{background:var(--dark);padding:100px 60px;position:relative;overflow:hidden}
     .data-inner{max-width:1400px;margin:0 auto}
     .data-inner h2{font-size:clamp(34px,4vw,52px);font-weight:900;line-height:1.12;margin-bottom:16px}
     .data-inner h2 .hl{color:var(--accent)}
@@ -79,8 +83,13 @@
     .data-card h4{font-size:17px;font-weight:700;margin:10px 0 6px}
     .data-card p{font-size:13px;color:rgba(255,255,255,.45);line-height:1.6}
 
+    /* SECTION BG */
+    .sec-bg{position:absolute;inset:0;z-index:0;overflow:hidden}
+    .sec-bg img{width:100%;height:100%;object-fit:cover;opacity:.08;filter:blur(2px)}
+    .sec-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.92) 0%,rgba(10,10,10,.85) 50%,rgba(10,10,10,.92) 100%)}
+
     /* POLICY */
-    .policy{background:var(--dark);padding:100px 60px;position:relative}
+    .policy{background:var(--dark);padding:100px 60px;position:relative;overflow:hidden}
     .policy-inner{max-width:1400px;margin:0 auto}
     .policy-inner h2{font-size:clamp(34px,4vw,52px);font-weight:900;line-height:1.12;margin-bottom:16px}
     .policy-inner h2 .hl{color:var(--accent)}
@@ -316,7 +325,8 @@
 
 <!-- 政策背景 -->
 <section class="policy" id="policy">
-  <div class="policy-inner">
+  <div class="sec-bg"><img src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=1920&q=80" alt=""></div>
+  <div class="policy-inner" style="position:relative;z-index:1">
     <div class="sec-tag">政策背景</div>
     <h2>为什么现在<span class="hl">必须做</span></h2>
     <p class="desc">2025年全国常住人口城镇化率67.89%，城镇常住人口95380万人，城市治理已进入精细化阶段。深圳城镇化率99.79%，属于超高密度城市治理场景。 <span class="src">[S1][S2]</span></p>
@@ -329,7 +339,8 @@
 
 <!-- 深圳现状 -->
 <section class="data-section" id="status">
-  <div class="data-inner">
+  <div class="sec-bg"><img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1920&q=80" alt=""></div>
+  <div class="data-inner" style="position:relative;z-index:1">
     <div class="sec-tag">深圳现状</div>
     <h2>系统很大，<span class="hl">末端问题会被放大</span></h2>
     <p class="desc">深圳排水系统规模很大，任何小区末端错接、混接、外水入渗，都会被层层放大到管网和污水厂。很多问题真正发生在最末端的小区内部。 <span class="src">[S3]</span></p>
@@ -343,7 +354,8 @@
 
 <!-- 问题落点 -->
 <section class="case" id="case">
-  <div class="case-inner">
+  <div class="sec-bg"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=80" alt=""></div>
+  <div class="case-inner" style="position:relative;z-index:1">
     <div class="sec-tag green">问题落点</div>
     <h2>小区排水已经进入<span class="hl">明确监管阶段</span></h2>
     <p class="desc">小区排水不再是"没人管"的灰色地带。真实社区里确实存在长期排污管网老化、污水溢流、异味扰民的问题，而且改造资金和优先级判断都很难，所以更需要先体检。</p>
@@ -368,7 +380,8 @@
 
 <!-- 技术方案 -->
 <section class="tech" id="tech">
-  <div class="tech-inner">
+  <div class="sec-bg"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1920&q=80" alt=""></div>
+  <div class="tech-inner" style="position:relative;z-index:1">
     <div class="tech-txt fu">
       <h2>一张图讲清<br><span class="hl">系统怎么工作</span></h2>
       <p class="tp-sub">系统由4层组成：井位感知层、数据传输层、诊断平台层、闭环处置层。相当于给小区排水井装上持续观察能力，把过去靠经验判断的问题，变成平台能看见、能预警、能派单的管理对象。</p>
@@ -399,7 +412,8 @@
 
 <!-- 数据图表 -->
 <section class="chart-section">
-  <div class="chart-inner">
+  <div class="sec-bg"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920&q=80" alt=""></div>
+  <div class="chart-inner" style="position:relative;z-index:1">
     <h3>关键数据可视化</h3>
     <div class="chart-row">
       <!-- 柱状图：设备单价对比 -->
@@ -521,8 +535,9 @@
 </section>
 
 <!-- 预期目标 -->
-<section class="goals">
-  <div class="goals-inner">
+<section class="goals" style="position:relative;overflow:hidden">
+  <div class="sec-bg"><img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1920&q=80" alt=""></div>
+  <div class="goals-inner" style="position:relative;z-index:1">
     <div class="sec-tag">预期目标</div>
     <h2>要把"提升效率"说成<span style="color:var(--accent)">可量化结果</span></h2>
     <p class="desc">市长最关心的不是"这个系统先进不先进"，而是"能不能带来确定结果"。所以我们的目标既要有居民能感知的结果，也要有管理部门能考核的结果。</p>
@@ -535,8 +550,9 @@
 </section>
 
 <!-- 预算测算 -->
-<section class="budget" id="budget">
-  <div class="budget-inner">
+<section class="budget" id="budget" style="position:relative;overflow:hidden">
+  <div class="sec-bg"><img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1920&q=80" alt=""></div>
+  <div class="budget-inner" style="position:relative;z-index:1">
     <div class="sec-tag">预算测算</div>
     <h2>申请预算：试点约<span style="color:var(--yellow)">85.9万元</span></h2>
     <p class="desc">这是一套课堂版测算，依据公开中标单价，逻辑清楚、容易答辩。这笔钱是"智慧体检试点预算"，不含大规模土建改造、清淤修复和整区施工费用。 <span class="src">[S6]</span></p>
@@ -558,11 +574,12 @@
 </section>
 
 <!-- 分工 -->
-<section class="team">
-  <div class="team-inner">
+<section class="team" style="position:relative;overflow:hidden">
+  <div class="sec-bg"><img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&q=80" alt=""></div>
+  <div class="team-inner" style="position:relative;z-index:1">
     <div class="sec-tag">团队分工</div>
     <h2>分工与人工智能使用</h2>
-    <p class="desc">我们不是只会"让人工智能生成"。人工智能做辅助工具，但关键数字、政策原文和采购单价都做了人工复核和来源回溯。</p>
+    <p class="desc">项目运行时，系统将借助人工智能进行自动诊断、异常识别和工单派发，提升管理效率。关键数据均来自官方来源，经人工复核。</p>
     <div class="tm-grid fu">
       <div class="tm-card"><div class="tm-av">📋</div><h4>组长</h4><div class="tm-role">总体逻辑与汇报</div><p>负责选题确认、总体逻辑串联、汇报演讲和答辩准备。</p></div>
       <div class="tm-card"><div class="tm-av">📊</div><h4>政策与数据</h4><div class="tm-role">资料调研</div><p>收集国家和深圳市政策文件，整理深圳排水管网现状数据和痛点问题。</p></div>
@@ -571,7 +588,7 @@
       <div class="tm-card"><div class="tm-av">🎨</div><h4>视觉与海报</h4><div class="tm-role">演示文稿与海报设计</div><p>负责演示文稿视觉设计与A4海报制作，确保专业美观、主题突出。</p></div>
       <div class="tm-card"><div class="tm-av">🎤</div><h4>答辩准备</h4><div class="tm-role">现场表现</div><p>负责答辩问题准备、表达节奏练习、常见问题回答准备。</p></div>
     </div>
-    <div class="ai-note"><h4>人工智能使用说明</h4><p>人工智能主要用于资料检索辅助、结构整理、文案润色；关键数据全部回溯到2026年官方原始页面或政府采购公告。</p></div>
+    <div class="ai-note"><h4>系统人工智能能力</h4><p>项目运行时，系统将利用人工智能进行混接识别、异常预警、工单自动派发和整改跟踪，实现从"人工巡查"到"智能诊断"的转变。</p></div>
   </div>
 </section>
 
@@ -614,18 +631,37 @@
       <div class="ft-col"><h4>相关链接</h4><a href="#">深圳智慧水务</a><a href="#">海绵城市建设</a><a href="#">城市生命线工程</a></div>
     </div>
   </div>
-  <div class="ft-btm"><span>版权所有 ©2026 供排水智慧管理课程项目</span><span>用人工智能辅助制作 · 数据经人工查证</span></div>
+  <div class="ft-btm"><span>版权所有 ©2026 供排水智慧管理课程项目</span><span>数据经人工查证</span></div>
 </footer>
 
 <a href="#cta" class="float-btn">✉</a>
 
 <script>
+// Tab切换
 document.querySelectorAll('.tab-btn').forEach(b=>{b.addEventListener('click',()=>{document.querySelectorAll('.tab-btn').forEach(x=>x.classList.remove('on'));document.querySelectorAll('.tab-panel').forEach(x=>x.classList.remove('on'));b.classList.add('on');document.querySelector(`.tab-panel[data-p="${b.dataset.t}"]`).classList.add('on')})});
-const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
-document.querySelectorAll('.fu').forEach(el=>obs.observe(el));
+
+// 滚动动画 - 多种类型
+const animObs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');animObs.unobserve(e.target)}})},{threshold:.08,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.fu,.fu-left,.fu-right,.fu-scale,.fu-up').forEach(el=>animObs.observe(el));
+
+// 卡片交错动画
+const cardObs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){const cards=e.target.querySelectorAll('.prod-card,.data-card,.pol-card,.case-card,.g-card,.tm-card,.cta-q,.chart-box');cards.forEach((c,i)=>{c.style.transitionDelay=`${i*0.1}s`;c.classList.add('vis')});cardObs.unobserve(e.target)}})},{threshold:.05});
+document.querySelectorAll('.prod-cards,.data-cards,.pol-grid,.case-grid,.g-grid,.tm-grid,.cta-quotes,.chart-row').forEach(el=>cardObs.observe(el));
+
+// 导航高亮
 const secs=document.querySelectorAll('section[id]'),nls=document.querySelectorAll('.nav-center a');
 window.addEventListener('scroll',()=>{let c='';secs.forEach(s=>{if(window.scrollY>=s.offsetTop-120)c=s.id});nls.forEach(l=>{l.classList.remove('on');if(l.getAttribute('href')==='#'+c)l.classList.add('on')})});
+
+// 平滑滚动
 document.querySelectorAll('a[href^="#"]').forEach(l=>{l.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(l.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'})})});
+
+// 数字滚动动画
+const numObs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){const el=e.target;const text=el.textContent;const match=text.match(/([\d.]+)/);if(!match)return;const target=parseFloat(match[1]);const prefix=text.substring(0,text.indexOf(match[1]));const suffix=text.substring(text.indexOf(match[1])+match[1].length);const dur=1500;const start=performance.now();function tick(now){const p=Math.min((now-start)/dur,1);const eased=1-Math.pow(1-p,3);const cur=target*eased;el.textContent=prefix+(target%1!==0?cur.toFixed(1):Math.round(cur))+suffix;if(p<1)requestAnimationFrame(tick)}requestAnimationFrame(tick);numObs.unobserve(el)}})},{threshold:.5});
+document.querySelectorAll('.dc-num,.pol-num,.tp-num,.b-total .bn').forEach(el=>numObs.observe(el));
+
+// 视差效果
+let ticking=false;
+window.addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(()=>{document.querySelectorAll('.sec-bg img').forEach(img=>{const rect=img.parentElement.parentElement.getBoundingClientRect();const speed=0.05;img.style.transform=`translateY(${rect.top*speed}px)`});ticking=false});ticking=true}});
 </script>
 </body>
 </html>
