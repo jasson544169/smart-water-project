@@ -132,11 +132,44 @@ repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(26,95,180,.03)
 .ft-btm{display:flex;justify-content:space-between;padding-top:14px;border-top:1px solid var(--border);font-size:11px;color:var(--light)}
 
 /* ANIMATIONS */
-.a-up{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}.a-up.on{opacity:1;transform:translateY(0)}
-.a-left{opacity:0;transform:translateX(-30px);transition:opacity .65s ease,transform .65s ease}.a-left.on{opacity:1;transform:translateX(0)}
-.a-right{opacity:0;transform:translateX(30px);transition:opacity .65s ease,transform .65s ease}.a-right.on{opacity:1;transform:translateX(0)}
-.a-scale{opacity:0;transform:scale(.94);transition:opacity .65s ease,transform .65s ease}.a-scale.on{opacity:1;transform:scale(1)}
-.a-zoom{opacity:0;transform:scale(1.05);transition:opacity .65s ease,transform .65s ease}.a-zoom.on{opacity:1;transform:scale(1)}
+/* 弹跳式进入 - 标题/重要数据 */
+.a-bounce{opacity:0;transform:translateY(40px) scaleY(.92);transition:opacity .6s ease,transform .7s cubic-bezier(.34,1.56,.64,1)}.a-bounce.on{opacity:1;transform:translateY(0) scaleY(1)}
+/* 飘落式进入 - 正文/普通卡片 */
+.a-drop{opacity:0;transform:translateY(-20px);transition:opacity .8s ease .1s,transform .9s cubic-bezier(.23,1,.32,1) .1s}.a-drop.on{opacity:1;transform:translateY(0)}
+/* 左侧平滑滑入+淡入 - 图片 */
+.a-slide{opacity:0;transform:translateX(-40px);transition:opacity .5s ease .15s,transform .6s cubic-bezier(.25,.8,.25,1) .15s}.a-slide.on{opacity:1;transform:translateX(0)}
+/* 右侧平滑滑入+淡入 */
+.a-slide-r{opacity:0;transform:translateX(40px);transition:opacity .5s ease .15s,transform .6s cubic-bezier(.25,.8,.25,1) .15s}.a-slide-r.on{opacity:1;transform:translateX(0)}
+/* 缩放进入 */
+.a-scale{opacity:0;transform:scale(.94);transition:opacity .55s ease,transform .6s cubic-bezier(.25,.8,.25,1)}.a-scale.on{opacity:1;transform:scale(1)}
+/* 放大进入 */
+.a-zoom{opacity:0;transform:scale(1.06);transition:opacity .55s ease,transform .6s cubic-bezier(.25,.8,.25,1)}.a-zoom.on{opacity:1;transform:scale(1)}
+/* 旋转进入 */
+.a-rotate{opacity:0;transform:rotate(-4deg) scale(.95);transition:opacity .6s ease,transform .7s cubic-bezier(.25,.8,.25,1)}.a-rotate.on{opacity:1;transform:rotate(0) scale(1)}
+
+/* 导航下划线动画 */
+.nav-menu a{position:relative;overflow:hidden}
+.nav-menu a::after{content:"";position:absolute;bottom:4px;left:12px;width:0;height:2px;background:var(--accent);transition:width .35s cubic-bezier(.25,.8,.25,1);border-radius:1px}
+.nav-menu a:hover::after,.nav-menu a.on::after{width:calc(100% - 24px)}
+
+/* 按钮按压效果 */
+.cta-btn:active{transform:scale(.97)!important;transition:transform .1s ease}
+.lk:active{transform:scale(.97);transition:transform .1s ease}
+.cd:active{transform:scale(.985);transition:transform .1s ease}
+
+/* 按钮悬浮放大 */
+.cta-btn{transition:all .3s cubic-bezier(.25,.8,.25,1)}
+.cta-btn:hover{transform:translateY(-2px) scale(1.03)}
+
+/* 图标悬浮效果 */
+.cd .badge{transition:transform .3s ease}
+.cd:hover .badge{transform:translateY(-2px)}
+.img-card .caption{transition:transform .3s ease,opacity .3s ease}
+.img-card:hover .caption{transform:translateY(-2px)}
+
+/* 时间轴滚动延伸 */
+.tl::before{transform-origin:top;transform:scaleY(0);transition:transform 1.2s cubic-bezier(.25,.8,.25,1)}
+.tl.on::before{transform:scaleY(1)}
 
 @media(max-width:1024px){.g2,.g3,.g4,.cta-cards,.ref-grid,.img-grid{grid-template-columns:1fr}.nav-menu{display:none}.flow{grid-template-columns:1fr 1fr}.hero-grid{grid-template-columns:1fr}.ft-top{grid-template-columns:1fr}.ft-links{grid-template-columns:1fr 1fr}}
 @media(max-width:640px){.sec{padding:56px 20px}.flow{grid-template-columns:1fr}.ft-links{grid-template-columns:1fr}.ft-btm{flex-direction:column;gap:6px}.img-grid{grid-template-columns:1fr}}
@@ -181,18 +214,18 @@ repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(26,95,180,.03)
 <!-- 01 项目简介 -->
 <section class="sec" id="intro" style="background:linear-gradient(180deg,var(--bg1),var(--bg2))">
   <div class="sec-inner">
-    <div class="tag">01 项目简介</div>
-    <h2>一句话打动<em>决策者</em></h2>
-    <p class="lead">选择一个供水或排水智慧化技术，讲清楚：为什么深圳现在要做、技术怎么落地、要花多少钱、能带来什么民生与经济价值。</p>
+    <div class="tag a-bounce">01 项目简介</div>
+    <h2 class="a-bounce">一句话打动<em>决策者</em></h2>
+    <p class="lead a-drop">选择一个供水或排水智慧化技术，讲清楚：为什么深圳现在要做、技术怎么落地、要花多少钱、能带来什么民生与经济价值。</p>
     <div class="img-grid">
-      <div class="img-card a-left"><img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=500&q=80" alt="老旧小区"><div class="caption">老旧小区整体环境</div></div>
+      <div class="img-card a-slide"><img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=500&q=80" alt="老旧小区"><div class="caption">老旧小区整体环境</div></div>
       <div class="img-card a-scale"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=500&q=80" alt="管网改造"><div class="caption">管网改造远景实拍</div></div>
-      <div class="img-card a-right"><img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=500&q=80" alt="雨污分流"><div class="caption">雨污分流落地实景</div></div>
+      <div class="img-card a-slide-r"><img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=500&q=80" alt="雨污分流"><div class="caption">雨污分流落地实景</div></div>
     </div>
     <div class="g3">
-      <div class="cd a-left"><div class="badge b">情景身份</div><h4>深圳市水务局专项工作组</h4><p>以"水务局局长"身份进行汇报，项目要像一个真实城市项目。</p></div>
-      <div class="cd a-scale"><div class="badge b">项目主题</div><h4>小区雨污分流智慧体检系统</h4><p>实施排水智慧化管理技术，场景：老旧住宅小区排水管网诊断与修复。</p></div>
-      <div class="cd a-right"><div class="badge b">汇报重点</div><h4>紧跟时事、有理有据</h4><p>紧跟时事、有理有据、能自圆其说；讲解要有激情，网页与海报要吸引人。</p></div>
+      <div class="cd a-drop"><div class="badge b">情景身份</div><h4>深圳市水务局专项工作组</h4><p>以"水务局局长"身份进行汇报，项目要像一个真实城市项目。</p></div>
+      <div class="cd a-drop"><div class="badge b">项目主题</div><h4>小区雨污分流智慧体检系统</h4><p>实施排水智慧化管理技术，场景：老旧住宅小区排水管网诊断与修复。</p></div>
+      <div class="cd a-drop"><div class="badge b">汇报重点</div><h4>紧跟时事、有理有据</h4><p>紧跟时事、有理有据、能自圆其说；讲解要有激情，网页与海报要吸引人。</p></div>
     </div>
   </div>
 </section>
@@ -200,18 +233,18 @@ repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(26,95,180,.03)
 <!-- 02 政策依据 -->
 <section class="sec" id="policy" style="background:linear-gradient(180deg,var(--bg2),var(--bg1))">
   <div class="sec-inner">
-    <div class="tag">02 政策依据</div>
-    <h2>为什么现在<em>必须做</em></h2>
-    <p class="lead">2025年全国常住人口城镇化率67.89%，城镇常住人口95380万人，城市治理已进入精细化阶段。<a href="https://www.stats.gov.cn/sj/sjjd/202606/t20260603_1963868.html" target="_blank">《新型城镇化建设深入推进》[S1]</a> 深圳常住人口1824.85万人，城镇化率99.79%。<a href="https://tjj.sz.gov.cn/zwgk/zfxxgkml/tjsj/tjgb/content/post_12803919.html" target="_blank">《深圳市2025年统计公报》[S2]</a></p>
+    <div class="tag a-bounce">02 政策依据</div>
+    <h2 class="a-bounce">为什么现在<em>必须做</em></h2>
+    <p class="lead a-drop">2025年全国常住人口城镇化率67.89%，城镇常住人口95380万人，城市治理已进入精细化阶段。<a href="https://www.stats.gov.cn/sj/sjjd/202606/t20260603_1963868.html" target="_blank">《新型城镇化建设深入推进》[S1]</a> 深圳常住人口1824.85万人，城镇化率99.79%。<a href="https://tjj.sz.gov.cn/zwgk/zfxxgkml/tjsj/tjgb/content/post_12803919.html" target="_blank">《深圳市2025年统计公报》[S2]</a></p>
     <div class="img-grid">
-      <div class="img-card a-left"><img src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=500&q=80" alt="城市排水"><div class="caption">城市排水治理政务落地实景</div></div>
+      <div class="img-card a-slide"><img src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=500&q=80" alt="城市排水"><div class="caption">城市排水治理政务落地实景</div></div>
       <div class="img-card a-scale"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=500&q=80" alt="管网治理"><div class="caption">市政管网治理实景</div></div>
-      <div class="img-card a-right"><img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=500&q=80" alt="城市规划"><div class="caption">城市排水系统规划</div></div>
+      <div class="img-card a-slide-r"><img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=500&q=80" alt="城市规划"><div class="caption">城市排水系统规划</div></div>
     </div>
     <div class="g3">
-      <div class="cd a-left"><h4>城市生命线工程</h4><p>地下管网要加强监测预警。国务院安委办推动城市生命线安全工程，排水管网是核心组成部分。</p><a href="https://www.gov.cn/zhengce/zhengceku/202401/content_6926000.htm" target="_blank" class="lk">《城市生命线安全工程推进方案》→</a></div>
-      <div class="cd a-scale"><h4>排水防涝与韧性城市</h4><p>风险要提前发现。住建部要求加强城市排水防涝体系建设，提升城市应对极端天气的韧性能力。</p><a href="https://www.mohurd.gov.cn/gongkai/zhengce/zhengcefilelib/202303/20230322_771588.html" target="_blank" class="lk">《城市排水防涝体系建设》→</a></div>
-      <div class="cd a-right"><h4>深圳智慧水务</h4><p>一张图、一张网、一平台。深圳市水务局构建水务物联网感知体系，实现管网水位、水质、流量实时监测。</p><a href="https://swj.sz.gov.cn/" target="_blank" class="lk">深圳市水务局官网 →</a></div>
+      <div class="cd a-drop"><h4>城市生命线工程</h4><p>地下管网要加强监测预警。国务院安委办推动城市生命线安全工程，排水管网是核心组成部分。</p><a href="https://www.gov.cn/zhengce/zhengceku/202401/content_6926000.htm" target="_blank" class="lk">《城市生命线安全工程推进方案》→</a></div>
+      <div class="cd a-drop"><h4>排水防涝与韧性城市</h4><p>风险要提前发现。住建部要求加强城市排水防涝体系建设，提升城市应对极端天气的韧性能力。</p><a href="https://www.mohurd.gov.cn/gongkai/zhengce/zhengcefilelib/202303/20230322_771588.html" target="_blank" class="lk">《城市排水防涝体系建设》→</a></div>
+      <div class="cd a-drop"><h4>深圳智慧水务</h4><p>一张图、一张网、一平台。深圳市水务局构建水务物联网感知体系，实现管网水位、水质、流量实时监测。</p><a href="https://swj.sz.gov.cn/" target="_blank" class="lk">深圳市水务局官网 →</a></div>
     </div>
     <p style="margin-top:20px;font-size:15px;color:var(--muted);line-height:1.8">当一个城市几乎全部人口都生活在城镇空间里，排水问题就不只是工程问题，而是民生和城市韧性问题。</p>
   </div>
@@ -220,19 +253,19 @@ repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(26,95,180,.03)
 <!-- 03 小区现状 -->
 <section class="sec" id="status" style="background:linear-gradient(180deg,var(--bg1),var(--bg3))">
   <div class="sec-inner">
-    <div class="tag">03 小区现状</div>
-    <h2>问题藏在<em>地下</em></h2>
-    <p class="lead">2025年深圳全年累计处理污水<a href="https://www.sz.gov.cn/cn/xxgk/zfxxgj/tzgg/content/post_12728178.html" target="_blank"><strong>23.17亿立方米</strong> 《深圳市2025年度污水处理费征收使用情况公示》[S3]</a>，纳入地理信息系统管理的市政排水管渠<strong>21709.80公里</strong>，市政污水泵站<strong>80座</strong>。排水系统规模很大，任何小区末端错接、混接、外水入渗，都会被层层放大。</p>
+    <div class="tag a-bounce">03 小区现状</div>
+    <h2 class="a-bounce">问题藏在<em>地下</em></h2>
+    <p class="lead a-drop">2025年深圳全年累计处理污水<a href="https://www.sz.gov.cn/cn/xxgk/zfxxgj/tzgg/content/post_12728178.html" target="_blank"><strong>23.17亿立方米</strong> 《深圳市2025年度污水处理费征收使用情况公示》[S3]</a>，纳入地理信息系统管理的市政排水管渠<strong>21709.80公里</strong>，市政污水泵站<strong>80座</strong>。排水系统规模很大，任何小区末端错接、混接、外水入渗，都会被层层放大。</p>
     <div class="img-grid">
-      <div class="img-card a-left"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=500&q=80" alt="雨污混接"><div class="caption">阳台立管雨污混接实景</div></div>
+      <div class="img-card a-slide"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=500&q=80" alt="雨污混接"><div class="caption">阳台立管雨污混接实景</div></div>
       <div class="img-card a-scale"><img src="https://images.unsplash.com/photo-1581093458791-9d42e3c7e117?w=500&q=80" alt="管线错接"><div class="caption">楼顶管线错接实拍</div></div>
-      <div class="img-card a-right"><img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=500&q=80" alt="检查井"><div class="caption">老旧破损检查井实拍</div></div>
+      <div class="img-card a-slide-r"><img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=500&q=80" alt="检查井"><div class="caption">老旧破损检查井实拍</div></div>
     </div>
     <div class="g4">
-      <div class="cd a-left"><div class="big">23.17<span class="unit">亿m³</span></div><h4>2025年累计处理污水</h4><p>深圳全年累计处理污水量</p><a href="https://www.sz.gov.cn/cn/xxgk/zfxxgj/tzgg/content/post_12728178.html" target="_blank" class="lk">《污水处理费公示》[S3] →</a></div>
-      <div class="cd a-scale"><div class="big">21709<span class="unit">公里</span></div><h4>市政排水管渠</h4><p>纳入地理信息系统管理</p><a href="https://www.sz.gov.cn/cn/xxgk/zfxxgj/tzgg/content/post_12728178.html" target="_blank" class="lk">《污水处理费公示》[S3] →</a></div>
-      <div class="cd a-right"><div class="big">80<span class="unit">座</span></div><h4>市政污水泵站</h4><p>截污泵站数量</p><a href="https://www.sz.gov.cn/cn/xxgk/zfxxgj/tzgg/content/post_12728178.html" target="_blank" class="lk">《污水处理费公示》[S3] →</a></div>
-      <div class="cd a-zoom"><div class="badge y">2026年4月1日起</div><h4>运维责任明确</h4><p>未申请移交的居住区类小区，权属主体应做好排水管渠日常运维。</p><a href="https://www.sz.gov.cn/szzt2010/wgkzl/jcgk/jcygk/zdzcjc/content/post_12679010.html" target="_blank" class="lk">《排水管理进小区通告》[S4] →</a></div>
+      <div class="cd a-bounce"><div class="big">23.17<span class="unit">亿m³</span></div><h4>2025年累计处理污水</h4><p>深圳全年累计处理污水量</p><a href="https://www.sz.gov.cn/cn/xxgk/zfxxgj/tzgg/content/post_12728178.html" target="_blank" class="lk">《污水处理费公示》[S3] →</a></div>
+      <div class="cd a-bounce"><div class="big">21709<span class="unit">公里</span></div><h4>市政排水管渠</h4><p>纳入地理信息系统管理</p><a href="https://www.sz.gov.cn/cn/xxgk/zfxxgj/tzgg/content/post_12728178.html" target="_blank" class="lk">《污水处理费公示》[S3] →</a></div>
+      <div class="cd a-bounce"><div class="big">80<span class="unit">座</span></div><h4>市政污水泵站</h4><p>截污泵站数量</p><a href="https://www.sz.gov.cn/cn/xxgk/zfxxgj/tzgg/content/post_12728178.html" target="_blank" class="lk">《污水处理费公示》[S3] →</a></div>
+      <div class="cd a-rotate"><div class="badge y">2026年4月1日起</div><h4>运维责任明确</h4><p>未申请移交的居住区类小区，权属主体应做好排水管渠日常运维。</p><a href="https://www.sz.gov.cn/szzt2010/wgkzl/jcgk/jcygk/zdzcjc/content/post_12679010.html" target="_blank" class="lk">《排水管理进小区通告》[S4] →</a></div>
     </div>
   </div>
 </section>
@@ -240,19 +273,19 @@ repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(26,95,180,.03)
 <!-- 04 技术方案 -->
 <section class="sec" id="tech" style="background:linear-gradient(180deg,var(--bg3),var(--bg1))">
   <div class="sec-inner">
-    <div class="tag">04 技术方案</div>
-    <h2>系统由<em>四层</em>组成</h2>
-    <p class="lead">系统由井位感知层、数据传输层、诊断平台层、闭环处置层组成。重点监测液位、流量、化学需氧量、氨氮，识别"晴天有污、雨天倒灌、流量突增、水质突变"四类异常。</p>
+    <div class="tag a-bounce">04 技术方案</div>
+    <h2 class="a-bounce">系统由<em>四层</em>组成</h2>
+    <p class="lead a-drop">系统由井位感知层、数据传输层、诊断平台层、闭环处置层组成。重点监测液位、流量、化学需氧量、氨氮，识别"晴天有污、雨天倒灌、流量突增、水质突变"四类异常。</p>
     <div class="img-grid">
-      <div class="img-card a-left"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&q=80" alt="雨水井污水井"><div class="caption">雨水井与污水井实景对照</div></div>
+      <div class="img-card a-slide"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&q=80" alt="雨水井污水井"><div class="caption">雨水井与污水井实景对照</div></div>
       <div class="img-card a-scale"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&q=80" alt="传感器安装"><div class="caption">井内智能传感器安装实拍</div></div>
-      <div class="img-card a-right"><img src="https://images.unsplash.com/photo-1581093458791-9d42e3c7e117?w=500&q=80" alt="CCTV检测"><div class="caption">管道CCTV检测机器人作业实拍</div></div>
+      <div class="img-card a-slide-r"><img src="https://images.unsplash.com/photo-1581093458791-9d42e3c7e117?w=500&q=80" alt="CCTV检测"><div class="caption">管道CCTV检测机器人作业实拍</div></div>
     </div>
     <div class="flow">
-      <div class="fl a-left"><div class="sn">1</div><h4>井位感知层</h4><p>液位、流量<br>化学需氧量、氨氮</p></div>
-      <div class="fl a-scale"><div class="sn">2</div><h4>数据传输层</h4><p>物联网<br>无线传输</p></div>
-      <div class="fl a-scale"><div class="sn">3</div><h4>诊断平台层</h4><p>地理信息系统<br>人工智能分析</p></div>
-      <div class="fl a-right"><div class="sn">4</div><h4>闭环处置层</h4><p>工单派发<br>整改复核</p></div>
+      <div class="fl a-drop"><div class="sn">1</div><h4>井位感知层</h4><p>液位、流量<br>化学需氧量、氨氮</p></div>
+      <div class="fl a-drop"><div class="sn">2</div><h4>数据传输层</h4><p>物联网<br>无线传输</p></div>
+      <div class="fl a-drop"><div class="sn">3</div><h4>诊断平台层</h4><p>地理信息系统<br>人工智能分析</p></div>
+      <div class="fl a-drop"><div class="sn">4</div><h4>闭环处置层</h4><p>工单派发<br>整改复核</p></div>
     </div>
     <div class="g2" style="margin-top:24px">
       <div class="cd a-left">
@@ -285,18 +318,18 @@ repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(26,95,180,.03)
 <!-- 05 施工落地 -->
 <section class="sec" id="impl" style="background:linear-gradient(180deg,var(--bg1),var(--bg2))">
   <div class="sec-inner">
-    <div class="tag">05 施工落地</div>
-    <h2>三步走：<em>先体检</em>，再分级，后修复</h2>
-    <p class="lead">项目分三个阶段推进，确保从试点到推广的可行路径。试点片区约50个小区，布设12个重点井位。</p>
+    <div class="tag a-bounce">05 施工落地</div>
+    <h2 class="a-bounce">三步走：<em>先体检</em>，再分级，后修复</h2>
+    <p class="lead a-drop">项目分三个阶段推进，确保从试点到推广的可行路径。试点片区约50个小区，布设12个重点井位。</p>
     <div class="img-grid">
-      <div class="img-card a-left"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=500&q=80" alt="路面开槽"><div class="caption">小区路面开槽铺管施工</div></div>
+      <div class="img-card a-slide"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=500&q=80" alt="路面开槽"><div class="caption">小区路面开槽铺管施工</div></div>
       <div class="img-card a-scale"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=500&q=80" alt="立管改造"><div class="caption">外墙污水立管加装施工</div></div>
-      <div class="img-card a-right"><img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=500&q=80" alt="路面复原"><div class="caption">完工路面复原实拍</div></div>
+      <div class="img-card a-slide-r"><img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=500&q=80" alt="路面复原"><div class="caption">完工路面复原实拍</div></div>
     </div>
     <div class="tl">
-      <div class="tl-i a-left"><div class="ph">第一步 · 建账摸底</div><h4>整理管网资产和重点风险点</h4><p>完成试点小区排水井、排水口、管线、历史问题的基础建档，建立管网"健康档案"，标注重点风险点位。</p></div>
-      <div class="tl-i a-scale"><div class="ph">第二步 · 机器人检测</div><h4>形成缺陷评级和病害清单</h4><p>布设重点井位监测，使用管道机器人进行结构性检测，形成缺陷评级和病害清单，锁定疑似错接混接和外水入渗点。</p></div>
-      <div class="tl-i a-right"><div class="ph">第三步 · 精准修复</div><h4>接入地理信息系统平台和巡检养护工单</h4><p>接入地理信息系统平台和巡检养护工单，完成整改、复核、销项，沉淀成可复制的小区体检标准流程。</p></div>
+      <div class="tl-i a-drop"><div class="ph">第一步 · 建账摸底</div><h4>整理管网资产和重点风险点</h4><p>完成试点小区排水井、排水口、管线、历史问题的基础建档，建立管网"健康档案"，标注重点风险点位。</p></div>
+      <div class="tl-i a-drop"><div class="ph">第二步 · 机器人检测</div><h4>形成缺陷评级和病害清单</h4><p>布设重点井位监测，使用管道机器人进行结构性检测，形成缺陷评级和病害清单，锁定疑似错接混接和外水入渗点。</p></div>
+      <div class="tl-i a-drop"><div class="ph">第三步 · 精准修复</div><h4>接入地理信息系统平台和巡检养护工单</h4><p>接入地理信息系统平台和巡检养护工单，完成整改、复核、销项，沉淀成可复制的小区体检标准流程。</p></div>
     </div>
   </div>
 </section>
@@ -304,10 +337,10 @@ repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(26,95,180,.03)
 <!-- 06 造价预算 -->
 <section class="sec" id="budget" style="background:linear-gradient(180deg,var(--bg2),var(--bg1))">
   <div class="sec-inner">
-    <div class="tag">06 造价预算</div>
-    <h2>试点预算：<em>85.9万元</em></h2>
-    <p class="lead">依据公开中标单价测算。试点片区约50个小区，按每4-5个小区布设1个重点监测井位，共需12个。</p>
-    <div class="a-up">
+    <div class="tag a-bounce">06 造价预算</div>
+    <h2 class="a-bounce">试点预算：<em>85.9万元</em></h2>
+    <p class="lead a-drop">依据公开中标单价测算。试点片区约50个小区，按每4-5个小区布设1个重点监测井位，共需12个。</p>
+    <div class="a-drop">
       <table class="tbl">
         <thead><tr><th>项目</th><th>测算依据</th><th>金额</th></tr></thead>
         <tbody>
@@ -327,38 +360,38 @@ repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(26,95,180,.03)
 <!-- 07 项目效益 -->
 <section class="sec" id="benefit" style="background:linear-gradient(180deg,var(--bg1),var(--bg3))">
   <div class="sec-inner">
-    <div class="tag">07 项目效益</div>
-    <h2>为什么这笔钱<em>值得花</em></h2>
-    <p class="lead">排水管网项目的经济价值，主要来自"避免损失"和"少走弯路"。</p>
+    <div class="tag a-bounce">07 项目效益</div>
+    <h2 class="a-bounce">为什么这笔钱<em>值得花</em></h2>
+    <p class="lead a-drop">排水管网项目的经济价值，主要来自"避免损失"和"少走弯路"。</p>
     <div class="img-grid">
-      <div class="img-card a-left"><img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=500&q=80" alt="改造前后"><div class="caption">同点位改造前后对比实景</div></div>
+      <div class="img-card a-slide"><img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=500&q=80" alt="改造前后"><div class="caption">同点位改造前后对比实景</div></div>
       <div class="img-card a-scale"><img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=500&q=80" alt="水质改善"><div class="caption">周边沟渠水质改善实拍</div></div>
-      <div class="img-card a-right"><img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=500&q=80" alt="河道治理"><div class="caption">河道水质改善效果</div></div>
+      <div class="img-card a-slide-r"><img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=500&q=80" alt="河道治理"><div class="caption">河道水质改善效果</div></div>
     </div>
     <div class="g2">
-      <div class="cd a-left"><h4>减少盲目开挖</h4><p>先看清病害，再精准修复。减少反复开挖带来的交通、环境、投诉损失。</p><div class="badge g">节约养护成本约200万元/年</div></div>
-      <div class="cd a-right"><h4>减少外水处理</h4><p>通过精准识别混接和入渗，减少雨水和地下水进入污水管网，降低污水厂无效处理量。</p><div class="badge g">减少外水处理费用约120万元/年</div></div>
-      <div class="cd a-left"><h4>带动本地产业</h4><p>带动本地检测装备、软件平台、管网修复和运维服务产业发展。</p><div class="badge b">预计2年内收回投资</div></div>
-      <div class="cd a-right"><h4>民生价值</h4><p>少积水、少臭味、少冒溢、少开挖。居民满意度提升，投诉量下降。</p><div class="badge g">污水冒溢投诉减少60%以上</div></div>
+      <div class="cd a-drop"><h4>减少盲目开挖</h4><p>先看清病害，再精准修复。减少反复开挖带来的交通、环境、投诉损失。</p><div class="badge g">节约养护成本约200万元/年</div></div>
+      <div class="cd a-drop"><h4>减少外水处理</h4><p>通过精准识别混接和入渗，减少雨水和地下水进入污水管网，降低污水厂无效处理量。</p><div class="badge g">减少外水处理费用约120万元/年</div></div>
+      <div class="cd a-drop"><h4>带动本地产业</h4><p>带动本地检测装备、软件平台、管网修复和运维服务产业发展。</p><div class="badge b">预计2年内收回投资</div></div>
+      <div class="cd a-drop"><h4>民生价值</h4><p>少积水、少臭味、少冒溢、少开挖。居民满意度提升，投诉量下降。</p><div class="badge g">污水冒溢投诉减少60%以上</div></div>
     </div>
     <div class="g3" style="margin-top:16px">
-      <div class="cd a-scale"><div class="badge b">管理目标</div><h4 style="margin-top:6px">可量化考核</h4><p>重点井位在线监测覆盖率<strong>100%</strong>；异常工单<strong>24小时内</strong>派发；疑似错接混接点<strong>100%建档</strong>；整改复核闭环率<strong>90%以上</strong>。</p></div>
-      <div class="cd a-scale"><div class="badge g">民生结果</div><h4 style="margin-top:6px">居民可感知</h4><p>少积水、少臭味、少冒溢、少开挖。减少污水冒溢、道路积水、反复开挖和群众投诉。</p></div>
-      <div class="cd a-scale"><div class="badge y">经济效益</div><h4 style="margin-top:6px">投入产出比</h4><p>预计2年内收回投资，此后每年净节约约240万元。带动检测装备、软件平台、管网修复产业发展。</p></div>
+      <div class="cd a-rotate"><div class="badge b">管理目标</div><h4 style="margin-top:6px">可量化考核</h4><p>重点井位在线监测覆盖率<strong>100%</strong>；异常工单<strong>24小时内</strong>派发；疑似错接混接点<strong>100%建档</strong>；整改复核闭环率<strong>90%以上</strong>。</p></div>
+      <div class="cd a-rotate"><div class="badge g">民生结果</div><h4 style="margin-top:6px">居民可感知</h4><p>少积水、少臭味、少冒溢、少开挖。减少污水冒溢、道路积水、反复开挖和群众投诉。</p></div>
+      <div class="cd a-rotate"><div class="badge y">经济效益</div><h4 style="margin-top:6px">投入产出比</h4><p>预计2年内收回投资，此后每年净节约约240万元。带动检测装备、软件平台、管网修复产业发展。</p></div>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
 <section class="cta">
-  <h2 class="a-up">让地下管网从<br><em>"隐患未知"走向"精准治理"</em></h2>
-  <p class="lead a-up" style="text-align:center">与其等污水冒溢后反复开挖，不如先给小区地下排水做一次智慧体检。</p>
-  <div class="cta-cards a-up">
+  <h2 class="a-bounce">让地下管网从<br><em>"隐患未知"走向"精准治理"</em></h2>
+  <p class="lead a-drop" style="text-align:center">与其等污水冒溢后反复开挖，不如先给小区地下排水做一次智慧体检。</p>
+  <div class="cta-cards a-drop">
     <div class="cta-c"><div class="cn">少积水</div><div class="ct">雨天道路不内涝</div></div>
     <div class="cta-c"><div class="cn">少返工</div><div class="ct">精准识别不盲改</div></div>
     <div class="cta-c"><div class="cn">少开挖</div><div class="ct">数据驱动不浪费</div></div>
   </div>
-  <a href="#top" class="cta-btn a-up">回到顶部 ↑</a>
+  <a href="#top" class="cta-btn a-drop">回到顶部 ↑</a>
 </section>
 
 <!-- 参考文献汇总 -->
@@ -394,7 +427,7 @@ repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(26,95,180,.03)
 </footer>
 
 <script>
-// Water ripple
+// 水流动画
 (function(){
   var c=document.getElementById('waterCanvas');if(!c)return;
   var ctx=c.getContext('2d');
@@ -409,18 +442,95 @@ repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(26,95,180,.03)
   }draw();
 })();
 
-// Animations
-var obs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('on');else e.target.classList.remove('on')})},{threshold:.1,rootMargin:'0px 0px -15px 0px'});
-document.querySelectorAll('.a-up,.a-left,.a-right,.a-scale,.a-zoom').forEach(function(el){obs.observe(el)});
+// 滚动动画 - 多种类型
+var animObs=new IntersectionObserver(function(es){
+  es.forEach(function(e){
+    if(e.isIntersecting)e.target.classList.add('on');
+    else e.target.classList.remove('on');
+  });
+},{threshold:.1,rootMargin:'0px 0px -15px 0px'});
+document.querySelectorAll('.a-bounce,.a-drop,.a-slide,.a-slide-r,.a-scale,.a-zoom,.a-rotate').forEach(function(el){animObs.observe(el)});
 
-// Card stagger
-var cObs=new IntersectionObserver(function(es){es.forEach(function(e){var c=e.target.children;if(e.isIntersecting){for(var i=0;i<c.length;i++){(function(j){setTimeout(function(){c[j].style.opacity='1';c[j].style.transform='translateY(0) scale(1)'},j*110)})(i)}}else{for(var i=0;i<c.length;i++){c[i].style.opacity='0';c[i].style.transform='translateY(20px) scale(.97)'}}})},{threshold:.08});
-document.querySelectorAll('.g2,.g3,.g4,.cta-cards,.ref-grid,.img-grid').forEach(function(el){for(var i=0;i<el.children.length;i++){el.children[i].style.opacity='0';el.children[i].style.transform='translateY(20px) scale(.97)';el.children[i].style.transition='all .55s ease-out'}cObs.observe(el)});
+// 时间轴延伸动画
+var tlObs=new IntersectionObserver(function(es){
+  es.forEach(function(e){
+    if(e.isIntersecting)e.target.classList.add('on');
+    else e.target.classList.remove('on');
+  });
+},{threshold:.2});
+document.querySelectorAll('.tl').forEach(function(el){tlObs.observe(el)});
 
-// Nav
+// 卡片交错动画
+var cObs=new IntersectionObserver(function(es){
+  es.forEach(function(e){
+    var c=e.target.children;
+    if(e.isIntersecting){
+      for(var i=0;i<c.length;i++){(function(j){setTimeout(function(){c[j].style.opacity='1';c[j].style.transform='translateY(0) scale(1)'},j*120)})(i)}
+    }else{
+      for(var i=0;i<c.length;i++){c[i].style.opacity='0';c[i].style.transform='translateY(20px) scale(.97)'}
+    }
+  });
+},{threshold:.08});
+document.querySelectorAll('.g2,.g3,.g4,.cta-cards,.ref-grid,.img-grid').forEach(function(el){
+  for(var i=0;i<el.children.length;i++){el.children[i].style.opacity='0';el.children[i].style.transform='translateY(20px) scale(.97)';el.children[i].style.transition='all .55s ease-out'}
+  cObs.observe(el);
+});
+
+// 数字滚动动画
+var numObs=new IntersectionObserver(function(es){
+  es.forEach(function(e){
+    if(!e.isIntersecting)return;
+    var el=e.target;
+    if(el.dataset.counted)return;
+    el.dataset.counted='1';
+    var text=el.textContent;
+    var match=text.match(/([\d.]+)/);
+    if(!match)return;
+    var target=parseFloat(match[1]);
+    var before=text.substring(0,text.indexOf(match[1]));
+    var after=text.substring(text.indexOf(match[1])+match[1].length);
+    var dur=1400;
+    var start=null;
+    function tick(ts){
+      if(!start)start=ts;
+      var p=Math.min((ts-start)/dur,1);
+      var eased=1-Math.pow(1-p,3);
+      var cur=target*eased;
+      if(target%1!==0)el.textContent=before+cur.toFixed(1)+after;
+      else el.textContent=before+Math.round(cur)+after;
+      if(p<1)requestAnimationFrame(tick);
+      else el.textContent=text;
+    }
+    requestAnimationFrame(tick);
+  });
+},{threshold:.5});
+document.querySelectorAll('.big,.tl-num').forEach(function(el){numObs.observe(el)});
+
+// 导航高亮
 var secs=document.querySelectorAll('section[id]'),nls=document.querySelectorAll('.nav-menu a');
-window.addEventListener('scroll',function(){var cur='';secs.forEach(function(s){if(window.scrollY>=s.offsetTop-80)cur=s.id});nls.forEach(function(l){l.classList.remove('on');if(l.getAttribute('href')==='#'+cur)l.classList.add('on')})});
-document.querySelectorAll('a[href^="#"]').forEach(function(l){l.addEventListener('click',function(e){e.preventDefault();var t=document.querySelector(l.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'})})});
+window.addEventListener('scroll',function(){
+  var cur='';
+  secs.forEach(function(s){if(window.scrollY>=s.offsetTop-80)cur=s.id});
+  nls.forEach(function(l){l.classList.remove('on');if(l.getAttribute('href')==='#'+cur)l.classList.add('on')});
+});
+
+// 平滑滚动
+document.querySelectorAll('a[href^="#"]').forEach(function(l){
+  l.addEventListener('click',function(e){
+    e.preventDefault();
+    var t=document.querySelector(l.getAttribute('href'));
+    if(t)t.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+});
+
+// 视差效果
+window.addEventListener('scroll',function(){
+  document.querySelectorAll('.sec-bg img').forEach(function(img){
+    var r=img.parentElement.parentElement.getBoundingClientRect();
+    var s=window.innerHeight-r.top;
+    if(s>0&&r.top<window.innerHeight)img.style.transform='translateY('+(s*0.02)+'px)';
+  });
+});
 </script>
 </body>
 </html>
