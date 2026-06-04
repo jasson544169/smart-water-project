@@ -25,7 +25,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opa
 /* HERO */
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;padding-top:64px;overflow:hidden;background:linear-gradient(135deg,#e8f0fa 0%,#d8e8f5 40%,#e0ecf4 100%)}
 .hero canvas{position:absolute;inset:0;width:100%;height:100%;opacity:.1;z-index:0}
-.hero .inner{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:0 44px;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.hero .inner{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:0 30px;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
 .hero h1{font-size:clamp(36px,4.5vw,58px);font-weight:900;line-height:1.1;margin-bottom:16px;color:var(--blue)}
 .hero h1 em{font-style:normal;color:var(--accent)}
 .hero .sub{font-size:17px;color:var(--muted);line-height:1.7;margin-bottom:24px;max-width:480px}
@@ -39,13 +39,15 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opa
 .cta-btn:active{transform:scale(.97)}
 
 /* SECTION COMMON */
-.sec{position:relative;padding:100px 44px;overflow:hidden}
-.sec-inner{max-width:1240px;margin:0 auto;position:relative;z-index:1}
+.sec{position:relative;padding:60px 30px;overflow:hidden}
+.sec-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1}
 .tag{display:inline-flex;align-items:center;gap:8px;color:var(--accent);font-size:12px;font-weight:700;letter-spacing:.1em;margin-bottom:12px}
 .tag::before{content:"";width:20px;height:2px;background:var(--accent)}
-.sec h2{font-size:clamp(28px,3.5vw,42px);font-weight:900;line-height:1.15;margin-bottom:12px;color:var(--blue)}
+.sec h2{font-size:clamp(28px,3.5vw,42px);font-weight:900;line-height:1.15;margin-bottom:20px;color:var(--blue)}
 .sec h2 em{font-style:normal;color:var(--accent)}
 .sec .lead{font-size:15px;color:var(--muted);line-height:1.8;max-width:780px;margin-bottom:32px}
+.sec .lead strong{color:var(--text)}
+p{margin-bottom:14px}
 
 /* LINK CARD */
 .lk{display:inline-flex;align-items:center;gap:5px;padding:5px 12px;border-radius:6px;background:rgba(37,99,235,.06);border:1px solid rgba(37,99,235,.12);font-size:12px;font-weight:600;color:var(--accent);margin-top:8px;transition:all .2s}
@@ -57,11 +59,11 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opa
 .badge.g{background:rgba(16,185,129,.08);color:#059669}
 .badge.y{background:rgba(245,158,11,.08);color:#d97706}
 
-/* === 板块1：项目简介 - 左大图+右分栏 === */
-.intro-layout{display:grid;grid-template-columns:1.2fr 0.8fr;gap:40px;align-items:stretch}
-.intro-big-img{border-radius:20px;overflow:hidden;min-height:400px;position:relative}
-.intro-big-img img{width:100%;height:100%;object-fit:cover;display:block}
-.intro-right{display:flex;flex-direction:column;justify-content:space-between}
+/* === 板块1：项目简介 - 左大图52%+右分栏48% === */
+.intro-layout{display:grid;grid-template-columns:52% 48%;gap:32px;align-items:stretch}
+.intro-big-img{border-radius:20px;overflow:hidden;position:relative}
+.intro-big-img img{width:100%;display:block;object-fit:cover}
+.intro-right{display:flex;flex-direction:column;justify-content:space-between;gap:16px}
 .intro-title{padding:28px;border-radius:16px;background:var(--card);border:1px solid var(--border);box-shadow:var(--shadow)}
 .intro-title h3{font-size:24px;font-weight:900;color:var(--blue);margin-bottom:8px}
 .intro-title p{font-size:14px;color:var(--muted);line-height:1.7}
@@ -71,8 +73,8 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opa
 .intro-card h4{font-size:15px;font-weight:700;margin-bottom:4px}
 .intro-card p{font-size:13px;color:var(--muted);line-height:1.6}
 
-/* === 板块2：小区现状 - 瀑布流 === */
-.waterfall{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:start}
+/* === 板块2：小区现状 - 瀑布流三列均分 === */
+.waterfall{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:start;min-width:0}
 .wf-item{border-radius:16px;overflow:hidden;background:var(--card);border:1px solid var(--border);box-shadow:var(--shadow);transition:all .4s}
 .wf-item:hover{transform:translateY(-6px);box-shadow:0 16px 44px rgba(26,95,180,.12);border-color:rgba(37,99,235,.2)}
 .wf-item img{width:100%;display:block;transition:transform .5s}
@@ -88,8 +90,8 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opa
 .data-card h4{font-size:13px;font-weight:700;margin:6px 0 2px}
 .data-card p{font-size:12px;color:var(--muted)}
 
-/* === 板块3：政策依据 - 左时间轴+右正文 === */
-.policy-layout{display:grid;grid-template-columns:200px 1fr;gap:40px}
+/* === 板块3：政策依据 - 左时间轴22%+右正文78% === */
+.policy-layout{display:grid;grid-template-columns:22% 78%;gap:28px}
 .pol-tl{position:relative;padding-left:24px}
 .pol-tl::before{content:"";position:absolute;left:8px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--accent),rgba(37,99,235,.08))}
 .pol-item{position:relative;padding:16px 20px;margin-bottom:16px;border-radius:12px;background:var(--card);border:1px solid var(--border);transition:all .3s}
@@ -105,9 +107,9 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opa
 .pol-img img{width:100%;display:block}
 
 /* === 板块4：技术方案 - 上下分层 === */
-.tech-top{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;margin-bottom:30px}
+.tech-top{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center;margin-bottom:24px}
 .tech-img{border-radius:16px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow)}
-.tech-img img{width:100%;display:block}
+.tech-img img{width:100%;display:block;max-width:100%}
 .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
 .fl{padding:18px 10px;border-radius:12px;background:var(--card);border:1px solid var(--border);text-align:center;transition:all .3s;box-shadow:var(--shadow)}
 .fl:hover{border-color:rgba(37,99,235,.3);transform:translateY(-3px)}
@@ -132,10 +134,10 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opa
 .impl-img{border-radius:14px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow)}
 .impl-img img{width:100%;display:block}
 
-/* === 板块6：项目效益 - 左右对比 === */
-.compare{display:grid;grid-template-columns:1fr auto 1fr;gap:0;align-items:stretch;margin:30px 0;border-radius:20px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow)}
-.compare-side{position:relative;min-height:350px}
-.compare-side img{width:100%;height:100%;object-fit:cover;display:block}
+/* === 板块6：项目效益 - 左右对比49%/49%+2%留白 === */
+.compare{display:grid;grid-template-columns:49% 2% 49%;gap:0;align-items:stretch;margin:30px 0;border-radius:20px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow)}
+.compare-side{position:relative}
+.compare-side img{width:100%;display:block;object-fit:cover}
 .compare-side .label{position:absolute;bottom:16px;left:16px;padding:6px 14px;border-radius:8px;font-size:13px;font-weight:700;color:#fff}
 .compare-side .label.before{background:rgba(239,68,68,.85)}
 .compare-side .label.after{background:rgba(16,185,129,.85)}
@@ -160,16 +162,16 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opa
 .cta-c .ct{font-size:12px;color:var(--muted)}
 
 /* REFS */
-.refs{background:#e8eef6;padding:56px 44px;border-top:1px solid var(--border)}
+.refs{background:#e8eef6;padding:48px 30px;border-top:1px solid var(--border)}
 .refs h3{font-size:17px;font-weight:700;margin-bottom:18px;color:var(--blue)}
 .ref-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .ref-item{padding:10px 14px;border-radius:8px;background:var(--card);border:1px solid var(--border);font-size:12px;color:var(--muted);line-height:1.5}
 .ref-item .rt{color:var(--accent);font-weight:700;margin-right:4px}
 
 /* FOOTER */
-.footer{padding:44px 44px 28px;border-top:1px solid var(--border);background:#fff}
-.ft-inner{max-width:1240px;margin:0 auto}
-.ft-top{display:grid;grid-template-columns:1fr 2fr;gap:44px;margin-bottom:32px}
+.footer{padding:40px 30px 28px;border-top:1px solid var(--border);background:#fff}
+.ft-inner{max-width:1200px;margin:0 auto}
+.ft-top{display:grid;grid-template-columns:1fr 2fr;gap:40px;margin-bottom:32px}
 .ft-logo{font-size:20px;font-weight:900;color:var(--blue);margin-bottom:10px}
 .ft-links{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .ft-col h4{font-size:13px;font-weight:700;color:var(--accent);margin-bottom:8px}
