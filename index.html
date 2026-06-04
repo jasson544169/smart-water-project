@@ -121,17 +121,15 @@ p{margin-bottom:14px}
 .tech-small:hover img{transform:scale(1.04)}
 .tech-small .caption{position:absolute;bottom:0;left:0;right:0;padding:10px 14px;background:linear-gradient(transparent,rgba(0,0,0,.6));color:#fff;font-size:12px;font-weight:500}
 
-/* === 板块5：施工落地 - 大图通栏+两列交错 === */
-.impl-hero{border-radius:20px;overflow:hidden;margin-bottom:30px;box-shadow:0 16px 48px rgba(26,95,180,.1);border:1px solid var(--border)}
-.impl-hero img{width:100%;display:block;max-height:400px;object-fit:cover}
-.impl-row{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:20px;align-items:center}
+/* === 板块5：施工落地 - 两列交错 === */
+.impl-row{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:20px;align-items:stretch}
 .impl-row.reverse{direction:rtl}
 .impl-row.reverse > *{direction:ltr}
-.impl-text{padding:24px;border-radius:14px;background:var(--card);border:1px solid var(--border);box-shadow:var(--shadow)}
+.impl-text{padding:24px;border-radius:14px;background:var(--card);border:1px solid var(--border);box-shadow:var(--shadow);display:flex;flex-direction:column;justify-content:center}
 .impl-text h4{font-size:18px;font-weight:700;margin-bottom:8px;color:var(--blue)}
 .impl-text p{font-size:14px;color:var(--muted);line-height:1.7}
-.impl-img{border-radius:14px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow)}
-.impl-img img{width:100%;display:block}
+.impl-img{border-radius:14px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow);display:flex;align-items:stretch}
+.impl-img img{width:100%;height:100%;object-fit:cover;display:block}
 
 /* === 板块6：项目效益 - 左右对比49%/49%+2%留白 === */
 .compare{display:grid;grid-template-columns:49% 2% 49%;gap:0;align-items:stretch;margin:30px 0;border-radius:20px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow)}
@@ -351,7 +349,6 @@ p{margin-bottom:14px}
     <div class="tag a-bounce">05 施工落地</div>
     <h2 class="a-bounce">三步走：<em>先体检</em>，再分级，后修复</h2>
     <p class="lead a-drop">项目分三个阶段推进，确保从试点到推广的可行路径。试点片区约50个小区，布设12个重点井位。</p>
-    <div class="impl-hero a-scale"><img src="img/05_hero.jpg" alt="施工现场"></div>
     <div class="impl-row">
       <div class="impl-img a-slide"><img src="img/05_hero.jpg" alt="路面开槽"></div>
       <div class="impl-text a-slide-r"><div class="ph" style="display:inline-block;padding:3px 10px;border-radius:6px;background:rgba(37,99,235,.06);color:var(--accent);font-size:12px;font-weight:700;margin-bottom:8px">第一步 · 建账摸底</div><h4>整理管网资产和重点风险点</h4><p>完成试点小区排水井、排水口、管线、历史问题的基础建档，建立管网"健康档案"，标注重点风险点位。</p></div>
